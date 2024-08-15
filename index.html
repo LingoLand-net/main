@@ -27,53 +27,36 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <style>
-        /* Add your custom styles here */
-        .menu-toggle {
-            display: none; /* Initially hide the menu toggle */
-        }
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block; /* Show the menu toggle on small screens */
-            }
-            .nav {
-                display: none; /* Hide the navigation menu by default on small screens */
-            }
-            .nav.show {
-                display: block; /* Show the navigation menu when toggle is clicked */
-            }
-        }
-    </style>
+
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <a href="#" class="logo" id="logo">
-                <img src="assets/img/logo.png" alt="LingoLand Logo">
-            </a>
-            <div class="nav-container">
-                <button class="menu-toggle" aria-label="Toggle navigation">
-                    <span class="menu-icon">
-                        <span class="menu-icon-line"></span>
-                        <span class="menu-icon-line"></span>
-                        <span class="menu-icon-line"></span>
-                    </span>
-                </button>
-                    <nav class="nav">
-                    <ul class="nav-list">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="store.html">Store</a></li>
-                        <li><a href="aboout-us.html">About Us</a></li>
-                        <li><a href="our_ressources.html">Resources</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
-
-            </div>
+  <header class="bg-[#00ACA8] text-white flex items-center justify-between px-6 py-4 relative z-20">
+    <div class="flex items-center justify-between w-full max-w-6xl mx-auto">
+        <a href="#" class="flex-shrink-0" id="logo">
+            <img src="assets/img/logo.png" alt="LingoLand Logo" class="w-24 h-auto">
+        </a>
+        <div class="flex items-center space-x-4">
+            <button class="menu-toggle block md:hidden text-3xl focus:outline-none z-30" aria-label="Toggle navigation">
+                <div class="space-y-2">
+                    <span class="block w-8 h-1 bg-white"></span>
+                    <span class="block w-8 h-1 bg-white"></span>
+                    <span class="block w-8 h-1 bg-white"></span>
+                </div>
+            </button>
+            <nav class="nav fixed inset-y-0 left-0 w-full transform -translate-x-full transition-transform duration-300 ease-in-out md:relative md:translate-x-0 md:flex md:items-center md:bg-transparent z-10">
+                <ul class="nav-list flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 w-full md:w-auto text-lg md:text-base">
+                    <li><a href="index.html" class="block px-6 py-3 nav-item  transition">Home</a></li>
+                    <li><a href="store.html" class="block px-6 py-3 nav-item  transition">Store</a></li>
+                    <li><a href="about-us.html" class="block px-6 py-3 nav-item  transition">About Us</a></li>
+                    <li><a href="our_resources.html" class="block px-6 py-3 nav-item  transition">Resources</a></li>
+                    <li><a href="contact.html" class="block px-6 py-3 nav-item  transition">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-    </header>
+    </div>
+</header>
 
-    
+
     <section class="hero">
         <div class="hero-content">
             <h1 style="font-family: 'Anton', sans-serif;">Welcome to <span class="highlight">

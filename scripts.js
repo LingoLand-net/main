@@ -3,10 +3,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const nav = document.querySelector('.nav');
 
     menuToggle.addEventListener('click', function() {
-        nav.classList.toggle('show');
-        menuToggle.classList.toggle('show');
+        nav.classList.toggle('-translate-x-full');
+        nav.classList.toggle('translate-x-0');
     });
 });
+
 
 
 document.getElementById('logo').addEventListener('click', function (e) {
@@ -30,16 +31,6 @@ document.addEventListener("DOMContentLoaded", function() {
     elements.forEach(element => {
         observer.observe(element);
     });
-});
-
-
-// Disable horizontal scrolling
-document.body.style.overflowX = 'hidden';
-document.addEventListener('touchstart', function(e) {
-    e.preventDefault();
-});
-document.addEventListener('touchmove', function(e) {
-    e.preventDefault();
 });
 
 
