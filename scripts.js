@@ -3,11 +3,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const nav = document.querySelector('.nav');
 
     menuToggle.addEventListener('click', function() {
-        nav.classList.toggle('-translate-x-full');
-        nav.classList.toggle('translate-x-0');
+        if (nav.classList.contains('hidden')) {
+            // Show the nav and start the slide-in animation
+            nav.classList.remove('hidden');
+            setTimeout(() => {
+                nav.classList.remove('-translate-x-full');
+                nav.classList.add('translate-x-0');
+            }, 10); // Small delay to ensure the transition is applied
+        } else {
+            // Slide out the nav
+            nav.classList.remove('translate-x-0');
+            nav.classList.add('-translate-x-full');
+
+            // Hide the nav after the transition
+            nav.addEventListener('transitionend', function() {
+                nav.classList.add('hidden');
+            }, { once: true });
+        }
     });
 });
-
 
 
 document.getElementById('logo').addEventListener('click', function (e) {

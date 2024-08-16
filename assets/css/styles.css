@@ -21,7 +21,6 @@ body {
     padding: 0;
     background-color: #f9f9f9;
     color: #333;
-    overflow-x: none; /* Prevent horizontal overflow */
     overflow-x: hidden;
     line-height: 1.6;
 }
@@ -291,7 +290,7 @@ header{
 }
 
 /* Desktop Styles (Large Screens) */
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 702px){
     .hero {
         padding: 60px;
     }
@@ -310,6 +309,9 @@ header{
 
     .congratulations-badge {
         margin-left: auto;
+    }
+    .nav{
+        height:80px;
     }
 }
 
