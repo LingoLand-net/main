@@ -38,6 +38,7 @@ body {
 	color: #333;
 	overflow-x: hidden;
 	line-height: 1.6;
+	scroll-behavior: smooth;
 }
 
 img {
