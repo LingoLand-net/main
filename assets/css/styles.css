@@ -2220,128 +2220,6 @@ button:active {
 	}
 }
 
-
-/* Cart Styles */
-
-.header .cart-container {
-	position: relative;
-	margin-left: 10px;
-	/* Adjust this value to move the cart more to the left */
-}
-
-.header .cart-container .cart-btn {
-	background: none;
-	border: none;
-	color: white;
-	font-size: 1.5rem;
-	cursor: pointer;
-	position: relative;
-	display: flex;
-	align-items: center;
-}
-
-.header .cart-container .cart-btn img {
-	height: 35px;
-	/* Adjust size for better visibility */
-	width: auto;
-	margin-right: 8px;
-	/* Add spacing between icon and count */
-}
-
-.header .cart-container .cart-count {
-	position: absolute;
-	top: -5px;
-	right: -10px;
-	background: red;
-	color: white;
-	border-radius: 50%;
-	padding: 2px 6px;
-	font-size: 0.75rem;
-	font-weight: bold;
-	text-align: center;
-}
-
-.header .cart-container .cart-dropdown {
-	display: none;
-	position: absolute;
-	top: 100%;
-	right: 0;
-	background: white;
-	color: #333;
-	border: 1px solid #ddd;
-	border-radius: 8px;
-	/* Rounded corners for better design */
-	width: 300px;
-	z-index: 1000;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-	/* Add shadow for depth */
-}
-
-.header .cart-container .cart-dropdown.show {
-	display: block;
-	/* Show when class 'show' is added */
-}
-
-.header .cart-container .cart-dropdown h2 {
-	margin: 0;
-	padding: 12px;
-	background: #00ACA8;
-	color: white;
-	border-radius: 8px 8px 0 0;
-	/* Rounded top corners */
-	font-size: 1.2rem;
-}
-
-.header .cart-container .cart-dropdown .cart-items {
-	max-height: 300px;
-	overflow-y: auto;
-	padding: 10px;
-}
-
-.header .cart-container .cart-dropdown .cart-items .cart-item {
-	display: flex;
-	align-items: center;
-	margin-bottom: 10px;
-	padding: 8px;
-	border-bottom: 1px solid #ddd;
-	cursor: pointer;
-	/* Add pointer cursor for better UX */
-}
-
-.header .cart-container .cart-dropdown .cart-items .cart-item img {
-	height: 60px;
-	width: auto;
-	margin-right: 12px;
-}
-
-.header .cart-container .cart-dropdown .cart-items .cart-item h3 {
-	margin: 0;
-	font-size: 1rem;
-	font-weight: bold;
-}
-
-.header .cart-container .cart-dropdown .cart-items .cart-item p {
-	margin: 0;
-	color: #666;
-}
-
-.header .cart-container .cart-dropdown .view-cart {
-	display: block;
-	text-align: center;
-	padding: 12px;
-	background: #00ACA8;
-	color: white;
-	text-decoration: none;
-	border-top: 1px solid #ddd;
-	border-radius: 0 0 8px 8px;
-	/* Rounded bottom corners */
-}
-
-.header .cart-container .cart-dropdown .view-cart:hover {
-	background: #008a87;
-}
-
-
 /* Modal Styles */
 
 .modal {
@@ -2488,6 +2366,16 @@ button:active {
 		padding: 8px 12px;
 		/* Smaller button padding */
 	}
+}
+.price {
+    display: inline-flex;
+    align-items: center;
+    margin: 0; /* Optional: to remove any default margin */
+}
+
+.price img {
+    margin-right: 5px; /* Optional: add some spacing between the image and the price */
+    vertical-align: middle; /* Ensure image aligns with the text */
 }
 
 
@@ -2653,6 +2541,125 @@ button:active {
 	}
 }
 
+/* Cart Button Styling */
+.cart-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.cart-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.cart-btn img {
+    width: 40px; /* Adjust size as needed */
+    height: auto;
+}
+
+.cart-count {
+    background-color: #ff7428; /* Orange color */
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 0.2rem 0.5rem;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+
+/* Cart Dropdown Styling */
+.cart-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 300px;
+    background-color: rgba(146, 146, 146, 0.76);
+	color: #000;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 30;
+    overflow: hidden;
+}
+
+.cart-container:hover .cart-dropdown {
+    display: block; /* Show dropdown on hover */
+}
+
+.cart-dropdown h2 {
+    background-color: #81aaa9; /* Teal header */
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    margin: 0;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.cart-items {
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.cart-items::-webkit-scrollbar {
+    width: 8px;
+}
+
+.cart-items::-webkit-scrollbar-thumb {
+    background-color: #070c0c; /* Teal scrollbar */
+    border-radius: 4px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.cart-item img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.cart-item-name {
+    flex: 1;
+    font-size: 0.9rem;
+}
+
+.cart-item-quantity {
+    margin-left: 10px;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.view-cart {
+    display: block;
+    background-color: #ff7428; /* Orange button */
+    color: rgb(22, 16, 16);
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.view-cart:hover {
+    background-color: #e6641f; /* Darker orange on hover */
+}
 
 /* Checkout popup specific styles */
 
