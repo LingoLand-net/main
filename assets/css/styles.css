@@ -935,7 +935,7 @@ a {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 .marquee-container {
-    width: 800px;
+    width: 1200px;
     padding: 16px; /* Add padding around the container */
     margin: 0 auto; /* Center the container horizontally */
 }
@@ -945,7 +945,7 @@ a {
 }
 .marquee:hover {
     animation-play-state: paused;
-    transform:scale(1.0.5);
+    transform:scale(1.2);
 }
 
 .reviewCard:hover{
@@ -955,8 +955,8 @@ a {
     animation-direction: reverse;
 }
 @keyframes marquee {
-    from { transform: translateX(50%); }
-    to { transform: translateX(-40%); }
+    from { transform: translateX(50%);}
+    to { transform: translateX(-50%); }
 }
 .gradient-overlay {
     position: absolute;
@@ -984,7 +984,6 @@ a {
         display: none;
     }
 }
-
 
 
 /* Responsive Design for Laptops and Desktops */
