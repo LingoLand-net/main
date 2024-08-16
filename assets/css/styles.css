@@ -1713,7 +1713,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 10px 0;
+    margin: 10px;
     /* Add space between each icon-text pair */
 }
 .footer-social-media a {
