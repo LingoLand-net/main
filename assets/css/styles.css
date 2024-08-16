@@ -1731,11 +1731,11 @@ a {
 }
 
 .footer-social-media span {
-	display: inline-block;    
+	display: inline-block;
 	font-size: 14px;
     /* Style the text */
     color: white;
-	margin-left: 8px; /* Space between icon and text */
+	margin-right: 50px;
 }
 
 .footer-bottom {
