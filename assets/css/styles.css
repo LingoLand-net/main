@@ -779,12 +779,7 @@ a {
 /* TV Styles (Very Large Screens) */
 
 @media (min-width: 1200px) {
-	.what-is-lingo-land h2 {
-		font-size: 3rem;
-	}
-	.what-is-lingo-land p {
-		font-size: 1.25rem;
-	}
+
 	.image-container h3 {
 		font-size: 2rem;
 	}
@@ -797,12 +792,7 @@ a {
 /* Desktop Styles (Large Screens) */
 
 @media (min-width: 992px) and (max-width: 1199px) {
-	.what-is-lingo-land h2 {
-		font-size: 2.5rem;
-	}
-	.what-is-lingo-land p {
-		font-size: 1.125rem;
-	}
+
 	.image-container h3 {
 		font-size: 1.75rem;
 	}
@@ -815,12 +805,7 @@ a {
 /* Tablet Styles (Medium Screens) */
 
 @media (min-width: 768px) and (max-width: 991px) {
-	.what-is-lingo-land h2 {
-		font-size: 2rem;
-	}
-	.what-is-lingo-land p {
-		font-size: 1rem;
-	}
+
 	.image-container h3 {
 		font-size: 1.5rem;
 	}
@@ -838,12 +823,6 @@ a {
 @media (max-width: 767px) {
 	.what-is-lingo-land {
 		padding: 20px;
-	}
-	.what-is-lingo-land h2 {
-		font-size: 1.875rem;
-	}
-	.what-is-lingo-land p {
-		font-size: 0.875rem;
 	}
 	.image-container h3 {
 		font-size: 1rem;
