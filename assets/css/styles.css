@@ -10,6 +10,18 @@
 *::after {
     box-sizing: border-box;
 }
+header{
+    background-color: #00ABA4 !important;
+}
+.nav{
+    background-color: #00ABA4;
+    height:320px;
+}
+.nav-item:hover {
+    list-style-type: none;
+    color: #ff7428;
+    background-color: #007b7f;
+}
 
 html {
     font-size: 100%;
@@ -33,20 +45,6 @@ img {
 a {
     text-decoration: none;
     color: inherit;
-}
-
-
-header{
-    background-color: #00ABA4;
-}
-.nav{
-    background-color: #00ABA4;
-    height:320px;
-}
-.nav-item:hover {
-    list-style-type: none;
-    color: #ff7428;
-    background-color: #007b7f;
 }
 
 
