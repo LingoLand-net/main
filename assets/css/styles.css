@@ -1648,160 +1648,127 @@ a {
 	}
 }
 
-
 /* Footer Styles */
 
 .footer {
 	background-color: #11504B;
-	/* Background color */
 	color: white;
-	/* Text color */
 	padding: 20px;
-	/* Padding for the footer */
 	text-align: center;
-	/* Center the text */
 	display: flex;
-	/* Flexbox for layout */
 	flex-direction: column;
-	/* Column layout */
 	align-items: center;
-	/* Center items horizontally */
 }
 
 .footer-logo-img {
-	max-width: 50%;
-	/* Adjust logo size */
+	max-width: 40%;
 	height: auto;
 	margin-bottom: 10px;
-	/* Space below the logo */
 }
 
 .footer-content {
 	display: flex;
-	/* Flexbox for layout */
 	flex-wrap: wrap;
-	/* Allow wrapping */
 	justify-content: space-between;
-	/* Space between sections */
 	width: 100%;
-	/* Full width */
 	margin-bottom: 20px;
-	/* Space below the footer content */
 }
 
 .footer-info,
 .footer-links,
 .footer-social-media {
 	flex: 1;
-	/* Take up available space */
 	margin: 10px;
-	/* Margin for spacing */
 }
 
 .footer-info {
 	text-align: center;
-	/* Center text on small screens */
 }
 
 .footer-info h2 {
 	margin-bottom: 10px;
-	/* Space below the heading */
 }
 
 .footer-links {
 	text-align: center;
-	/* Center text on small screens */
 }
 
 .footer-links ul {
 	list-style: none;
-	/* Remove bullet points */
 	padding: 0;
-	/* Remove padding */
 }
 
 .footer-links ul li {
 	margin-bottom: 10px;
-	/* Space between links */
 }
 
 .footer-social-media {
 	text-align: center;
-	/* Center social media icons */
 }
-
+.icon-text-container img {
+    margin-right: 8px;
+    /* Space between the icon and the text */
+}
+.icon-text-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    /* Add space between each icon-text pair */
+}
 .footer-social-media a {
 	display: inline-block;
 	width: 30px;
-	/* Icon size */
 	height: 30px;
-	/* Icon size */
 	margin: 0 8px;
-	/* Space between icons */
 	background-size: contain;
-	/* Scale background */
 }
 
-.footer-social-media .facebook {
-	background-image: url('img/facebook-icon.png');
-	/* Facebook icon */
+.footer-social-media .icon-text-container {
+	display: flex;
+	align-items: center;
+	gap: 8px; /* Space between the icon and text */
 }
 
-.footer-social-media .twitter {
-	background-image: url('img/twitter-icon.png');
-	/* Twitter icon */
-}
-
-.footer-social-media .instagram {
-	background-image: url('img/instagram-icon.png');
-	/* Instagram icon */
-}
-
-.footer-social-media .linkedin {
-	background-image: url('img/linkedin-icon.png');
-	/* LinkedIn icon */
+.footer-social-media span {
+	display: inline-block;    
+	font-size: 14px;
+    /* Style the text */
+    color: white;
+	margin-left: 8px; /* Space between icon and text */
 }
 
 .footer-bottom {
 	border-top: 1px solid #B2B3CF;
-	/* Top border */
 	padding-top: 10px;
-	/* Padding above text */
 	font-size: 12px;
-	/* Font size */
 }
 
-
 /* Media Queries for Phones */
-
 @media (max-width: 768px) {
 	.footer-content {
 		flex-direction: column;
-		/* Stack sections vertically on small screens */
 		align-items: center;
-		/* Center items horizontally */
 	}
 	.footer-info,
 	.footer-links,
 	.footer-social-media {
 		margin: 10px 0;
-		/* Margin for vertical spacing */
 	}
 	.footer-logo-img {
 		max-width: 120px;
-		/* Smaller logo on small screens */
 	}
 	.logo {
 		max-width: 120px;
-		/* Smaller logo on small screens */
 	}
 	.footer-social-media a {
 		width: 30px;
-		/* Icon size */
 		height: 30px;
-		/* Icon size */
 		margin: 0 5px;
-		/* Space between icons */
+	}
+	.footer-social-media .icon-text-container {
+		flex-direction: column;
+		align-items: center;
 	}
 }
 
