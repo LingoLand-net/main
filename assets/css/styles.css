@@ -1419,6 +1419,7 @@ a {
 
 .video-container:hover .play-pause-btn {
     display: block;
+    transform: scale(1.1);
 }
 /* Image container */
 
