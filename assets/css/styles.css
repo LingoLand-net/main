@@ -1399,7 +1399,27 @@ a {
 	/* Line height for better readability */
 }
 
+.video-container {
+    position: relative;
+    display: inline-block;
+}
+.play-pause-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
 
+.video-container:hover .play-pause-btn {
+    display: block;
+}
 /* Image container */
 
 .why-choose-us .image-container {
