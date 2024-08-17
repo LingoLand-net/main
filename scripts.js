@@ -24,19 +24,35 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const video = document.getElementById('myVideo');
+    const videoContainer = document.querySelector('.video-container');
     const playPauseBtn = document.getElementById('playPauseBtn');
+    let hideTimeout;
+
+    videoContainer.addEventListener('mouseenter', () => {
+        playPauseBtn.style.display = 'block';
+        clearTimeout(hideTimeout);
+        hideTimeout = setTimeout(() => {
+            playPauseBtn.style.display = 'none';
+        }, 5000);
+    });
+
+    videoContainer.addEventListener('mouseleave', () => {
+        clearTimeout(hideTimeout);
+        playPauseBtn.style.display = 'none';
+    });
 
     playPauseBtn.addEventListener('click', () => {
+        const video = document.getElementById('myVideo');
         if (video.paused) {
             video.play();
-            playPauseBtn.textContent = 'Pause';
+            playPauseBtn.textContent = '▶';
         } else {
             video.pause();
             playPauseBtn.textContent = 'Play';
         }
     });
 });
+
 
 
 document.getElementById('logo').addEventListener('click', function (e) {

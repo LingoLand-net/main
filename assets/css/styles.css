@@ -1416,7 +1416,7 @@ a {
     border: none;
     cursor: pointer;
 }
-
+/*display the button on hover for 5 seconds then hide it*/
 .video-container:hover .play-pause-btn {
     display: block;
     transform: scale(1.1);
