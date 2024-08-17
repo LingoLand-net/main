@@ -1407,7 +1407,7 @@ a {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -45%);
     display: none;
     padding: 10px 20px;
     font-size: 16px;
@@ -1415,6 +1415,10 @@ a {
     color: white;
     border: none;
     cursor: pointer;
+    -webkit-transform: translate(-50%, -45%);
+    -moz-transform: translate(-50%, -45%);
+    -ms-transform: translate(-50%, -45%);
+    -o-transform: translate(-50%, -45%);
 }
 /*display the button on hover for 5 seconds then hide it*/
 .video-container:hover .play-pause-btn {

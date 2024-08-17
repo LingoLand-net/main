@@ -4,18 +4,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     menuToggle.addEventListener('click', function() {
         if (nav.classList.contains('hidden')) {
-            // Show the nav and start the slide-in animation
             nav.classList.remove('hidden');
             setTimeout(() => {
                 nav.classList.remove('-translate-x-full');
                 nav.classList.add('translate-x-0');
-            }, 10); // Small delay to ensure the transition is applied
+            }, 10); 
         } else {
-            // Slide out the nav
             nav.classList.remove('translate-x-0');
             nav.classList.add('-translate-x-full');
 
-            // Hide the nav after the transition
             nav.addEventListener('transitionend', function() {
                 nav.classList.add('hidden');
             }, { once: true });
@@ -33,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         clearTimeout(hideTimeout);
         hideTimeout = setTimeout(() => {
             playPauseBtn.style.display = 'none';
-        }, 5000);
+        }, 4000);
     });
 
     videoContainer.addEventListener('mouseleave', () => {
