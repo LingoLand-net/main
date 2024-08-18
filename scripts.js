@@ -91,3 +91,10 @@ document.querySelectorAll('.tab').forEach(tab => {
     });
 });
 
+//Google ads
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-92CZEJ6YE7');
