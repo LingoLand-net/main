@@ -3,7 +3,7 @@ document.querySelector('.menu-toggle').addEventListener('click', () => {
     document.querySelector('.nav').classList.toggle('show');
 });
 
-const scriptURL = 'https://script.google.com/macros/s/AKfycbwyxyC8kFxMUdNXSiHuAexTrhZszUdmeNi6nu2rGMtjUNGBR3cmGBy550hXnvY386oM/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwdnSNIaYiQK3mJN7aknuE60nz1TIpR7I6bEGpo-n3M0BYCyBNPVF1iKJ-FQXaZLoRoUw/exec';
 
 $(document).ready(function () {
     $('#contact-form').on('submit', function (e) {
@@ -18,7 +18,7 @@ $(document).ready(function () {
             },
             showConfirmButton: false,
             allowOutsideClick: false,
-            background: "hsla(231, 10%, 14%, 1)"
+            background: "#00ACA8"
         });
 
         const formData = new FormData(this);
@@ -34,7 +34,7 @@ $(document).ready(function () {
 
                 if (data.result === 'success') {
                     Swal.fire({
-                        imageUrl: "assets/images/logo.png",
+                        imageUrl: "assets/images/Lingoland_logo.png",
                         imageAlt: "Custom Success Icon",
                         title: 'Success!',
                         text: 'Your message is sent. Thank you for reaching out.',
@@ -45,7 +45,7 @@ $(document).ready(function () {
                         showConfirmButton: false,
                         allowOutsideClick: false,
                         color: "#000",
-                        background: "#60c0e0",
+                        background: "#00ACA8",
                         backdrop: "rgba(0,0,0,0.4)",
                     }).then(() => {
                         window.location.reload();

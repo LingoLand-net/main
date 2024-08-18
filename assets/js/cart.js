@@ -272,6 +272,8 @@ function sendProductToGoogleSheets(name, email, phone, country, products) {
                     text: "Your purchase has been successfully processed.",
                     icon: "success",
                     confirmButtonText: "OK",
+                    background: "#00ACA8",
+                    backdrop: "rgba(0,0,0,0.4)",
                 }).then(() => {
                     window.location.reload();
                 });
