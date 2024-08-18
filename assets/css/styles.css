@@ -768,13 +768,13 @@ a {
 /* Specific Button Styles */
 
 .for-instructors .btn {
-	background-color: transparent;
-	color: #F8A233;
-	border: 2px solid #F8A233;
+	background-color: #00ACA8;
 }
 
 .for-students .btn {
-	background-color: #00ACA8;
+	background-color: transparent;
+	color: #F8A233;
+	border: 2px solid #F8A233;
 }
 
 
