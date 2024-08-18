@@ -13,6 +13,7 @@
 
 header {
 	background-color: #00ABA4 !important;
+	animation: slideInLeft 1s ease-in-out;
 }
 
 .nav {
