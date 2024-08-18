@@ -3,7 +3,7 @@ document.querySelector('.menu-toggle').addEventListener('click', () => {
     document.querySelector('.nav').classList.toggle('show');
 });
 
-const scriptURL = 'https://script.google.com/macros/s/AKfycbwdnSNIaYiQK3mJN7aknuE60nz1TIpR7I6bEGpo-n3M0BYCyBNPVF1iKJ-FQXaZLoRoUw/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwrB3Khh2EX4HNRwUufpcYwJ7ENiRYRPCHGg_5ae3MMmPg_gwM5Wnnde5EmY1zOsqQ1/exec';
 
 $(document).ready(function () {
     $('#contact-form').on('submit', function (e) {
