@@ -255,7 +255,7 @@ function sendProductToGoogleSheets(name, email, phone, country, products) {
         },
     });
     // Google Sheets API code here
-    const scriptUrl = "https://script.google.com/macros/s/AKfycbwyvqYi6d6_5d2BZ6ODiYl8MjNGwSQrLhWhpDjCZP8XFSoQ5DaHBNSV8SeCh5YhLjB13A/exec";
+    const scriptUrl = "https://script.google.com/macros/s/AKfycbwakSXGYB-C2Cn3JGkk6fhl-8cgjApqgCNG-omK0vSP9z4DQdHslDBaUwSg1AaWAnG6Nw/exec";
     const xhr = new XMLHttpRequest();
 
     xhr.open("POST", scriptUrl, true);
@@ -295,7 +295,7 @@ function sendProductToGoogleSheets(name, email, phone, country, products) {
     formData.append('email', email);
     formData.append('phone', phone);
     formData.append('country', country);
-    formData.append('products', JSON.stringify(products)); 
+    formData.append('products', JSON.stringify(products));
 
     xhr.send(formData);
 }
