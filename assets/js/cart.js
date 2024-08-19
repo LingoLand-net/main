@@ -250,6 +250,7 @@ function sendProductToGoogleSheets(name, email, phone, country, products) {
         icon: "info",
         allowOutsideClick: false,
         showConfirmButton: false,
+        background: "#00ACA8",
         willOpen: () => {
             Swal.showLoading();
         },
