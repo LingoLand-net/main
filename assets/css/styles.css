@@ -730,27 +730,49 @@ a {
 
 .image-container .btn {
 	width: 283px;
-	/* Default width */
-	height: 80px;
-	/* Default height */
-	border: none;
+	/*Defaultwidth*/height: 80px;
+	/*Defaultheight*/border: none;
 	border-radius: 80px;
 	color: white;
 	font-size: 16px;
 	cursor: pointer;
 	position: absolute;
 	bottom: 10%;
-	/* Position from the bottom */
-	left: 50%;
+	/*Positionfromthebottom*/left: 50%;
 	transform: translateX(-50%);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-	/* Added width and height transitions */
+		/* Added width and height transitions */
 }
 
+.pfd-files {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+  }
+  
+  .pfd-files iframe {
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pfd-files iframe:hover {
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
 
+  @media only screen and (max-width: 768px) {
+	.pfd-files iframe {
+	  width: 100%; /* or a specific width, e.g. 300px */
+	  height: calc(100vw * (11.69 / 8.26)); /* maintain aspect ratio */
+	  border: 1px solid #ddd;
+	  border-radius: 10px;
+	  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	}
+  }
 /* Hover Effect for Buttons */
 
 .image-container .btn:hover {
