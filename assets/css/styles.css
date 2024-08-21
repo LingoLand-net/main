@@ -825,9 +825,6 @@ a {
 }
 
 .links a:hover {
-	width: 50%;
-	/* Increased width on hover */
-	height: 75px;
 	/* Increased height on hover */
 	background-color: rgba(250, 191, 80, 0.164);
 	/* Slightly transparent white background */
