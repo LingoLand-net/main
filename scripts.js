@@ -75,10 +75,10 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-
 document.querySelectorAll('.tab').forEach(tab => {
     tab.addEventListener('click', () => {
-        const grade = tab.getAttribute('data-grade');
+        let grade = tab.getAttribute('data-grade');
+        console.log(`Tab clicked: ${grade}`);
         
         document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
@@ -87,7 +87,13 @@ document.querySelectorAll('.tab').forEach(tab => {
             section.classList.remove('active');
         });
         
-        document.getElementById(`grade-${grade}`).classList.add('active');
+        if (grade === '4th-form') {
+            console.log('Activating 4th Form section');
+            document.getElementById('4th-form').classList.add('active');
+        } else {
+            console.log(`Activating grade-${grade} section`);
+            document.getElementById(`grade-${grade}`).classList.add('active');
+        }
     });
 });
 

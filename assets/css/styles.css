@@ -807,53 +807,32 @@ a {
 	gap: 20px;
 }
 
-.pfd-files iframe {
-	border: 1px solid #ddd;
-	border-radius: 10px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	background-color:#00ABA4 ;
+
+
+.pfd-files .links {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
 }
 
-.pfd-files iframe:hover {
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+.links a {
+	background-color: transparent;
+	color: #007BFF;
+	border: 2px solid #F8A233;
+	border-radius: 20px;
+	padding: 20px;
 }
 
-@media only screen and (min-width: 768px) {
-	.pfd-files .links {
-		display: none;
-	}
-}
-
-@media only screen and (max-width: 768px) {
-	.pfd-files iframe {
-		display: none;
-	}
-
-	.pfd-files .links {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		gap: 20px;
-	}
-
-	.links a {
-		background-color: transparent;
-		color: #007BFF;
-		border: 2px solid #F8A233;
-		border-radius: 20px;
-		padding: 20px;
-	}
-
-	.links a:hover {
-		width: 50%;
-		/* Increased width on hover */
-		height: 75px;
-		/* Increased height on hover */
-		background-color: rgba(250, 191, 80, 0.164);
-		/* Slightly transparent white background */
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-		/* Added shadow for a more pronounced effect */
-	}
+.links a:hover {
+	width: 50%;
+	/* Increased width on hover */
+	height: 75px;
+	/* Increased height on hover */
+	background-color: rgba(250, 191, 80, 0.164);
+	/* Slightly transparent white background */
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+	/* Added shadow for a more pronounced effect */
 }
 
 /* Hover Effect for Buttons */
@@ -1146,16 +1125,16 @@ a {
 
 .marquee {
 	display: flex;
-	animation: marquee 20s linear infinite;
+	animation: marquee 40s linear infinite;
+}
+
+.reviewCard {
+	min-width: 400px;
 }
 
 .marquee:hover {
 	animation-play-state: paused;
 	transform: scale(1.2);
-}
-
-.reviewCard:hover {
-	transform: scale(1.1);
 }
 
 .marquee.reverse {
@@ -1164,11 +1143,11 @@ a {
 
 @keyframes marquee {
 	from {
-		transform: translateX(50%);
+		transform: translateX(-100%);
 	}
 
 	to {
-		transform: translateX(-50%);
+		transform: translateX(50%);
 	}
 }
 
