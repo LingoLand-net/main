@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 .anton-regular {
 	font-family: "Anton", sans-serif;
 	font-weight: 200;
@@ -274,10 +275,12 @@ a {
 	0% {
 		transform: translateY(0);
 	}
+
 	50% {
 		transform: translateY(-10px);
 		/* Adjust this value for the desired float distance */
 	}
+
 	100% {
 		transform: translateY(0);
 	}
@@ -287,6 +290,7 @@ a {
 /* Hide certain badges on tablets and phones */
 
 @media (max-width: 991px) {
+
 	.badge,
 	.class-info {
 		display: none;
@@ -301,16 +305,20 @@ a {
 	.hero {
 		padding: 70px;
 	}
+
 	.hero-content h1 {
 		font-size: 60px;
 		/* Larger font size for TV screens */
 	}
+
 	.hero-image img {
 		max-width: 500px;
 	}
+
 	.info-badges {
 		left: 20px;
 	}
+
 	.congratulations-badge {
 		margin-left: auto;
 		/* Keeps the badge on the right side */
@@ -324,18 +332,23 @@ a {
 	.hero {
 		padding: 60px;
 	}
+
 	.hero-content h1 {
 		font-size: 56px;
 	}
+
 	.hero-image img {
 		max-width: 450px;
 	}
+
 	.info-badges {
 		left: 10px;
 	}
+
 	.congratulations-badge {
 		margin-left: auto;
 	}
+
 	.nav {
 		height: 80px;
 	}
@@ -348,15 +361,19 @@ a {
 	.hero {
 		padding: 40px;
 	}
+
 	.hero-content h1 {
 		font-size: 48px;
 	}
+
 	.hero-image img {
 		max-width: 400px;
 	}
+
 	.info-badges {
 		left: 10px;
 	}
+
 	.congratulations-badge {
 		margin-left: auto;
 	}
@@ -369,15 +386,19 @@ a {
 	.hero {
 		padding: 30px;
 	}
+
 	.hero-content h1 {
 		font-size: 40px;
 	}
+
 	.hero-image img {
 		max-width: 350px;
 	}
+
 	.info-badges {
 		left: 10px;
 	}
+
 	.congratulations-badge {
 		margin-left: auto;
 	}
@@ -393,18 +414,22 @@ a {
 		text-align: center;
 		padding: 20px;
 	}
+
 	.hero-content {
 		max-width: 100%;
 		text-align: center;
 		margin-bottom: 20px;
 	}
+
 	.hero-content h1 {
 		font-size: 32px;
 	}
+
 	.hero-image img {
 		max-width: 300px;
 		margin: 0 auto;
 	}
+
 	.info-badges {
 		left: 50%;
 		transform: translateX(-50%);
@@ -413,13 +438,16 @@ a {
 		bottom: 20px;
 		/* Move badges to the bottom */
 	}
+
 	.congratulations-badge {
 		margin-left: auto;
 		margin-right: auto;
 	}
+
 	.cta-buttons {
 		flex-direction: column;
 	}
+
 	.cta-buttons button {
 		margin-bottom: 10px;
 	}
@@ -438,6 +466,7 @@ a {
 	0% {
 		opacity: 0;
 	}
+
 	100% {
 		opacity: 1;
 	}
@@ -448,6 +477,7 @@ a {
 		transform: translateX(-100%);
 		opacity: 0;
 	}
+
 	100% {
 		transform: translateX(0);
 		opacity: 1;
@@ -459,6 +489,7 @@ a {
 		transform: translateX(100%);
 		opacity: 0;
 	}
+
 	100% {
 		transform: translateX(0);
 		opacity: 1;
@@ -470,6 +501,7 @@ a {
 		opacity: 0;
 		transform: translateY(20px);
 	}
+
 	100% {
 		opacity: 1;
 		transform: translateY(0);
@@ -477,10 +509,12 @@ a {
 }
 
 @keyframes bounce {
+
 	0%,
 	100% {
 		transform: translateY(0);
 	}
+
 	50% {
 		transform: translateY(-10px);
 	}
@@ -577,16 +611,20 @@ a {
 	.our-approach h2 {
 		font-size: 3em;
 	}
+
 	.our-approach p {
 		font-size: 1.4em;
 	}
+
 	.our-approach .card {
 		width: 350px;
 	}
+
 	.our-approach .icon {
 		width: 80px;
 		height: 80px;
 	}
+
 	.our-approach .card h3 {
 		font-size: 1.8em;
 	}
@@ -596,16 +634,20 @@ a {
 	.our-approach h2 {
 		font-size: 2.5em;
 	}
+
 	.our-approach p {
 		font-size: 1.3em;
 	}
+
 	.our-approach .card {
 		width: 320px;
 	}
+
 	.our-approach .icon {
 		width: 70px;
 		height: 70px;
 	}
+
 	.our-approach .card h3 {
 		font-size: 1.6em;
 	}
@@ -615,16 +657,20 @@ a {
 	.our-approach h2 {
 		font-size: 2.2em;
 	}
+
 	.our-approach p {
 		font-size: 1.2em;
 	}
+
 	.our-approach .card {
 		width: 300px;
 	}
+
 	.our-approach .icon {
 		width: 60px;
 		height: 60px;
 	}
+
 	.our-approach .card h3 {
 		font-size: 1.4em;
 	}
@@ -634,17 +680,21 @@ a {
 	.our-approach h2 {
 		font-size: 2em;
 	}
+
 	.our-approach p {
 		font-size: 1em;
 	}
+
 	.our-approach .card {
 		width: 100%;
 		margin: 10px 0;
 	}
+
 	.our-approach .icon {
 		width: 50px;
 		height: 50px;
 	}
+
 	.our-approach .card h3 {
 		font-size: 1.2em;
 	}
@@ -681,7 +731,7 @@ a {
 	flex-wrap: wrap;
 }
 
-.for-who> div {
+.for-who>div {
 	text-align: center;
 	margin: 20px;
 	flex: 1 1 300px;
@@ -730,21 +780,24 @@ a {
 
 .image-container .btn {
 	width: 283px;
-	/*Defaultwidth*/height: 80px;
-	/*Defaultheight*/border: none;
+	/*Defaultwidth*/
+	height: 80px;
+	/*Defaultheight*/
+	border: none;
 	border-radius: 80px;
 	color: white;
 	font-size: 16px;
 	cursor: pointer;
 	position: absolute;
 	bottom: 10%;
-	/*Positionfromthebottom*/left: 50%;
+	/*Positionfromthebottom*/
+	left: 50%;
 	transform: translateX(-50%);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-		/* Added width and height transitions */
+	/* Added width and height transitions */
 }
 
 .pfd-files {
@@ -752,27 +805,57 @@ a {
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: 20px;
-  }
-  
-  .pfd-files iframe {
+}
+
+.pfd-files iframe {
 	border: 1px solid #ddd;
 	border-radius: 10px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .pfd-files iframe:hover {
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  }
+	background-color:#00ABA4 ;
+}
 
-  @media only screen and (max-width: 768px) {
-	.pfd-files iframe {
-	  width: 100%; /* or a specific width, e.g. 300px */
-	  height: calc(100vw * (11.69 / 8.26)); /* maintain aspect ratio */
-	  border: 1px solid #ddd;
-	  border-radius: 10px;
-	  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.pfd-files iframe:hover {
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+@media only screen and (min-width: 768px) {
+	.pfd-files .links {
+		display: none;
 	}
-  }
+}
+
+@media only screen and (max-width: 768px) {
+	.pfd-files iframe {
+		display: none;
+	}
+
+	.pfd-files .links {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 20px;
+	}
+
+	.links a {
+		background-color: transparent;
+		color: #007BFF;
+		border: 2px solid #F8A233;
+		border-radius: 20px;
+		padding: 20px;
+	}
+
+	.links a:hover {
+		width: 50%;
+		/* Increased width on hover */
+		height: 75px;
+		/* Increased height on hover */
+		background-color: rgba(250, 191, 80, 0.164);
+		/* Slightly transparent white background */
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+		/* Added shadow for a more pronounced effect */
+	}
+}
+
 /* Hover Effect for Buttons */
 
 .image-container .btn:hover {
@@ -807,6 +890,7 @@ a {
 	.image-container h3 {
 		font-size: 2rem;
 	}
+
 	.image-container .btn {
 		font-size: 1.125rem;
 	}
@@ -820,6 +904,7 @@ a {
 	.image-container h3 {
 		font-size: 1.75rem;
 	}
+
 	.image-container .btn {
 		font-size: 1.125rem;
 	}
@@ -833,10 +918,12 @@ a {
 	.image-container h3 {
 		font-size: 1.5rem;
 	}
+
 	.image-container .btn {
 		font-size: 1rem;
 	}
-	.for-who> div {
+
+	.for-who>div {
 		max-width: 90%;
 	}
 }
@@ -848,12 +935,14 @@ a {
 	.what-is-lingo-land {
 		padding: 20px;
 	}
+
 	.image-container h3 {
 		font-size: 1rem;
 		/* Reduced font size for phones */
 		padding: 5px 10px;
 		/* Reduced padding for phones */
 	}
+
 	.image-container .btn {
 		font-size: 0.75rem;
 		/* Reduced font size for phones */
@@ -862,15 +951,18 @@ a {
 		height: 40px;
 		/* Reduced button height */
 	}
+
 	.image-container img {
 		border-radius: 8px;
 		/* Reduced border radius for images */
 	}
+
 	.for-who {
 		flex-direction: column;
 		align-items: center;
 	}
-	.for-who> div {
+
+	.for-who>div {
 		max-width: 90%;
 		/* Adjusted max width for phone view */
 	}
@@ -884,6 +976,7 @@ a {
 		opacity: 0;
 		transform: translateY(20px);
 	}
+
 	to {
 		opacity: 1;
 		transform: translateY(0);
@@ -1073,6 +1166,7 @@ a {
 	from {
 		transform: translateX(50%);
 	}
+
 	to {
 		transform: translateX(-50%);
 	}
@@ -1120,24 +1214,29 @@ a {
 		font-size: 42px;
 		/* Adjust font size for larger screens */
 	}
+
 	.our-mission p {
 		font-size: 20px;
 		/* Adjust font size for larger screens */
 	}
+
 	.our-mission .card {
 		width: 360px;
 		/* Width for desktops */
 		height: 360px;
 		/* Height for desktops */
 	}
+
 	.our-mission .card h3 {
 		font-size: 24px;
 		/* Adjust font size for headings */
 	}
+
 	.our-mission .card p {
 		font-size: 16px;
 		/* Adjust font size for paragraphs */
 	}
+
 	.our-mission .icon-container {
 		width: 85px;
 		/* Larger icon size */
@@ -1154,10 +1253,12 @@ a {
 		font-size: 36px;
 		/* Adjust font size for tablets */
 	}
+
 	.our-mission p {
 		font-size: 18px;
 		/* Adjust font size for tablets */
 	}
+
 	.our-mission .mission-cards {
 		flex-direction: column;
 		/* Stack cards vertically */
@@ -1166,20 +1267,24 @@ a {
 		align-items: center;
 		/* Center cards */
 	}
+
 	.our-mission .card {
 		width: 80%;
 		/* Adjust width for tablets */
 		height: auto;
 		/* Adjust height for tablets */
 	}
+
 	.our-mission .card h3 {
 		font-size: 22px;
 		/* Adjust font size for headings */
 	}
+
 	.our-mission .card p {
 		font-size: 16px;
 		/* Adjust font size for paragraphs */
 	}
+
 	.our-mission .icon-container {
 		width: 80px;
 		/* Icon size for tablets */
@@ -1198,24 +1303,29 @@ a {
 		font-size: 48px;
 		/* Larger font size for TVs */
 	}
+
 	.our-mission p {
 		font-size: 20px;
 		/* Larger font size for TVs */
 	}
+
 	.our-mission .card {
 		width: 360px;
 		/* Width for TVs */
 		height: 360px;
 		/* Height for TVs */
 	}
+
 	.our-mission .card h3 {
 		font-size: 26px;
 		/* Larger font size for headings */
 	}
+
 	.our-mission .card p {
 		font-size: 16px;
 		/* Larger font size for paragraphs */
 	}
+
 	.our-mission .icon-container {
 		width: 90px;
 		/* Larger icon size */
@@ -1233,14 +1343,17 @@ a {
 	.our-mission {
 		padding: 20px;
 	}
+
 	.our-mission h2 {
 		font-size: 32px;
 		/* Smaller font size for phones */
 	}
+
 	.our-mission p {
 		font-size: 16px;
 		/* Smaller font size for phones */
 	}
+
 	.our-mission .mission-cards {
 		flex-direction: column;
 		/* Stack cards vertically */
@@ -1249,20 +1362,24 @@ a {
 		align-items: center;
 		/* Center cards */
 	}
+
 	.our-mission .card {
 		width: 90%;
 		/* Adjust width for phones */
 		height: auto;
 		/* Adjust height for phones */
 	}
+
 	.our-mission .card h3 {
 		font-size: 20px;
 		/* Smaller font size for headings */
 	}
+
 	.our-mission .card p {
 		font-size: 14px;
 		/* Smaller font size for paragraphs */
 	}
+
 	.our-mission .icon-container {
 		width: 70px;
 		/* Smaller icon size */
@@ -1271,6 +1388,7 @@ a {
 		margin-bottom: 20px;
 		/* Space between icon and text for phones */
 	}
+
 	.our-mission .btn {
 		width: 90%;
 		/* Adjust button width for phones */
@@ -1423,27 +1541,30 @@ a {
 }
 
 .video-container {
-    position: relative;
-    display: inline-block;
+	position: relative;
+	display: inline-block;
 }
+
 .play-pause-btn {
-    position: absolute;
-    top: 50%;
-    left: 45%;
-    transform: translate(-50%, -45%);
-    display: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    cursor: pointer;
+	position: absolute;
+	top: 50%;
+	left: 45%;
+	transform: translate(-50%, -45%);
+	display: none;
+	padding: 10px 20px;
+	font-size: 16px;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+	border: none;
+	cursor: pointer;
 }
+
 /*display the button on hover for 5 seconds then hide it*/
 .video-container:hover .play-pause-btn {
-    display: block;
-    transform: scale(1.1);
+	display: block;
+	transform: scale(1.1);
 }
+
 /* Image container */
 
 .why-choose-us .image-container {
@@ -1464,6 +1585,7 @@ a {
 /* Responsive Design */
 
 @media (max-width: 1024px) {
+
 	/* Hide cubes on tablets and smaller devices */
 	.why-choose-us .cube {
 		display: none;
@@ -1478,12 +1600,14 @@ a {
 		padding: 20px;
 		/* Adjust padding for mobile view */
 	}
+
 	.why-choose-us .content {
 		flex-direction: column;
 		/* Stack content vertically */
 		align-items: center;
 		/* Center content */
 	}
+
 	.why-choose-us .text-container,
 	.why-choose-us .image-container {
 		width: 100%;
@@ -1491,22 +1615,26 @@ a {
 		padding: 0;
 		/* Remove padding for mobile view */
 	}
+
 	.why-choose-us .text-container {
 		margin-bottom: 20px;
 		/* Space between text and image */
 	}
+
 	.why-choose-us .image-container img {
 		max-width: 100%;
 		/* Ensure image doesn't exceed container width */
 		border-radius: 15px;
 		/* Optional: rounded corners for the image */
 	}
+
 	.why-choose-us .text-container h2 {
 		font-size: 28px;
 		/* Adjust font size for better readability on mobile */
 		margin-bottom: 10px;
 		/* Adjust margin for better spacing */
 	}
+
 	.why-choose-us .text-container .text-content p {
 		font-size: 16px;
 		/* Adjust font size for better readability on mobile */
@@ -1670,12 +1798,14 @@ a {
 		text-align: center;
 		/* Center text and image */
 	}
+
 	.transform-your-english .text {
 		padding-left: 0;
 		/* Remove padding on mobile */
 		padding-bottom: 20px;
 		/* Space between text and image */
 	}
+
 	.transform-your-english .image-container {
 		width: 100%;
 		/* Full width for mobile view */
@@ -1684,6 +1814,7 @@ a {
 		padding: 0;
 		/* Remove padding for mobile view */
 	}
+
 	.transform-your-english .image-container img {
 		max-width: 100%;
 		/* Ensure image fits within container */
@@ -1749,17 +1880,20 @@ a {
 .footer-social-media {
 	text-align: center;
 }
+
 .icon-text-container img {
-    margin-right: 8px;
-    /* Space between the icon and the text */
+	margin-right: 8px;
+	/* Space between the icon and the text */
 }
+
 .icon-text-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10px;
-    /* Add space between each icon-text pair */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 10px;
+	/* Add space between each icon-text pair */
 }
+
 .footer-social-media a {
 	display: inline-block;
 	width: 30px;
@@ -1771,14 +1905,15 @@ a {
 .footer-social-media .icon-text-container {
 	display: flex;
 	align-items: center;
-	gap: 8px; /* Space between the icon and text */
+	gap: 8px;
+	/* Space between the icon and text */
 }
 
 .footer-social-media span {
 	display: inline-block;
 	font-size: 14px;
-    /* Style the text */
-    color: white;
+	/* Style the text */
+	color: white;
 	margin-right: 50px;
 }
 
@@ -1794,22 +1929,27 @@ a {
 		flex-direction: column;
 		align-items: center;
 	}
+
 	.footer-info,
 	.footer-links,
 	.footer-social-media {
 		margin: 10px 0;
 	}
+
 	.footer-logo-img {
 		max-width: 120px;
 	}
+
 	.logo {
 		max-width: 120px;
 	}
+
 	.footer-social-media a {
 		width: 30px;
 		height: 30px;
 		margin: 0 5px;
 	}
+
 	.footer-social-media .icon-text-container {
 		flex-direction: column;
 		align-items: center;
@@ -2038,18 +2178,22 @@ button:active {
 	.our-story {
 		padding: 40px 15px;
 	}
+
 	.our-story .story-header h2 {
 		font-size: 2.2rem;
 		/* Adjusted font size */
 	}
+
 	.our-story .story-content {
 		flex-direction: column;
 		align-items: center;
 	}
+
 	.our-story .story-text,
 	.our-story .story-image {
 		max-width: 100%;
 	}
+
 	.our-story .story-image img {
 		max-width: 100%;
 		height: auto;
@@ -2214,18 +2358,22 @@ button:active {
 		padding: 60px 15px;
 		/* Adjusted padding */
 	}
+
 	.about-lingoland h2 {
 		font-size: 2.5rem;
 		/* Adjusted font size */
 	}
+
 	.about-lingoland .subheading {
 		font-size: 1.2rem;
 		/* Adjusted subheading font size */
 	}
+
 	.about-lingoland .lingoland-content {
 		flex-direction: column;
 		align-items: center;
 	}
+
 	.about-lingoland .content-item {
 		max-width: 100%;
 	}
@@ -2363,14 +2511,17 @@ button:active {
 		flex: 1 1 calc(50% - 20px);
 		/* Two cards per row on small screens */
 	}
+
 	.product-card h2 {
 		font-size: 16px;
 		/* Smaller text size */
 	}
+
 	.product-card .price {
 		font-size: 14px;
 		/* Smaller text size */
 	}
+
 	.product-card .btn {
 		font-size: 12px;
 		/* Smaller button text */
@@ -2378,15 +2529,19 @@ button:active {
 		/* Smaller button padding */
 	}
 }
+
 .price {
-    display: inline-flex;
-    align-items: center;
-    margin: 0; /* Optional: to remove any default margin */
+	display: inline-flex;
+	align-items: center;
+	margin: 0;
+	/* Optional: to remove any default margin */
 }
 
 .price img {
-    margin-right: 5px; /* Optional: add some spacing between the image and the price */
-    vertical-align: middle; /* Ensure image aligns with the text */
+	margin-right: 5px;
+	/* Optional: add some spacing between the image and the price */
+	vertical-align: middle;
+	/* Ensure image aligns with the text */
 }
 
 
@@ -2473,6 +2628,7 @@ button:active {
 		width: 100%;
 		/* Make cards take full width on small screens */
 	}
+
 	.modal-content {
 		width: 90%;
 		/* Make modal content width responsive */
@@ -2532,19 +2688,23 @@ button:active {
 		align-items: flex-start;
 		text-align: left;
 	}
+
 	.remove-item-btn {
 		position: static;
 		margin-bottom: 10px;
 		font-size: 20px;
 	}
+
 	.cart-item-image {
 		width: 100%;
 		/* Make image take full width on small screens */
 		margin: 0 0 10px 0;
 	}
+
 	.cart-item-details {
 		width: 100%;
 	}
+
 	.cart-item-quantity {
 		margin-left: 0;
 		width: 100%;
@@ -2554,122 +2714,129 @@ button:active {
 
 /* Cart Button Styling */
 .cart-container {
-    position: relative;
-    display: flex;
-    align-items: center;
+	position: relative;
+	display: flex;
+	align-items: center;
 }
 
 .cart-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    position: relative;
-    display: flex;
-    align-items: center;
+	background: none;
+	border: none;
+	cursor: pointer;
+	position: relative;
+	display: flex;
+	align-items: center;
 }
 
 .cart-btn img {
-    width: 40px; /* Adjust size as needed */
-    height: auto;
+	width: 40px;
+	/* Adjust size as needed */
+	height: auto;
 }
 
 .cart-count {
-    background-color: #ff7428; /* Orange color */
-    color: white;
-    font-size: 0.8rem;
-    font-weight: bold;
-    border-radius: 50%;
-    padding: 0.2rem 0.5rem;
-    position: absolute;
-    top: -10px;
-    right: -10px;
+	background-color: #ff7428;
+	/* Orange color */
+	color: white;
+	font-size: 0.8rem;
+	font-weight: bold;
+	border-radius: 50%;
+	padding: 0.2rem 0.5rem;
+	position: absolute;
+	top: -10px;
+	right: -10px;
 }
 
 /* Cart Dropdown Styling */
 .cart-dropdown {
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 100%;
-    width: 300px;
-    background-color: rgba(146, 146, 146, 0.76);
+	display: none;
+	position: absolute;
+	right: 0;
+	top: 100%;
+	width: 300px;
+	background-color: rgba(146, 146, 146, 0.76);
 	color: #000;
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    z-index: 30;
-    overflow: hidden;
+	border: 1px solid #ccc;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+	z-index: 30;
+	overflow: hidden;
 }
 
 .cart-container:hover .cart-dropdown {
-    display: block; /* Show dropdown on hover */
+	display: block;
+	/* Show dropdown on hover */
 }
 
 .cart-dropdown h2 {
-    background-color: #81aaa9; /* Teal header */
-    color: rgb(0, 0, 0);
-    padding: 10px;
-    margin: 0;
-    font-size: 1rem;
-    text-align: center;
+	background-color: #81aaa9;
+	/* Teal header */
+	color: rgb(0, 0, 0);
+	padding: 10px;
+	margin: 0;
+	font-size: 1rem;
+	text-align: center;
 }
 
 .cart-items {
-    max-height: 200px;
-    overflow-y: auto;
-    padding: 10px;
-    background-color: #f9f9f9;
+	max-height: 200px;
+	overflow-y: auto;
+	padding: 10px;
+	background-color: #f9f9f9;
 }
 
 .cart-items::-webkit-scrollbar {
-    width: 8px;
+	width: 8px;
 }
 
 .cart-items::-webkit-scrollbar-thumb {
-    background-color: #070c0c; /* Teal scrollbar */
-    border-radius: 4px;
+	background-color: #070c0c;
+	/* Teal scrollbar */
+	border-radius: 4px;
 }
 
 .cart-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 10px;
 }
 
 .cart-item img {
-    width: 50px;
-    height: auto;
-    margin-right: 10px;
+	width: 50px;
+	height: auto;
+	margin-right: 10px;
 }
 
 .cart-item-name {
-    flex: 1;
-    font-size: 0.9rem;
+	flex: 1;
+	font-size: 0.9rem;
 }
 
 .cart-item-quantity {
-    margin-left: 10px;
-    font-size: 0.9rem;
-    color: #777;
+	margin-left: 10px;
+	font-size: 0.9rem;
+	color: #777;
 }
 
 .view-cart {
-    display: block;
-    background-color: #ff7428; /* Orange button */
-    color: rgb(22, 16, 16);
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: bold;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-    transition: background-color 0.3s ease;
+	display: block;
+	background-color: #ff7428;
+	/* Orange button */
+	color: rgb(22, 16, 16);
+	padding: 10px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 1rem;
+	font-weight: bold;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	transition: background-color 0.3s ease;
 }
 
 .view-cart:hover {
-    background-color: #e6641f; /* Darker orange on hover */
+	background-color: #e6641f;
+	/* Darker orange on hover */
 }
 
 /* Checkout popup specific styles */
@@ -2724,9 +2891,11 @@ button:active {
 		flex-direction: column;
 		align-items: flex-start;
 	}
+
 	.checkout-cart-itemss .cart-item-details {
 		text-align: left;
 	}
+
 	.checkout-cart-itemss .cart-item-quantity {
 		margin-top: 10px;
 		text-align: right;
@@ -2869,17 +3038,21 @@ button:active {
 	.hero-banner h1 {
 		font-size: 2rem;
 	}
+
 	.hero-banner p {
 		font-size: 1rem;
 	}
+
 	.tab {
 		flex: 1 1 100%;
 		margin: 5px 0;
 	}
+
 	.video-wrapper {
 		flex: 1 1 100%;
 		max-width: 100%;
 	}
+
 	.video-wrapper iframe {
 		height: 200px;
 		/* Adjust video height for smaller screens */
