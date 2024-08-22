@@ -1140,12 +1140,12 @@ a {
 
 @keyframes marquee {
 	from {
-		transform: translateX(-100%);
-	}
+		transform: translateX(50%);
+}
 
 	to {
-		transform: translateX(50%);
-	}
+		transform: translateX(-50%);
+}
 }
 
 .gradient-overlay {
