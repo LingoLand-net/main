@@ -1112,10 +1112,41 @@ a {
 	box-shadow: 0 8px 16px #00000033;
 }
 
-.slick-carousel {
-	margin: 5px !important;
+.marquee-container {
+	width: 1200px;
+	padding: 16px;
+	/* Add padding around the container */
+	margin: 0 auto;
+	/* Center the container horizontally */
 }
 
+.marquee {
+	display: flex;
+	animation: marquee 40s linear infinite;
+}
+
+.reviewCard {
+	min-width: 300px;
+}
+
+.marquee:hover {
+	animation-play-state: paused;
+	transform: scale(1.2);
+}
+
+.marquee.reverse {
+	animation-direction: reverse;
+}
+
+@keyframes marquee {
+	from {
+		transform: translateX(-100%);
+	}
+
+	to {
+		transform: translateX(50%);
+	}
+}
 
 .gradient-overlay {
 	position: absolute;
