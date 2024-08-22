@@ -1414,6 +1414,15 @@ a {
 }
 
 
+.our-approach img{
+	border-radius: 50px;
+	background-color: transparent;
+}
+
+.our-mission img {
+	border-radius: 50px;
+}
+
 /* Cube design */
 
 .why-choose-us .cube {
