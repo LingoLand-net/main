@@ -976,142 +976,6 @@ a {
 }
 
 
-/* General Styles for Our Mission Section */
-
-.our-mission {
-	margin-top: 60px;
-	border-radius: 25px;
-	padding: 20px;
-	text-align: center;
-}
-
-.our-mission h2,
-.our-mission p,
-.our-mission .mission-cards .card {
-	opacity: 1;
-	/* Make everything fully visible */
-	transform: translateY(0);
-	/* No transform */
-}
-
-.our-mission h2 {
-	font-size: 36px;
-	/* Default font size */
-	margin-bottom: 20px;
-	/* Margin to create space below the heading */
-}
-
-.our-mission p {
-	font-size: 18px;
-	/* Default font size */
-	margin-bottom: 20px;
-	/* Margin to create space below the paragraph */
-}
-
-.our-mission .mission-cards {
-	display: flex;
-	justify-content: center;
-	/* Center cards horizontally */
-	flex-wrap: wrap;
-	gap: 30px;
-	/* Set gap between cards to 30px */
-}
-
-.our-mission .card {
-	background: #E7E7E7;
-	border-radius: 25px;
-	/* Updated border radius */
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-	padding: 20px;
-	margin: 10px;
-	width: 360px;
-	/* Reduced width for cards */
-	height: 360px;
-	/* Reduced height for cards */
-	text-align: left;
-	/* Align text to the left inside cards */
-	position: relative;
-	box-sizing: border-box;
-	/* Include padding and border in the element's total width and height */
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-	/* Add transition for hover effects */
-}
-
-.our-mission .card:hover {
-	transform: scale(1.05);
-	/* Slightly enlarge the card */
-	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-	/* Enhance the shadow effect */
-}
-
-.our-mission .icon-container {
-	width: 80px;
-	/* Icon size */
-	height: 80px;
-	/* Icon size */
-	margin-bottom: 30px;
-	/* Space between icon and text */
-}
-
-.our-mission .card-content {
-	display: flex;
-	flex-direction: column;
-	/* Stack text vertically */
-	align-items: flex-start;
-	/* Align text to the left */
-}
-
-.our-mission .card h3,
-.our-mission .card p {
-	margin: 0;
-}
-
-.our-mission .card h3 {
-	color: #2F327D;
-	/* Set h3 color */
-	font-size: 22px;
-	/* Font size */
-}
-
-.our-mission .card p {
-	color: #696984;
-	/* Set color for p */
-	font-size: 14px;
-	/* Font size */
-	text-align: left;
-	/* Ensure paragraphs align to the left */
-}
-
-
-/* Button Styles */
-
-.our-mission .btn {
-	width: 283px;
-	/* Default width */
-	height: 80px;
-	/* Default height */
-	border: none;
-	border-radius: 80px;
-	color: white;
-	font-size: 16px;
-	cursor: pointer;
-	position: absolute;
-	bottom: 10%;
-	/* Position from the bottom */
-	left: 50%;
-	transform: translateX(-50%);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-	/* Add hover transition */
-}
-
-.our-mission .btn:hover {
-	transform: translateX(-50%) scale(1.05);
-	box-shadow: 0 8px 16px #00000033;
-}
-
 .marquee-container {
 	width: 1200px;
 	padding: 16px;
@@ -1126,7 +990,7 @@ a {
 }
 
 .reviewCard {
-	min-width: 300px;
+	width: 300px;
 }
 
 .marquee:hover {
@@ -1182,44 +1046,6 @@ a {
 	}
 }
 
-
-/* Responsive Design for Laptops and Desktops */
-
-@media (min-width: 992px) and (max-width: 1199px) {
-	.our-mission h2 {
-		font-size: 42px;
-		/* Adjust font size for larger screens */
-	}
-
-	.our-mission p {
-		font-size: 20px;
-		/* Adjust font size for larger screens */
-	}
-
-	.our-mission .card {
-		width: 360px;
-		/* Width for desktops */
-		height: 360px;
-		/* Height for desktops */
-	}
-
-	.our-mission .card h3 {
-		font-size: 24px;
-		/* Adjust font size for headings */
-	}
-
-	.our-mission .card p {
-		font-size: 16px;
-		/* Adjust font size for paragraphs */
-	}
-
-	.our-mission .icon-container {
-		width: 85px;
-		/* Larger icon size */
-		height: 85px;
-		/* Larger icon size */
-	}
-}
 
 
 /* Responsive Design for Tablets */
