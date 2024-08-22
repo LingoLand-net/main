@@ -3,88 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marquee Demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Testimonial Carousel</title>
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.1/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        .marquee-container {
-            padding: 16px; /* Add padding around the container */
-            margin: 0 auto; /* Center the container horizontally */
-        }
-        .marquee {
-            display: flex;
-            white-space: nowrap;
+        .carousel-container {
+            position: relative;
+            width: 80%;
+            margin: auto;
             overflow: hidden;
-            animation: marquee 20s linear infinite;
-        }
-        .marquee:hover {
-            animation-play-state: paused;
-        }
-        .marquee.reverse {
-            animation-direction: reverse;
-        }
-        @keyframes marquee {
-            from { transform: translateX(50%); }
-            to { transform: translateX(-40%); }
         }
 
+        .slick-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .gradient-overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 20%;
+            pointer-events: none;
+            z-index: 1;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+        }
+
+        .gradient-overlay.right {
+            right: 0;
+            background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+        }
+
+        .gradient-overlay.left {
+            left: 0;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+        }
+
+        @media (max-width: 640px) {
+            .gradient-overlay {
+                display: none;
+            }
+        }
     </style>
 </head>
-<body class="bg-gray-100 dark:bg-gray-900">
-
-<div class="marquee-container relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background ">
-    <div class="marquee" id="firstMarquee">
-        <!-- Review cards will be injected here by JavaScript -->
-    </div>
-    <div class="marquee reverse" id="secondMarquee">
-        <!-- Review cards will be injected here by JavaScript -->
-    </div>
-    <div class="gradient-overlay left"></div>
-    <div class="gradient-overlay right"></div>
-</div>
-
-
-<script>
-const reviews = [
-    { name: "Jack", username: "@jack", body: "I've never seen anything like this before. It's amazing. I love it.", img: "https://avatar.vercel.sh/jack" },
-    { name: "Jill", username: "@jill", body: "I don't know what to say. I'm speechless. This is amazing.", img: "https://avatar.vercel.sh/jill" },
-    { name: "John", username: "@john", body: "I'm at a loss for words. This is amazing. I love it.", img: "https://avatar.vercel.sh/john" },
-    { name: "Jane", username: "@jane", body: "I'm at a loss for words. This is amazing. I love it.", img: "https://avatar.vercel.sh/jane" },
-    { name: "Jenny", username: "@jenny", body: "I'm at a loss for words. This is amazing. I love it.", img: "https://avatar.vercel.sh/jenny" },
-    { name: "James", username: "@james", body: "I'm at a loss for words. This is amazing. I love it.", img: "https://avatar.vercel.sh/james" },
-];
-
-const firstRow = reviews.slice(0, reviews.length / 2);
-const secondRow = reviews.slice(reviews.length / 2);
-
-function createReviewCard({ img, name, username, body }) {
-    const card = document.createElement('figure');
-    card.className = "relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05] dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15] m-4";
-    
-    card.innerHTML = `
-        <div class="flex items-center gap-4">
-            <img class="rounded-full border-2 border-gray-300 dark:border-gray-600 shadow-sm" width="40" height="40" alt="Profile picture of ${name}" src="${img}" />
-            <div>
-                <figcaption class="text-lg font-semibold text-gray-900 dark:text-white">${name}</figcaption>
-                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">${username}</p>
-            </div>
+<body>
+    <div class="carousel-container">
+        <div class="slick-carousel">
+            <!-- Review cards will be inserted here by JavaScript -->
         </div>
-        <blockquote class="mt-4 text-sm text-gray-700 dark:text-gray-300 italic leading-relaxed">${body}</blockquote>
-    `;
-    return card;
-}
+        <div class="gradient-overlay left"></div>
+        <div class="gradient-overlay right"></div>
+    </div>
 
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick Carousel JS -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        const reviews = [
+            { name: "Hela Hawari", username: "English teacher / parent", body: "LingoLand is the creation of one of the most creative and innovative teachers I've ever known. The content is varied and rich. The books are designed in a way that comforts the eyes with their joyful colors. Lingoland helps us teach English in an artistic way.", img: "assets/img/testppl/Hela Hawari.jpg" },
+            { name: "Hamdi Dkhil", username: "English teacher/ entrepreneur", body: "As a teacher, I am thrilled to have had the opportunity to teach with this innovative English book. Its interactive approach and creative use of AI have transformed my classroom experience, engaging students in ways that traditional materials simply cannot. The thoughtfully designed activities foster critical thinking and collaboration, making learning both enjoyable and effective. I wholeheartedly recommend this book to fellow educators looking to inspire their students!", img: "assets/img/testppl/hamdi.jpg" },
+            { name: "Najoua Ben Jazia Regaieg", username: "French teacher / parent", body: "En tant qu'enseignante, je trouve que LingoLand est un outil pédagogique innovant, motivant et unique. Il explicite et facilite l'apprentissage de l'anglais aux jeunes apprenants, les motive à travers des activités ludiques et enrichissantes. Je recommande LingoLand à tous les jeunes qui désirent vraiment améliorer leur acquisition de l'anglais.", img: "assets/img/testppl/Najoua.jpg" },
+        ];
 
-const firstMarquee = document.getElementById('firstMarquee');
-const secondMarquee = document.getElementById('secondMarquee');
+        function createReviewCard({ img, name, username, body }) {
+            const card = document.createElement('div');
+            card.className = "relative cursor-pointer overflow-hidden rounded-xl border p-4 border-gray-200 bg-gray-50 shadow-lg transition-transform duration-300 transform hover:scale-105";
+            
+            card.innerHTML = `
+            <div class="flex items-center gap-4">
+                <img class="rounded-full border-2 border-gray-300 shadow-sm" width="40" height="40" alt="Profile picture of ${name}" src="${img}" />
+                <div class="flex-1">
+                    <figcaption class="text-lg font-semibold text-gray-900">${name}</figcaption>
+                    <p class="text-sm font-medium text-gray-500">${username}</p>
+                </div>
+            </div>
+            <blockquote class="mt-4 text-sm text-gray-700 leading-relaxed">${body}</blockquote>
+            `;
+            return card;
+        }
 
-firstRow.forEach(review => {
-    firstMarquee.appendChild(createReviewCard(review));
-});
+        $(document).ready(function(){
+            const carousel = $('.slick-carousel');
+            reviews.forEach(review => {
+                carousel.append(createReviewCard(review));
+            });
 
-secondRow.forEach(review => {
-    secondMarquee.appendChild(createReviewCard(review));
-});
-</script>
-
+            carousel.slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                arrows: false,
+                dots: false,
+                infinite: true,
+                speed: 600,
+                cssEase: 'linear',
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
 </body>
 </html>

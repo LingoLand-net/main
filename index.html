@@ -24,7 +24,9 @@
 	<meta property="twitter:description" content="LingoLand offers top-quality English teaching materials designed to enhance learning experiences." />
 	<meta property="twitter:image" content="https://cdn.discordapp.com/attachments/1115393182998466713/1273813676079710329/TKjZmOc.png?ex=66bffaee&is=66bea96e&hm=ad44ec57a5a5caf1108a348719e215ece7f829eebe0a5657335d5df2418a55e1&" />
 	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/styles.css">
 
@@ -356,13 +358,14 @@
 	<h2 class="our-approach container" style="font-family: 'Anton', sans-serif;font-size: 3em;">
 		<span style="color:#F48C06;">Test</span><span style="color:#00ACA8;">imonials ✨</span>
 	</h2>
-	<div class="marquee-container relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background ">
-		<div class="marquee" id="firstMarquee">
-		</div>
-		<div class="gradient-overlay left"></div>
-		<div class="gradient-overlay right"></div>
-	</div>
-
+    <div class="carousel-container container">
+        <div class="slick-carousel">
+			
+        </div>
+        <div class="gradient-overlay left"></div>
+        <div class="gradient-overlay right"></div>
+    </div>
+<br><hr><br>
 	<footer class="footer">
 		<div class="footer-content">
 			<div class="">
@@ -396,7 +399,10 @@
 			<p>&copy; 2024 LingoLand. All rights reserved.</p>
 		</div>
 	</footer>
-
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick Carousel JS -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-92CZEJ6YE7"></script>
 	<script src="assets/js/testemonials.js"></script>
 	<script src="scripts.js"></script>
