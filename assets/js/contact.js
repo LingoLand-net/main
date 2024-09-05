@@ -1,9 +1,17 @@
+const buttons = document.querySelectorAll(".question-btn");
+console.log(buttons);
 
-document.querySelector('.menu-toggle').addEventListener('click', () => {
-    document.querySelector('.nav').classList.toggle('show');
+const toggleAnswer = function clickEvent(e) {
+	const questionBoxElement = e.currentTarget.parentElement.parentElement;
+	console.log(questionBoxElement.classList.toggle('show'));
+};
+
+buttons.forEach((button) => {
+	button.addEventListener("click", toggleAnswer);
 });
 
-const scriptURL = 'https://script.google.com/macros/s/AKfycbwrB3Khh2EX4HNRwUufpcYwJ7ENiRYRPCHGg_5ae3MMmPg_gwM5Wnnde5EmY1zOsqQ1/exec';
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzoyrA_EWaF-LEpaLBEU3Yb12ETCVqSB8QX4jpSSJKlItsz2FMxkn0zdPRKP7kZm8jP/exec';
 
 $(document).ready(function () {
     $('#contact-form').on('submit', function (e) {
@@ -34,7 +42,7 @@ $(document).ready(function () {
 
                 if (data.result === 'success') {
                     Swal.fire({
-                        imageUrl: "assets/images/Lingoland_logo.png",
+                        imageUrl: "assets/img/Lingoland_logo.png",
                         imageAlt: "Custom Success Icon",
                         title: 'Success!',
                         text: 'Your message is sent. Thank you for reaching out.',
@@ -62,10 +70,22 @@ $(document).ready(function () {
             error: function (error) {
                 console.error('Error!', error);
                 Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'An unexpected error occurred. Please try again later.',
-                });
+                        imageUrl: "assets/img/Lingoland_logo.png",
+                        imageAlt: "Custom Success Icon",
+                        title: 'Success!',
+                        text: 'Your message is sent. Thank you for reaching out.',
+                        width: 600,
+                        padding: "3em",
+                        timer: 5000,
+                        timerProgressBar: true,
+                        showConfirmButton: false,
+                        allowOutsideClick: false,
+                        color: "#000",
+                        background: "#00ACA8",
+                        backdrop: "rgba(0,0,0,0.4)",
+                    }).then(() => {
+                        window.location.reload();
+                    });
             }
         });
     });
