@@ -259,7 +259,7 @@ function sendProductToGoogleSheets(name, email, phone, country, personaladdress,
         },
     });
     // Google Sheets API code here
-    const scriptUrl = 'https://script.google.com/macros/s/AKfycbx3yiHMyQ3cnMH9ZTme_JnevTnXTpiglo9HUIa_QrJYjeTnFRgAV8UChRFhV1IYGO9T1w/exec';
+    const scriptUrl = 'https://script.google.com/macros/s/AKfycbzUIdkJ7oGrjqPpLPBrBEOrFRS7K1PIsziPeXD4zBjihOqyNhVOFC1hVk5hOU371z6KOQ/exec';
     const xhr = new XMLHttpRequest();
 
     xhr.open("POST", scriptUrl, true);
