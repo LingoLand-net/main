@@ -178,6 +178,8 @@ function removeCartItem(productId) {
                         <option value="Tataouine">Tataouine</option>
                         <option value="Kairouan">Kairouan</option>
                     </select>
+                    <label for="personaladdress">delivery address:</label>
+                    <input type="text" id="personaladdress" name="personaladdress" required>
                     <button type="submit" id="submit-btn">Submit</button>
                 </form>
             `,
@@ -213,6 +215,7 @@ function removeCartItem(productId) {
                 const email = form.querySelector('#email')?.value || '';
                 const phone = form.querySelector('#phone')?.value || '';
                 const country = form.querySelector('#country')?.value || '';
+                const personaladdress = form.querySelector('#personaladdress')?.value || '';
     
                 // Handle cart items
                 const products = cart.map(item => {
@@ -227,7 +230,7 @@ function removeCartItem(productId) {
                 console.log('Products:', products); // Log products to ensure they're captured correctly
     
                 // Call the function to send data
-                sendProductToGoogleSheets(name, email, phone, country, products);
+                sendProductToGoogleSheets(name, email, phone, country, personaladdress, products);
             });
         } else {
             console.error('Form not found');
@@ -241,7 +244,7 @@ function removeCartItem(productId) {
     // Expose checkout function globally
     window.checkout = checkout;
 });
-function sendProductToGoogleSheets(name, email, phone, country, products) {
+function sendProductToGoogleSheets(name, email, phone, country, personaladdress, products) {
     console.log('Submitting:', { name, email, phone, country, products });
 
     Swal.fire({
@@ -256,7 +259,7 @@ function sendProductToGoogleSheets(name, email, phone, country, products) {
         },
     });
     // Google Sheets API code here
-    const scriptUrl = "https://script.google.com/macros/s/AKfycbwakSXGYB-C2Cn3JGkk6fhl-8cgjApqgCNG-omK0vSP9z4DQdHslDBaUwSg1AaWAnG6Nw/exec";
+    const scriptUrl = 'https://script.google.com/macros/s/AKfycbx3yiHMyQ3cnMH9ZTme_JnevTnXTpiglo9HUIa_QrJYjeTnFRgAV8UChRFhV1IYGO9T1w/exec';
     const xhr = new XMLHttpRequest();
 
     xhr.open("POST", scriptUrl, true);
@@ -296,6 +299,7 @@ function sendProductToGoogleSheets(name, email, phone, country, products) {
     formData.append('email', email);
     formData.append('phone', phone);
     formData.append('country', country);
+    formData.append('personaladdress', personaladdress);
     formData.append('products', JSON.stringify(products));
 
     xhr.send(formData);
