@@ -178,8 +178,9 @@ function removeCartItem(productId) {
                         <option value="Tataouine">Tataouine</option>
                         <option value="Kairouan">Kairouan</option>
                     </select>
-                    <label for="personaladdress">delivery address:</label>
+                    <label for="personaladdress">Delivery Address:</label>
                     <input type="text" id="personaladdress" name="personaladdress" required>
+                    <q class="text-sm">5d around Sfax, 9d all over the Country</q><br>
                     <button type="submit" id="submit-btn">Submit</button>
                 </form>
             `,
