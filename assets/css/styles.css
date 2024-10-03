@@ -334,7 +334,9 @@ a {
 	.hero {
 		padding: 60px;
 	}
-
+	.phone {
+		display: none;
+	}
 	.hero-content h1 {
 		font-size: 56px;
 	}
