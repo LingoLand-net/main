@@ -19,6 +19,30 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+window.onload = function() {
+    // Get the current URL path
+    const currentPath = window.location.pathname;
+    
+    // Mapping paths to new subdomains (without altering the main domain)
+    const subdomainMap = {
+        '/index.html': 'home',
+        '/about-us.html': 'about',
+        '/contact.html': 'contact',
+        '/store.html': 'store',
+        '/our-resources.html': 'resources'
+    };
+
+    // Get the new subdomain based on the current path
+    const newSubdomain = subdomainMap[currentPath];
+
+    // If a new subdomain exists, update the URL
+    if (newSubdomain) {
+        // Construct the new URL with the new subdomain
+        const newUrl = window.location.protocol + "//" + newSubdomain + ".lingo-land.net";
+        window.history.pushState({}, "", newUrl);  // Change the URL without reloading the page
+    }
+};
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const videoContainer = document.querySelector('.video-container');
