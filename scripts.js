@@ -19,30 +19,29 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
 window.onload = function() {
     // Get the current URL path
     const currentPath = window.location.pathname;
-    
-    // Mapping paths to new subdomains (without altering the main domain)
-    const subdomainMap = {
-        '/index.html': 'home',
-        '/about-us.html': 'about',
-        '/contact.html': 'contact',
-        '/store.html': 'store',
-        '/our-resources.html': 'resources'
+
+    // Mapping current paths to new paths
+    const pathMap = {
+        '/index.html': '/Welcome to lingoland',
+        '/about-us.html': '/About Us',
+        '/contact.html': '/Contact',
+        '/store.html': '/Store',
+        '/our-resources.html': '/Resources'
     };
 
-    // Get the new subdomain based on the current path
-    const newSubdomain = subdomainMap[currentPath];
+    // Get the new path based on the current path
+    const newPath = pathMap[currentPath];
 
-    // If a new subdomain exists, update the URL
-    if (newSubdomain) {
-        // Construct the new URL with the new subdomain
-        const newUrl = window.location.protocol + "//" + newSubdomain + ".lingo-land.net";
-        window.history.pushState({}, "", newUrl);  // Change the URL without reloading the page
+    // If a new path exists, update the URL
+    if (newPath) {
+        const newUrl = window.location.origin + newPath; // Keep the same domain
+        window.history.pushState({}, '', newUrl);
     }
 };
-
 
 document.addEventListener('DOMContentLoaded', () => {
     const videoContainer = document.querySelector('.video-container');
