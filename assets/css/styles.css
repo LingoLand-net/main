@@ -2786,6 +2786,7 @@ button:active {
 	transition: background 0.3s ease, transform 0.2s ease;
 	flex: 1;
 	margin: 5px;
+	text-align: center;
 }
 
 .tab:hover {
@@ -2798,7 +2799,6 @@ button:active {
 	/* Orange */
 	transform: scale(1.05);
 }
-
 
 /* Video Grid */
 
@@ -2834,6 +2834,8 @@ button:active {
 	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+
 .video-wrapper1 {
 	display: flex;
 	justify-content: center;
