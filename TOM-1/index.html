@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="LingoLand: Innovation meets Education. Discover our innovative English language resources tailored to the Tunisian curriculum." />
+	<meta name="keywords" content="English language, education, Tunisian curriculum, LingoLand, innovative resources" />
+	<meta name="author" content="Ali Cheikh | Moahmed Zoueri" />
+	<meta name="robots" content="index, follow" />
+	<meta name="language" content="English" />
+	<meta name="theme-color" content="#fed28d" />
+
+	<title>Resources | LingoLand</title>
+	<link rel="shortcut icon" href="https://lingo-land.net/1.png" type="image/x-icon">
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="LingoLand Resources" />
+	<meta property="og:description" content="LingoLand offers top-quality English teaching materials designed to enhance learning experiences." />
+	<meta property="og:image" content="https://lingo-land.net/1.png" />
+	<meta property="og:url" content="https://lingo-land.net" />
+
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:url" content="https://lingo-land.net" />
+	<meta property="twitter:title" content="Resources | LingoLand" />
+	<meta property="twitter:description" content="LingoLand offers top-quality English teaching materials designed to enhance learning experiences." />
+	<meta property="twitter:image" content="image.png" />
+	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+	<title>Our Resources</title>
+	<link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+	<header class="text-white flex items-center justify-between px-6 py-4 relative z-20">
+		<div class="flex items-center justify-between w-full max-w-6xl mx-auto hheader">
+			<a href="index.html" class="flex-shrink-0" id="logo">
+				<img src="../assets/img/logo.png" alt="LingoLand Logo" class="w-24 h-auto">
+			</a>
+			<div class="flex items-center space-x-4">
+				<button class="menu-toggle block md:hidden text-3xl focus:outline-none z-30" aria-label="Toggle navigation">
+                    <div class="space-y-2">
+                        <span class="block w-8 h-1 bg-white"></span>
+                        <span class="block w-8 h-1 bg-white"></span>
+                        <span class="block w-8 h-1 bg-white"></span>
+                    </div>
+                </button>
+				<nav class="nav hidden fixed inset-y-0 left-0 w-full transform -translate-x-full transition-transform duration-300 ease-in-out md:relative md:translate-x-0 md:flex md:items-center md:bg-transparent z-20">
+					<ul class="nav-list flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 w-full md:w-auto text-lg md:text-base">
+						<li><a href="../index.html" class="block px-6 py-3 nav-item  transition">Home</a></li>
+						<li><a href="../store.html" class="block px-6 py-3 nav-item  transition">Store</a></li>
+						<li><a href="../about-us.html" class="block px-6 py-3 nav-item  transition">About Us</a></li>
+						<li><a href="../our_resources.html" class="block px-6 py-3 nav-item  transition">Resources</a></li>
+						<li><a href="../contact.html" class="block px-6 py-3 nav-item  transition">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+    <div class="container ">
+        <div class="row mt-5">
+            <div class="col-md-6 offset-md-3"  style="margin-top: 10vh;margin-bottom: 15vh;">
+                <form id="loginForm">
+                    <h2>Login</h2>
+                    <div class="form-group">
+                        <label for="loginEmail">Email address</label>
+                        <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" placeholder="Enter email" required pattern=".*\S+.*" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" class="form-control" id="loginPassword" pattern="[a-zA-Z0-9!@#$%^&*()_+\\-={}:;<>?,.]{8,}" placeholder="Password" required>
+                    </div>
+                    <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+                        <button type="submit" id="loginButton" class="btn btn-warning">Login</button>
+                    </div>
+                    <p><center><strong>Forgot Password :</strong> Click <span style="font-weight: bold;color: rgb(109, 109, 252);" onclick="passwordF()"> here</span></center></p>
+                    <hr>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container fixed-top" id="dashboard" style="display: none;">
+        <div class="row mt-5">
+            <div class="col-md-6 offset-md-3">
+                <button class="btn float-right bg-info text-light" onclick="window.location.reload();">Log Out</button>
+                <h2>Dashboard</h2>
+                <div class="card mt-3" onclick="window.location.href='/generate-password.html'" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Generate Password</h5>
+                        <p class="card-text">Strong Passwords Generation</p>
+                    </div>
+                </div>
+                <div class="card mt-3" onclick="window.location.href='/user-passwords.html'" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Password Dashboard</h5>
+                        <p class="card-text">View your Generated & Saved Passwords</p>
+                    </div>
+                </div>
+                <div class="card mt-3" onclick="window.location.href='/password-strength-meter.html'" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Password Strength Meter</h5>
+                        <p class="card-text">Integrate a password strength meter.</p>
+                    </div>
+                </div>
+                <!-- Add more cards for other features -->
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="../script.js"></script>
+    <script>
+        function passwordF() {
+            Swal.fire({
+                icon: 'info',
+                title: '<strong>Password Recovery 🤩</strong>',
+                html: `
+                <b>email us your <u>Account</u> we will send you the <i>Password</i></b>
+                `,
+                text: `tttt`,
+                footer: '<a href="mailto:website.support@gmail.com">website.support@gmail.com</a>',
+                confirmButtonText: 'Cancel'
+            });
+        }
+    </script>
+		<footer class="footer">
+			<div class="footer-content">
+				<div class="">
+					<a href="#" class="logo" id="logo">
+						<img src="../assets/img/logo.png" alt="LingoLand Logo" class="footer-logo-img">
+					</a>
+				</div>
+				<div class="footer-info">
+					<h2><b>Contact Us</b></h2>
+					<p>3005 Cité Ons, Sfax, Tunisia</p>
+					<p>Email: <a href="mailto:contact@lingoland.com">contact@lingo-land.net</a></p>
+					<p>Phone: <a href="tel:+21612345678">+216 22 571 291</a></p>
+					<hr><br>
+					<b><p>Developed by: <a href="https://i-startup.tn/">I-StartUp®️</a></p></b>
+				</div>
+				<div class="footer-links">
+					<h2><b>Quick Links</b></h2>
+					<ul>
+						<li><a href="../index.html">Home</a></li>
+						<li><a href="../store.html">Store</a></li>
+						<li><a href="../about-us.html">About Us</a></li>
+						<li><a href="../our_resources.html">Resources</a></li>
+					</ul>
+				</div>
+				<div class="footer-social-media">
+					<h2>Follow Us</h2>
+					<a href="https://www.facebook.com/profile.php?id=100094352086577" target="_blank" class="social-icon facebook" aria-label="Facebook"><img src="../assets/img/facebook.png" alt="" srcset=""></a>
+					<a href="https://www.youtube.com/@LingoLandCoursebooks" target="_blank" class="social-icon twitter" aria-label="Twitter"><img src="../assets/img/youtube.png" alt=""></a>
+					<a href="https://www.instagram.com/lingoland_coursebooks/" target="_blank" class="social-icon instagram" aria-label="Instagram"><img src="../assets/img/innstagram.png" alt="" srcset=""></a>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<p>&copy; 2024 LingoLand. All rights reserved.</p>
+			</div>
+		</footer>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+</body>
+</html>
