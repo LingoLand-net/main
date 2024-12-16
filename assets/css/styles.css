@@ -2650,6 +2650,7 @@ button:active {
 	border-bottom-left-radius: 8px;
 	border-bottom-right-radius: 8px;
 	transition: background-color 0.3s ease;
+	cursor: pointer;
 }
 
 .view-cart:hover {
