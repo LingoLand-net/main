@@ -26,7 +26,6 @@
 	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
     <script src="sweetalert2.min.js"></script>
-	
     <script src="sweetalert2/dist/sweetalert2.min.js"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="/assets/css/styles.css">
@@ -333,7 +332,7 @@
 				</div>
 			</div>
 			<div class="video-container">
-				<video id="myVideo" src="assets/img/about us.mp4" loop playsinline unmuted height="100%" style="border-radius: 20px;box-shadow: 8px 8px #2F327D;"></video>
+				<video id="myVideo" loading="lazy" src="https://lingo-land.net/assets/img/about%20us.mp4" loop playsinline unmuted height="100%" style="border-radius: 20px;box-shadow: 8px 8px #2F327D;"></video>
 				<button id="playPauseBtn" class="play-pause-btn">Play</button>
 			</div>
 		</div>
@@ -359,13 +358,12 @@
 	<h2 class="our-approach container" style="font-family: 'Anton', sans-serif;font-size: 3em;">
 		<span style="color:#00ACA8;">Testimonials ✨</span>
 	</h2>
-	<div class="marquee-container relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background ">
-		<div class="marquee" id="firstMarquee">
-		</div>
+	<div class="marquee-container relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background">
+		<div class="marquee" id="firstMarquee"></div>
 		<div class="gradient-overlay left"></div>
 		<div class="gradient-overlay right"></div>
-	</div>
-
+	  </div>
+	  
 	<footer class="footer">
 		<div class="footer-content">
 			<div class="">

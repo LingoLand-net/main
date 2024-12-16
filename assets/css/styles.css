@@ -981,20 +981,47 @@ a {
 .fade-in-up.in-view {
 	animation: fadeInUp 0.6s ease-out forwards;
 }
-
-
 .marquee-container {
-	width: 1200px;
+	max-width: 1200px;
 	padding: 16px;
-	/* Add padding around the container */
 	margin: 0 auto;
-	/* Center the container horizontally */
-}
-
-.marquee {
+	position: relative;
+  }
+  
+  .marquee {
 	display: flex;
+	gap: 16px; /* Add spacing between review cards */
 	animation: marquee 40s linear infinite;
-}
+	width: max-content; /* Ensure the content width adjusts dynamically */
+  }
+  
+  .gradient-overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 50px;
+	z-index: 1;
+  }
+  
+  .gradient-overlay.left {
+	left: 0;
+	background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  }
+  
+  .gradient-overlay.right {
+	right: 0;
+	background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  }
+  
+  @keyframes marquee {
+	0% {
+	  transform: translateX(-50);
+	}
+	100% {
+	  transform: translateX(-50%);
+	}
+  }
+  
 
 .reviewCard {
 	width: 300px;
