@@ -2815,8 +2815,18 @@ button:active {
 .video-section {
 	display: none;
 	width: 100%;
+	text-align: center;
 }
 
+.video-section h4 {
+	width: 100%;
+	color:  #ff7428;
+	text-align: center;
+	margin: 20px 0;
+	font-size: 1.2rem;
+	font-weight: bold;
+  }
+  
 .video-section.active {
 	display: flex;
 	flex-wrap: wrap;
@@ -2827,6 +2837,7 @@ button:active {
 /* Video Cards */
 
 .video-wrapper {
+	position: relative;
 	flex: 1 1 calc(33.333% - 20px);
 	max-width: calc(33.333% - 20px);
 	border-radius: 10px;
