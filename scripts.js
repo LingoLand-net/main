@@ -73,12 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
-
-document.getElementById('logo').addEventListener('click', function (e) {
-    e.preventDefault(); // Prevent the default anchor behavior
-    window.location.reload(); // Reload the page
-});
 document.addEventListener("DOMContentLoaded", function() {
     const elements = document.querySelectorAll('.fade-in-up');
 
