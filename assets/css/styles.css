@@ -20,17 +20,25 @@ header {
 }
 .hheader{
 	animation: slideInLeft 1s ease-in-out;
+	-webkit-animation: slideInLeft 1s ease-in-out;
 }
 
 .nav {
 	background-color: #00ABA4;
 	height: 320px;
 }
+.nav-item{
+	border-radius: 20px;
+}
 
 .nav-item:hover {
 	list-style-type: none;
 	color: #ff7428;
-	background-color: #007b7f;
+	border-radius: 20px;
+	background-color: #00fff750;
+	box-shadow: 5px 5px #ffffffc4;
+	transform: ease-in-out;
+	transition-delay: 5ms;
 }
 
 html {
@@ -2486,21 +2494,20 @@ button:active {
 .cart-item {
 	display: flex;
 	align-items: center;
-	border: 1px solid #ccc;
+	border: 1px solid #ff7428;
+	color: white;
 	padding: 10px;
 	border-radius: 8px;
-	background-color: #f9f9f9;
+	background-color: #008a87;
 	position: relative;
 }
 
 .remove-item-btn {
 	position: absolute;
-	top: 2px;
 	left: 2px;
-	background: #ff00006e;
 	border: none;
 	color: #ffffff;
-	font-size: 20px;
+	font-size: 100%;
 	cursor: pointer;
 }
 
@@ -2517,11 +2524,15 @@ button:active {
 }
 
 .cart-item-quantity {
+	/* Add styles for quantity input */
 	margin-left: 10px;
 }
 
 .quantity-input {
 	width: 30px;
+	height: 100%;
+	font-size: 20px;
+	color: #000;
 }
 
 
