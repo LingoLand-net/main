@@ -17,12 +17,19 @@
 	<meta property="og:description" content="Visit our store LingoLand offers top-quality English teaching materials designed to enhance learning experiences." />
 	<meta property="og:image" content="/assets/img/image.png" />
 	<meta property="og:url" content="https://lingo-land.net" />
-
+	<link rel="shortcut icon" href="/assets/img/circle.png" type="image/x-icon">
 	<meta property="twitter:card" content="summary_large_image" />
 	<meta property="twitter:url" content="https://lingo-land.net" />
 	<meta property="twitter:title" content="Store | LingoLand" />
 	<meta property="twitter:description" content="Visit our store LingoLand offers top-quality English teaching materials designed to enhance learning experiences." />
 	<meta property="twitter:image" content="/assets/img/image.png" />
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
 
 	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
@@ -75,7 +82,7 @@
 		<div class="modal-content">
 			<span class="close-btn">&times;</span>
 			<div id="modal-body">
-				<!-- Cart items and form will be dynamically inserted here -->
+				<!-- cart pop-up -->
 			</div>
 		</div>
 	</div>
@@ -83,45 +90,90 @@
 	<main class="main-content">
 		<section class="store-section">
 			<h1 class="what-is-lingo-land fade-in-up" style="font-family: 'Anton', sans-serif;font-size: 3em;">
-                <span class="highlight" style="color: #00ACA8;">Our</span> <span class="highlight" style="color: #F48C06;">Store</span>
-            </h1>
+				<span class="highlight" style="color: #00ACA8;">Our</span> <span class="highlight" style="color: #F48C06;">Store</span>
+			</h1>
 			<div class="products-container">
-				<!-- Product Card 4 -->
+				<!-- Product Card 1 -->
 				<div class="product-card" data-product-id="4">
-					<img src="https://i.postimg.cc/RCn8Gtnm/5.png" alt="Product Image">
+					<div class="product-carousel">
+						<div><img src="https://i.postimg.cc/RCn8Gtnm/5.png" alt="Product Image 1"></div>
+						<div><img src="/assets/img/4th grade book final merge_34.png" alt="Product Image 2"></div>
+						<div><img src="/assets/img/4th grade book final merge_92.png" alt="Product Image 3"></div>
+					</div>
 					<h2>4th Grade</h2>
 					<p class="price"><img src="/assets/img/dinar.png" style="width:10px"> 35</p>
 					<br><button class="btn add-to-cart">Add to Cart</button>
 				</div>
-				<!-- Product Card 5 -->
+		
+				<!-- Product Card 2 -->
 				<div class="product-card" data-product-id="5">
-					<img src="https://i.postimg.cc/jd011jz7/1.png" alt="Product Image">
+					<div class="product-carousel">
+						<div><img src="https://i.postimg.cc/jd011jz7/1.png" alt="Product Image 1"></div>
+						<div><img src="/assets/img/5th grade final book merge_16.png" alt="Product Image 2"></div>
+						<div><img src="/assets/img/5th grade final book merge_82.png" alt="Product Image 3"></div>
+					</div>
 					<h2>5th Grade</h2>
 					<p class="price"><img src="/assets/img/dinar.png" style="width:10px"> 35</p>
 					<br><button class="btn add-to-cart">Add to Cart</button>
 				</div>
-				<!-- Product Card 2 -->
+		
+				<!-- Product Card 3 -->
 				<div class="product-card" data-product-id="2">
-					<img src="https://i.postimg.cc/d1gfwspg/9.png" alt="Product Image">
+					<div class="product-carousel">
+						<div><img src="https://i.postimg.cc/d1gfwspg/9.png" alt="Product Image 1"></div>
+						<div><img src="/assets/img/6th grade final book merge_103.png" alt="Product Image 2"></div>
+						<div><img src="/assets/img/6th grade final book merge_124.png" alt="Product Image 3"></div>
+					</div>
 					<h2>6th Grade</h2>
 					<p class="price"><img src="/assets/img/dinar.png" style="width:10px"> 40</p>
 					<br><button class="btn add-to-cart">Add to Cart</button>
 				</div>
-				<!-- Product Card 3 -->
+		
+				<!-- Product Card 4 -->
 				<div class="product-card" data-product-id="3">
-					<img src="https://i.postimg.cc/Y0gs9cw0/16.png" alt="Product Image">
+					<div class="product-carousel">
+						<div><img src="https://i.postimg.cc/Y0gs9cw0/16.png" alt="Product Image 1"></div>
+						<div><img src="/assets/img/9th grade book_51.png" alt="Product Image 2"></div>
+						<div><img src="/assets/img/9th grade book_89.png" alt="Product Image 3"></div>
+					</div>
 					<h2>9th Grade</h2>
 					<p class="price"><img src="/assets/img/dinar.png" style="width:10px"> 40</p>
 					<br><button class="btn add-to-cart">Add to Cart</button>
 				</div>
+		
+				<!-- Product Card 5 -->
 				<div class="product-card" data-product-id="1">
-					<img src="https://i.postimg.cc/Kz1W6kqn/14.png" alt="Product Image">
+					<div class="product-carousel">
+						<div><img src="https://i.postimg.cc/Kz1W6kqn/14.png" alt="Product Image 1"></div>
+						<div><img src="/assets/img/Bac Class Book FINAL with numbers_10.png" alt="Product Image 2"></div>
+						<div><img src="/assets/img/Bac Class Book FINAL with numbers_91.png" alt="Product Image 3"></div>
+					</div>
 					<h2>4th Form</h2>
 					<p class="price"><img src="/assets/img/dinar.png" style="width:10px"> 40</p>
 					<br><button class="btn add-to-cart">Add to Cart</button>
 				</div>
-			</div>
 		</section>
+
+		
+		<!-- Include the Slick Carousel CSS and JS links -->
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.product-carousel').slick({
+					slidesToShow: 1,  // Show 1 image at a time
+					slidesToScroll: 1,
+					dots: true,  // Show navigation dots
+					infinite: true,  // Enable infinite loop
+					autoplay: true,  // Enable autoplay
+					autoplaySpeed: 2000,  // Set autoplay speed
+				});
+			});
+		</script>
+		
 	</main>
 
 
@@ -161,7 +213,7 @@
 			<p>&copy; 2024 LingoLand. All rights reserved.</p>
 		</div>
 	</footer>
-
+	
 	<script src="/scripts.js"></script>
 	<script src="cart.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

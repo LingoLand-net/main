@@ -131,8 +131,7 @@ function removeCartItem(productId) {
                 <div class="cart-items">
                     ${cart.map(item => `
                         <div class="cart-item" data-product-id="${item.id}">
-                            <button class="remove-item-btn" aria-label="Remove item" style="display:none">&times;</button>
-                            <img src="${item.image}" alt="Product Image" class="cart-item-image">
+                            <button class="remove-item-btn" aria-label="Remove item">&times;</button>
                             <div class="cart-item-details">
                                 <h3>${item.name}</h3>
                                 <p class="price">${item.price}</p>
