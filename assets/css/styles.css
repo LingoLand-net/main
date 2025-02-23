@@ -1603,7 +1603,7 @@ a {
 .transform-your-english .image-container {
 	flex: 1;
 	/* Allow image container to take half the width */
-	background-image: url('img/Group 122-(Compressify.io).png');
+	background-image: url('img/Group122.png');
 	/* Background image for the image container */
 	background-size: contain;
 	/* Ensure background scales to fit container */
@@ -2326,13 +2326,15 @@ button:active {
 	background-color: #fff;
 	border-radius: 8px;
 	text-align: center;
-	max-width: 250px;
-	min-width: 220px;
+	max-width: 350px;
+	min-width: 220px ;
+	min-height: 400px !important;
 }
 
 .product-card img {
 	width: 100%;
 	height: auto;
+	min-height: 469px !important;
 	border-radius: 8px;
 }
 
@@ -2448,10 +2450,7 @@ button:active {
 
 /* Button styling */
 
-.product-card .add-to-cart {
-	background-color: #00ACA8;
-	/* Background color for button */
-	color: white;
+.product-card .add-to-cart .show-contents{
 	/* Text color for button */
 	border: none;
 	/* Remove default border */
@@ -2465,7 +2464,19 @@ button:active {
 	/* Space below the button */
 }
 
+.product-card .add-to-cart {
+	background-color: #00ACA8;
+}
 
+.category-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
 /* Button hover effect */
 
 .product-card .add-to-cart:hover {
