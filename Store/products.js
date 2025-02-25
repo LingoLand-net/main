@@ -41,32 +41,45 @@
                 "https://i.postimg.cc/LXt5wmDm/6th-grade-final-book-merge-80.png"
             ]
         },
-        // {
-        //     id: "6",
-        //     name: "note book",
-        //     price: "60",
-        //     grade: "6",
-        //     contains: ["Student's Book", "Workbook", "Game Board", "Flashcards Set"],
-        //     images: [
-        //         "https://i.postimg.cc/wBs75Xsy/3.png",
-        //         "https://i.postimg.cc/6p83wrcj/Fun-and-focus-cover-1.png",
-        //     ]
-        // },
-        // {
-        //     id: "6",
-        //     name: "6th Grade Box",
-        //     price: "60",
-        //     grade: "6",
-        //     contains: ["Student's Book", "Workbook", "Game Board", "Flashcards Set"],
-        //     description: "Complete learning package for 6th grade students",
-        //     images: [
-        //         "https://i.postimg.cc/ZnmB5Wn9/2.png",
-        //         "https://i.postimg.cc/wBs75Xsy/3.png",
-        //         "https://i.postimg.cc/6p83wrcj/Fun-and-focus-cover-1.png",
-        //         "https://i.postimg.cc/Qt3xpR3w/Words-and-wonders-cover-1.png"
-        //     ]
-        // },
-        
+        {
+            id: "6",
+            name: "6th Grade Box",
+            price: "60",
+            grade: "6",
+            contains: ["Note Books", "Game Board", "Flashcards Set"],
+            description: "Complete learning package for 6th grade students",
+            images: [
+                "/assets/img/box.png",
+                "/assets/img/boxbox.png",
+                "/assets/img/pp.png",
+                "/assets/img/ww.png",
+                "/assets/img/ff.png",
+            ]
+        },
+        {
+            id: "8",
+            name: "Words&wonders Note Book",
+            price: "30",
+            grade: "6",
+            contains: ["Note Book", "Workbook"],
+            images: [
+                "https://i.postimg.cc/Qt3xpR3w/Words-and-wonders-cover-1.png",
+                "/assets/img/wordsandwonder.png",
+                "/assets/img/ww.png",
+            ]
+        },
+        {
+            id: "7",
+            name: "Fun&Focus Note Book",
+            price: "30",
+            grade: "6",
+            contains: ["Note Book", "Workbook"],
+            images: [
+                "https://i.postimg.cc/6p83wrcj/Fun-and-focus-cover-1.png",
+                "/assets/img/funandfoucus.png",
+                "/assets/img/ff.png",
+            ]
+        },
         // Ninth Grade
         {
             id: "3",
@@ -116,12 +129,14 @@ const renderProducts = (grade) => {
                 <p class="price flex items-center gap-1 text-lg font-semibold">
                     ${product.price} د.ت
                 </p>
-                <div class="flex items-center gap-2 mt-3">
+                <div class="flex flex-col sm:flex-row items-center gap-2 mt-3 w-full">
                     <button class="add-to-cart w-full text-white font-medium px-6 py-2 rounded-md transition duration-200">
                         Add to Cart
                     </button>
                     ${product.contains ? 
-                        `<button class="show-contents w-full hover:text-gray-800 font-medium px-6 py-2 rounded-md transition duration-200" data-id="${product.id}">View Contents</button>` 
+                        `<button class="show-contents w-full hover:text-gray-800 font-medium px-6 py-2 rounded-md transition duration-200" data-id="${product.id}">
+                            View Contents
+                        </button>` 
                         : ""}
                 </div>
             </div>

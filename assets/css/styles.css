@@ -2308,8 +2308,10 @@ button:active {
 
 .products-container {
 	display: flex;
+	max-width: 735px;
+	margin: 0 auto;
 	flex-wrap: wrap;
-	gap: 20px;
+	gap: 35px;
 	/* Space between product cards */
 	justify-content: center;
 	padding: 5px;
