@@ -3,7 +3,7 @@
         // Forth Grade
         {
             id: "4",
-            name: "4th Grade",
+            name: "4th Grade Book",
             price: "35",
             grade: "4",
             images: [
@@ -17,7 +17,7 @@
         // Fifth Grade
         {
             id: "5",
-            name: "5th Grade",
+            name: "5th Grade Book",
             price: "35",
             grade: "5",
             images: [
@@ -31,7 +31,7 @@
         // Sixth Grade
         {
             id: "2",
-            name: "6th Grade",
+            name: "6th Grade Book",
             price: "40",
             grade: "6",
             images: [
@@ -83,7 +83,7 @@
         // Ninth Grade
         {
             id: "3",
-            name: "9th Grade",
+            name: "9th Grade Book",
             price: "40",
             grade: "9",
             images: [
@@ -97,7 +97,7 @@
         // Forth Form
         {
             id: "1",
-            name: "4th Form",
+            name: "4th Form Book",
             price: "40",
             grade: "4th-form",
             images: [
