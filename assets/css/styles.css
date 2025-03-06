@@ -1273,7 +1273,7 @@ a {
 	/* Diameter of the circle */
 	height: 40px;
 	/* Diameter of the circle */
-	background-color: #F5A93B;
+	background-color: hsla(35, 90%, 60%);
 	/* Circle color */
 	border-radius: 50%;
 	/* Make it a circle */
