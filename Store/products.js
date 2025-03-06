@@ -59,7 +59,7 @@
         {
             id: "8",
             name: "Words&wonders Note Book",
-            price: "30",
+            price: "20",
             grade: "6",
             contains: ["Note Book", "Workbook"],
             images: [
@@ -71,7 +71,7 @@
         {
             id: "7",
             name: "Fun&Focus Note Book",
-            price: "30",
+            price: "20",
             grade: "6",
             contains: ["Note Book", "Workbook"],
             images: [
