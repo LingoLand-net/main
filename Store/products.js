@@ -46,7 +46,7 @@
             name: "6th Grade Box",
             price: "60",
             grade: "6",
-            contains: ["Note Books", "Game Board", "Flashcards Set"],
+            contains: ["Notebooks", "Storyboards", "Stickers", "Project Files"],
             description: "Complete learning package for 6th grade students",
             images: [
                 "/assets/img/box.png",
