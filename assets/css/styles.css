@@ -27,6 +27,13 @@ header {
 	background-color: #00aba500;
 	height: 320px;
 }
+/*on phone the nav is not transparent*/
+@media (max-width: 767px) {
+	.nav {
+		background-color: #00aba5 !important;
+		height: 320px;
+	}
+}
 .nav-item{
 	border-radius: 20px;
 }
