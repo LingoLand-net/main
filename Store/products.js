@@ -111,7 +111,7 @@ const ProductManager = {
             price: "35",
             grade: "9",
             images: [
-                "/assets/img/6thwritingguidcover.png",
+                "/assets/img/9thwritingguidcover.png",
                 "/assets/img/9th grade writing guide_6.png",
                 "/assets/img/9th grade writing guide_3.png",
                 "/assets/img/9th grade writing guide_4.png"
