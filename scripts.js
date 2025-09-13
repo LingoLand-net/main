@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     menuToggle.addEventListener('click', function() {
         if (nav.classList.contains('hidden')) {
             nav.classList.remove('hidden');
+            nav.classList.add('margin-top-16');
             setTimeout(() => {
                 nav.classList.remove('-translate-x-full');
                 nav.classList.add('translate-x-0');

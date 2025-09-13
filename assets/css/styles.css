@@ -16,7 +16,7 @@ html {
 }
 
 header {
-	background-color: #00ABA4 !important;
+	background-color: #00aba5ab !important;
 }
 .hheader{
 	animation: slideInLeft 1s ease-in-out;
@@ -24,7 +24,7 @@ header {
 }
 
 .nav {
-	background-color: #00ABA4;
+	background-color: #00aba500;
 	height: 320px;
 }
 .nav-item{
@@ -35,7 +35,7 @@ header {
 	list-style-type: none;
 	color: #ffffffc4;
 	border-radius: 20px;
-	background-color: #00fff750;
+	background-color: #00aba5ab;
 	box-shadow: 5px 5px #ffffffc4;
 	transform: ease-in-out;
 	transition-delay: 5ms;
@@ -111,7 +111,7 @@ a {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	background-color: #00ABA4;
+	background-color: #00aba5ab !important;
 	padding: 5px 50px 50px;
 	/* Decrease top padding by 10px */
 	color: white;
@@ -192,7 +192,7 @@ a {
 .watch-btn .play-icon {
 	background-color: white;
 	border-radius: 50%;
-	color: #00ABA4;
+	color: #00aba5ab;
 	font-size: 18px;
 	width: 30px;
 	height: 30px;
@@ -550,7 +550,7 @@ a {
 }
 
 .our-approach .approach-title span:first-child {
-	color: #00ACA8;
+	color: #00aba5ab;
 }
 
 .our-approach .approach-title span:last-child {
@@ -737,7 +737,7 @@ a {
 }
 
 .what-is-lingo-land .highlight {
-	color: #00ABA4;
+	color: #00aba5ab;
 }
 
 .for-who {
@@ -854,7 +854,7 @@ a {
 	/* Increased width on hover */
 	height: 90px;
 	/* Increased height on hover */
-	background-color: rgba(255, 255, 255, 0.2);
+	background-color: #ffffff33;
 	/* Slightly transparent white background */
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 	/* Added shadow for a more pronounced effect */
@@ -864,7 +864,7 @@ a {
 /* Specific Button Styles */
 
 .for-instructors .btn {
-	background-color: #00ACA8;
+	background-color: #00aba5ab;
 }
 
 .for-students .btn {
