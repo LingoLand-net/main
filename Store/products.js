@@ -32,7 +32,7 @@ const ProductManager = {
         {
             id: "2",
             name: "6th Grade Book",
-            price: "30",
+            price: "35",
             grade: "6",
             images: [
                 "/assets/img/14.png",
@@ -44,7 +44,7 @@ const ProductManager = {
         {
             id: "3",
             name: "Writing Guide",
-            price: "35",
+            price: "30",
             grade: "6",
             images: [
                 "/assets/img/6thwritingguidcover.png",
@@ -112,9 +112,9 @@ const ProductManager = {
             grade: "9",
             images: [
                 "/assets/img/6thwritingguidcover.png",
-                "/assets/img/6th grade writing guide_6.png",
-                "/assets/img/6th grade writing guide_3.png",
-                "/assets/img/6th grade writing guide_4.png"
+                "/assets/img/9th grade writing guide_6.png",
+                "/assets/img/9th grade writing guide_3.png",
+                "/assets/img/9th grade writing guide_4.png"
             ]
         },
         
