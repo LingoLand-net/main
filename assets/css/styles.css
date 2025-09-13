@@ -1392,32 +1392,86 @@ a {
 	line-height: 1.6;
 	/* Line height for better readability */
 }
-
-.video-container {
-	position: relative;
-	display: inline-block;
-}
-
-.play-pause-btn {
-	position: absolute;
-	top: 50%;
-	left: 45%;
-	transform: translate(-50%, -45%);
-	display: none;
-	padding: 10px 20px;
-	font-size: 16px;
-	background-color: rgba(0, 0, 0, 0.5);
-	color: white;
-	border: none;
-	cursor: pointer;
-}
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 8px 8px #1a1c3d;
+            cursor: pointer;
+        }
+        video {
+            width: 100%;
+            display: block;
+            background-color: #000;
+        }
+        
+        .video-thumbnail {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 2;
+            transition: opacity 0.3s ease;
+        }
+        
+        .video-thumbnail.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .play-pause-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background-color: rgba(47, 50, 125, 0.85);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 3;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
 
 /*display the button on hover for 5 seconds then hide it*/
-.video-container:hover .play-pause-btn {
-	display: block;
-	transform: scale(1.1);
-}
+        
+        .play-pause-btn:hover {
+            background-color: rgba(47, 50, 125, 1);
+            transform: translate(-50%, -50%) scale(1.05);
+        }
 
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .play-pause-btn {
+                width: 60px;
+                height: 60px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            
+            .play-pause-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
 /* Image container */
 
 .why-choose-us .image-container {

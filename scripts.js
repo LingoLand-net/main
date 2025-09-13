@@ -44,35 +44,69 @@ document.addEventListener('DOMContentLoaded', function() {
 //     }
 // };
 
-document.addEventListener('DOMContentLoaded', () => {
-    const videoContainer = document.querySelector('.video-container');
-    const playPauseBtn = document.getElementById('playPauseBtn');
-    let hideTimeout;
+ document.addEventListener('DOMContentLoaded', () => {
+            const videoContainer = document.querySelector('.video-container');
+            const playPauseBtn = document.getElementById('playPauseBtn');
+            const video = document.getElementById('myVideo');
+            const thumbnail = document.querySelector('.video-thumbnail');
+            let hideTimeout;
 
-    videoContainer.addEventListener('mouseenter', () => {
-        playPauseBtn.style.display = 'block';
-        clearTimeout(hideTimeout);
-        hideTimeout = setTimeout(() => {
+            // Show controls on mouse enter
+            videoContainer.addEventListener('mouseenter', () => {
+                playPauseBtn.style.display = 'block';
+                clearTimeout(hideTimeout);
+                hideTimeout = setTimeout(() => {
+                    playPauseBtn.style.display = 'none';
+                }, 4000);
+            });
+
+            // Hide controls on mouse leave
+            videoContainer.addEventListener('mouseleave', () => {
+                clearTimeout(hideTimeout);
+                playPauseBtn.style.display = 'none';
+            });
+
+            // Play/Pause functionality
+            playPauseBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (video.paused) {
+                    video.play();
+                    playPauseBtn.textContent = '❚❚';
+                    thumbnail.classList.add('hidden');
+                } else {
+                    video.pause();
+                    playPauseBtn.textContent = '▶';
+                }
+            });
+
+            // Also toggle play/pause when clicking on the video
+            videoContainer.addEventListener('click', (e) => {
+                if (e.target !== playPauseBtn) {
+                    if (video.paused) {
+                        video.play();
+                        playPauseBtn.textContent = '❚❚';
+                        thumbnail.classList.add('hidden');
+                    } else {
+                        video.pause();
+                        playPauseBtn.textContent = '▶';
+                    }
+                }
+            });
+
+            // Hide button when video is playing and show when paused
+            video.addEventListener('play', () => {
+                playPauseBtn.textContent = '❚❚';
+                thumbnail.classList.add('hidden');
+            });
+
+            video.addEventListener('pause', () => {
+                playPauseBtn.textContent = '▶';
+                playPauseBtn.style.display = 'block';
+            });
+
+            // Initially hide the play button
             playPauseBtn.style.display = 'none';
-        }, 4000);
-    });
-
-    videoContainer.addEventListener('mouseleave', () => {
-        clearTimeout(hideTimeout);
-        playPauseBtn.style.display = 'none';
-    });
-
-    playPauseBtn.addEventListener('click', () => {
-        const video = document.getElementById('myVideo');
-        if (video.paused) {
-            video.play();
-            playPauseBtn.textContent = '▶';
-        } else {
-            video.pause();
-            playPauseBtn.textContent = 'Play';
-        }
-    });
-});
+        });
 
 document.addEventListener("DOMContentLoaded", function() {
     const elements = document.querySelectorAll('.fade-in-up');
