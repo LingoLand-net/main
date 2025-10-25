@@ -125,7 +125,7 @@ const ProductManager = {
             price: "40",
             grade: "4th-form",
             images: [
-                "/assets/img/14.png",
+                "/assets/img/cover.png",
                 "/assets/img/Bac Class Book FINAL with numbers_4.png",
                 "/assets/img/Bac Class Book FINAL with numbers_10.png",
                 "/assets/img/Bac Class Book FINAL with numbers_91.png"
