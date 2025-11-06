@@ -1,0 +1,275 @@
+(function () {
+    const products = [
+        {
+            id: "grade4-student-book",
+            sku: "LL-G4-SB",
+            name: "Grade 4 Student Book",
+            grade: "4",
+            gradeLabel: "4th",
+            type: "core",
+            price: 35,
+            summary: "Student textbook with interactive tasks and audio QR codes.",
+            description: "A complete grade 4 student book aligned with the Tunisian curriculum. Includes skills practice, storytelling units, and speaking games.",
+            highlights: [
+                "12 thematic units with culture notes",
+                "Audio support via QR codes and Google Drive",
+                "End-of-term projects and evaluation rubrics"
+            ],
+            includes: ["Student book (96 pages)", "Downloadable audio", "Digital worksheets pack"],
+            shippingNote: "Ready to ship within 48 hours.",
+            bestseller: true,
+            tags: ["grade 4", "student book", "audio"],
+            images: [
+                "../assets/img/5.png",
+                "https://i.postimg.cc/QNgKnJYc/4th-grade-book-final-merge-34.png",
+                "https://i.postimg.cc/28zLpLgM/4th-grade-book-final-merge-65.png"
+            ]
+        },
+        {
+            id: "grade5-student-book",
+            sku: "LL-G5-SB",
+            name: "Grade 5 Student Book",
+            grade: "5",
+            gradeLabel: "5th",
+            type: "core",
+            price: 35,
+            summary: "Aligned with CEFR A2, includes speaking labs and writing frames.",
+            description: "Engaging grammar, vocabulary, and communication tasks for grade 5 learners. Includes speaking labs scripted by LingoLand teachers.",
+            highlights: [
+                "14 speaking labs with phonics focus",
+                "Differentiated reading passages",
+                "Project-based learning tasks each term"
+            ],
+            includes: ["Student book", "Teacher-ready answer key", "Printable flashcards"],
+            shippingNote: "Delivery in Sfax within 24h.",
+            tags: ["grade 5", "textbook", "teacher support"],
+            images: [
+                "../assets/img/1.png",
+                "https://i.postimg.cc/SND2mNhs/5th-grade-final-book-merge-16.png",
+                "https://i.postimg.cc/6pq7qJWh/5th-grade-final-book-merge-26.png"
+            ]
+        },
+        {
+            id: "grade6-student-book",
+            sku: "LL-G6-SB",
+            name: "Grade 6 Student Book",
+            grade: "6",
+            gradeLabel: "6th",
+            type: "core",
+            price: 35,
+            summary: "Comprehensive language journey with CLIL projects and assessments.",
+            description: "In-depth grammar tutorials, vocabulary maps, and CLIL exploration for grade 6 students. Co-created with classroom teachers across Tunisia.",
+            highlights: [
+                "Step-by-step assessment preparation",
+                "Integrated listening transcripts",
+                "Digital quizzes in Google Forms"
+            ],
+            includes: ["Student book", "Project pack", "Listening scripts"],
+            shippingNote: "Ships nationwide within 72h.",
+            bestseller: true,
+            tags: ["grade 6", "project based", "assessment"],
+            images: [
+                "../assets/img/14.png",
+                "https://i.postimg.cc/5yfyMDKL/6th-grade-final-book-merge-103.png",
+                "https://i.postimg.cc/85QsZ7hy/6th-grade-final-book-merge-124.png"
+            ]
+        },
+        {
+            id: "grade6-writing-guide",
+            sku: "LL-G6-WG",
+            name: "Grade 6 Writing Guide",
+            grade: "6",
+            gradeLabel: "6th",
+            type: "support",
+            price: 30,
+            summary: "Writing handbook with sentence frames, rubrics, and mentor texts.",
+            description: "Model compositions, grammar tips, and editable planners to improve writing outcomes. Perfect companion for exam prep.",
+            highlights: [
+                "21 writing genres with exemplars",
+                "Peer review checklists",
+                "QR codes linking to mini-lessons"
+            ],
+            includes: ["Writing handbook", "Editable planners", "Rubric templates"],
+            shippingNote: "Ships within 48h.",
+            tags: ["grade 6", "writing", "handbook"],
+            images: [
+                "../assets/img/6thwritingguidcover.png",
+                "../assets/img/6th grade writing guide_6.png",
+                "../assets/img/6th grade writing guide_3.png"
+            ]
+        },
+        {
+            id: "grade6-premium-bundle",
+            sku: "LL-G6-BUNDLE",
+            name: "Grade 6 Premium Bundle",
+            grade: "6",
+            gradeLabel: "6th",
+            type: "bundle",
+            price: 60,
+            summary: "Complete classroom pack with student book, notebooks, and project tools.",
+            description: "All-in-one kit for grade 6 classrooms. Includes student books, notebooks, storyboard sets, and sticker packs for gamified projects.",
+            highlights: [
+                "Teacher dashboard access",
+                "Project storyboard collection",
+                "Achievement sticker pack"
+            ],
+            includes: ["Student book", "Fun & Focus notebook", "Words & Wonders notebook", "Storyboard kit", "Sticker pack"],
+            shippingNote: "Bundle ships on Tuesdays and Thursdays.",
+            bestseller: true,
+            tags: ["bundle", "grade 6", "classroom kit"],
+            images: [
+                "../assets/img/box.png",
+                "../assets/img/boxbox.png",
+                "../assets/img/pp.png",
+                "../assets/img/ww.png",
+                "../assets/img/ff.png"
+            ]
+        },
+        {
+            id: "grade6-words-wonders",
+            sku: "LL-G6-WW",
+            name: "Words & Wonders Notebook",
+            grade: "6",
+            gradeLabel: "6th",
+            type: "support",
+            price: 20,
+            summary: "Vocabulary and creative writing notebook for daily practice.",
+            description: "Guided vocabulary building with illustrated mind maps, sticker prompts, and QR-linked pronunciation support.",
+            highlights: [
+                "Daily vocabulary tracker",
+                "Creative writing prompts",
+                "Audio pronunciation support"
+            ],
+            includes: ["Vocabulary notebook", "Audio QR stickers"],
+            shippingNote: "Available for bulk orders.",
+            tags: ["notebook", "vocabulary", "grade 6"],
+            images: [
+                "https://i.postimg.cc/Qt3xpR3w/Words-and-wonders-cover-1.png",
+                "../assets/img/wordsandwonder.png",
+                "../assets/img/ww.png"
+            ]
+        },
+        {
+            id: "grade6-fun-focus",
+            sku: "LL-G6-FF",
+            name: "Fun & Focus Notebook",
+            grade: "6",
+            gradeLabel: "6th",
+            type: "support",
+            price: 20,
+            summary: "Grammar drills and listening tasks in an engaging workbook.",
+            description: "Spiral review notebook covering listening, grammar, and pronunciation. Ideal for homework and support sessions.",
+            highlights: [
+                "Weekly listening labs",
+                "Teacher grading tracker",
+                "Game-based grammar drills"
+            ],
+            includes: ["Notebook", "Audio QR pack", "Teacher tracker"],
+            shippingNote: "Ships in 48h.",
+            tags: ["notebook", "grammar", "listening"],
+            images: [
+                "https://i.postimg.cc/6p83wrcj/Fun-and-focus-cover-1.png",
+                "../assets/img/funandfoucus.png",
+                "../assets/img/ff.png"
+            ]
+        },
+        {
+            id: "grade9-student-book",
+            sku: "LL-G9-SB",
+            name: "Grade 9 Student Book",
+            grade: "9",
+            gradeLabel: "9th",
+            type: "core",
+            price: 40,
+            summary: "Advanced communicative units preparing students for national exams.",
+            description: "Integrated skills book for grade 9 with debate tasks, grammar labs, and test practice aligned with national exam specifications.",
+            highlights: [
+                "Exam-style practice papers",
+                "Listening labs with QR codes",
+                "Debate and speaking frameworks"
+            ],
+            includes: ["Student book", "Exam practice pack", "Listening scripts"],
+            shippingNote: "Delivery nationwide within 72h.",
+            tags: ["grade 9", "exam prep", "student book"],
+            images: [
+                "../assets/img/16.png",
+                "../assets/img/9-1.png",
+                "../assets/img/9-2.png"
+            ]
+        },
+        {
+            id: "grade9-writing-guide",
+            sku: "LL-G9-WG",
+            name: "Grade 9 Writing Guide",
+            grade: "9",
+            gradeLabel: "9th",
+            type: "support",
+            price: 35,
+            summary: "Structured writing support for exam excellence.",
+            description: "Genre-based writing guide with annotated samples, phrase banks, and evaluation rubrics tailored for grade 9 assessments.",
+            highlights: [
+                "Annotated model compositions",
+                "Rubrics for self and peer assessment",
+                "Writing workshops and mini lessons"
+            ],
+            includes: ["Writing guide", "Rubric pack", "Editable planners"],
+            shippingNote: "Ships same week.",
+            tags: ["writing", "grade 9", "exam"],
+            images: [
+                "../assets/img/9thwritingguidcover.png",
+                "../assets/img/9th grade writing guide_6.png",
+                "../assets/img/9th grade writing guide_3.png"
+            ]
+        },
+        {
+            id: "4th-form-student-book",
+            sku: "LL-4F-SB",
+            name: "4th Form Student Book",
+            grade: "4th-form",
+            gradeLabel: "bac",
+            type: "core",
+            price: 40,
+            summary: "Complete BAC prep course with authentic reading and oral tasks.",
+            description: "High-impact student book covering all BAC competencies with authentic texts, case studies, and oral presentation scaffolds.",
+            highlights: [
+                "BAC-style comprehension passages",
+                "Advanced grammar workshops",
+                "Presentation and debate scaffolds"
+            ],
+            includes: ["Student book", "Practice exams", "Audio pack"],
+            shippingNote: "Ships within 72h nationwide.",
+            tags: ["4th form", "BAC", "student book"],
+            images: [
+                "../assets/img/cover.png",
+                "../assets/img/Bac Class Book FINAL with numbers_4.png",
+                "../assets/img/Bac Class Book FINAL with numbers_10.png"
+            ]
+        },
+        {
+            id: "4th-form-writing-guide",
+            sku: "LL-4F-WG",
+            name: "4th Form Writing Guide",
+            grade: "4th-form",
+            gradeLabel: "bac",
+            type: "support",
+            price: 35,
+            summary: "Masterclasses for BAC writing tasks with annotated samples.",
+            description: "Advanced writing strategies, sample essays, and speaking prompts that align with BAC evaluation grids.",
+            highlights: [
+                "Argumentative & opinion essay frameworks",
+                "Annotated BAC scripts",
+                "Speaking and mediation prompts"
+            ],
+            includes: ["Writing guide", "Essay planner pack", "Speaking prompt cards"],
+            shippingNote: "Ready to dispatch within 48h.",
+            tags: ["4th form", "writing", "BAC"],
+            images: [
+                "../assets/img/4thformwritingcover.png",
+                "../assets/img/4th form writing guide_3.png",
+                "../assets/img/4th form writing guide_4.png"
+            ]
+        }
+    ];
+
+    window.STORE_PRODUCTS = products;
+})();

@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detailed view of a LingoLand English learning resource with highlights, inclusions, and order options.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#00aca8">
+    <title>Product Details | LingoLand Store</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="shortcut icon" href="../assets/img/circle.png" type="image/x-icon">
+    
+    <style>
+        body {
+            background-color: #f8fafc;
+            color: #1f2937;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .product-main {
+            padding: 4rem 0 5rem;
+        }
+
+        .product-container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .product-breadcrumb {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 1.75rem;
+        }
+
+        .product-breadcrumb a {
+            color: #007f83;
+            font-weight: 600;
+        }
+
+        .product-content {
+            display: grid;
+            gap: 2rem;
+            background: #ffffff;
+            border-radius: 1.75rem;
+            border: 1px solid #e2e8f0;
+            padding: 2rem;
+            box-shadow: 0 30px 60px rgba(15, 118, 110, 0.08);
+        }
+
+        .product-gallery {
+            display: grid;
+            gap: 1.25rem;
+        }
+
+        .product-image-main {
+            position: relative;
+            border-radius: 1.5rem;
+            border: 1px solid #e0f2fe;
+            overflow: hidden;
+            background: #f1f5f9;
+        }
+
+        .product-image-main img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-image-main img:hover {
+            transform: scale(1.05);
+        }
+
+        .product-thumbnails {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .product-thumb {
+            border: 2px solid transparent;
+            border-radius: 1rem;
+            overflow: hidden;
+            cursor: pointer;
+            width: 88px;
+            height: 88px;
+            background: #f1f5f9;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .product-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-thumb:hover,
+        .product-thumb.active {
+            border-color: #00aca8;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 22px rgba(0, 172, 168, 0.18);
+        }
+
+        .product-details {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .product-grade {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.35rem 1rem;
+            border-radius: 9999px;
+            background: #ecfeff;
+            color: #007f83;
+            font-size: 0.75rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .product-name {
+            font-size: clamp(1.9rem, 3vw, 2.6rem);
+            font-weight: 800;
+            color: #0f3d3f;
+        }
+
+        .product-summary {
+            font-size: 1rem;
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        .product-price-row {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+        }
+
+        .product-price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #007f83;
+        }
+
+        .product-sku {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+
+        .product-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .product-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            background: #f0fdf4;
+            color: #027a48;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .product-highlights {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .product-highlights li {
+            display: flex;
+            gap: 0.65rem;
+            align-items: flex-start;
+            font-size: 0.95rem;
+            color: #334155;
+        }
+
+        .product-highlights span {
+            display: inline-block;
+            width: 0.6rem;
+            height: 0.6rem;
+            border-radius: 9999px;
+            background: #00aca8;
+            margin-top: 0.35rem;
+        }
+
+        .product-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        .product-add-btn {
+            border: none;
+            border-radius: 9999px;
+            background: linear-gradient(135deg, #00aca8, #0fb0e0);
+            color: #ffffff;
+            font-weight: 700;
+            padding: 0.85rem 2.2rem;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .product-add-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 18px 34px rgba(0, 172, 168, 0.25);
+        }
+
+        .product-checkout-link {
+            border-radius: 9999px;
+            border: 2px solid #00aca8;
+            padding: 0.8rem 2rem;
+            font-weight: 700;
+            color: #007f83;
+            transition: background-color 0.2s ease, color 0.2s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .product-checkout-link:hover {
+            background-color: #00aca8;
+            color: #ffffff;
+        }
+
+        .product-shipping {
+            font-size: 0.9rem;
+            color: #475569;
+        }
+
+        .product-includes {
+            border-top: 1px solid #e2e8f0;
+            padding-top: 1rem;
+        }
+
+        .product-includes h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #0f3d3f;
+            margin-bottom: 0.75rem;
+        }
+
+        .product-includes ul {
+            list-style: disc inside;
+            color: #475569;
+            display: grid;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .product-description-section {
+            margin-top: 2.5rem;
+            background: #ffffff;
+            border-radius: 1.75rem;
+            border: 1px solid #e2e8f0;
+            padding: 2rem;
+            box-shadow: 0 18px 36px rgba(15, 23, 42, 0.06);
+        }
+
+        .product-description-section h2 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #0f3d3f;
+            margin-bottom: 1rem;
+        }
+
+        .product-description-section p {
+            font-size: 1rem;
+            color: #475569;
+            line-height: 1.7;
+        }
+
+        .product-empty {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            background: #ffffff;
+            border: 1px solid #fee4e2;
+            border-radius: 1.5rem;
+            color: #b91c1c;
+            font-weight: 600;
+        }
+
+        .cart-trigger {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-radius: 9999px;
+            border: 2px solid #ffffff;
+            background: rgba(255, 255, 255, 0.18);
+            color: #ffffff;
+            padding: 0.5rem 1.2rem;
+            font-weight: 700;
+            transition: background 0.2s ease, transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .cart-trigger:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .cart-count-badge {
+            position: absolute;
+            top: -8px;
+            right: -10px;
+            min-width: 22px;
+            min-height: 22px;
+            border-radius: 9999px;
+            background: #ffb451;
+            color: #0f172a;
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cart-panel {
+            position: fixed;
+            inset: 0;
+            display: none;
+            z-index: 80;
+        }
+
+        .cart-panel.active {
+            display: block;
+        }
+
+        .cart-panel__backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.35);
+            backdrop-filter: blur(4px);
+        }
+
+        .cart-panel__body {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: min(420px, 100%);
+            background: #ffffff;
+            border-left: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            box-shadow: -30px 0 90px rgba(15, 23, 42, 0.15);
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .cart-panel.active .cart-panel__body {
+            transform: translateX(0);
+        }
+
+        .cart-panel__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.75rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .cart-panel__header h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f3d3f;
+        }
+
+        .cart-panel__eyebrow {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: #94a3b8;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .cart-close-btn {
+            border: 1px solid #d4d4d8;
+            border-radius: 9999px;
+            padding: 0.55rem;
+            background: #ffffff;
+            color: #64748b;
+            transition: background-color 0.2s ease, color 0.2s ease;
+            cursor: pointer;
+        }
+
+        .cart-close-btn:hover {
+            background: #f1f5f9;
+            color: #0f3d3f;
+        }
+
+        .cart-panel__items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .cart-panel__footer {
+            border-top: 1px solid #e2e8f0;
+            padding: 1.75rem;
+            background: #f8fafc;
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .cart-panel__subtotal {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.95rem;
+            color: #334155;
+        }
+
+        .cart-panel__subtotal span:last-child {
+            font-weight: 700;
+            color: #007f83;
+        }
+
+        .cart-panel__note {
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            border-radius: 9999px;
+            background: linear-gradient(135deg, #00aca8, #0fb0e0);
+            color: #ffffff;
+            font-weight: 700;
+            padding: 0.85rem;
+            border: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+        }
+
+        .checkout-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 18px 32px rgba(0, 172, 168, 0.25);
+        }
+
+        body.cart-open {
+            overflow: hidden;
+        }
+
+        @media (min-width: 1024px) {
+            .product-content {
+                grid-template-columns: 1.1fr 1fr;
+                align-items: start;
+            }
+
+            .product-gallery {
+                position: sticky;
+                top: 120px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .nav {
+                background: #ffffff;
+            }
+            .nav-list a {
+                color: #333;
+            }
+        }
+    </style>
+</head>
+<body>
+<header class="text-white flex items-center justify-between px-6 py-4 relative z-20">
+		<div class="flex items-center justify-between w-full max-w-6xl mx-auto hheader">
+			<a href="/index.html" class="flex-shrink-0" id="logo">
+				<img src="../assets/img/logo.png" alt="LingoLand Logo" class="w-24 h-auto">
+			</a>
+			<div class="flex items-center space-x-4">
+				<button class="menu-toggle block md:hidden text-3xl focus:outline-none z-30" aria-label="Toggle navigation">
+					<div class="space-y-2">
+						<span class="block w-8 h-1 bg-white"></span>
+						<span class="block w-8 h-1 bg-white"></span>
+						<span class="block w-8 h-1 bg-white"></span>
+					</div>
+				</button>
+				<nav class="nav hidden fixed inset-y-0 left-0 w-full transform -translate-x-full transition-transform duration-300 ease-in-out md:relative md:translate-x-0 md:flex md:items-center md:bg-transparent z-20">
+					<ul class="nav-list flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 w-full md:w-auto text-lg md:text-base">
+						<li><a href="/index.html" class="block px-6 py-3 nav-item transition">Home</a></li>
+						<li><a href="/Store/" class="block px-6 py-3 nav-item transition">Store</a></li>
+						<li><a href="/About/" class="block px-6 py-3 nav-item transition">About Us</a></li>
+						<li><a href="/Resources/" class="block px-6 py-3 nav-item transition">Resources</a></li>
+						<li><a href="/Contact/" class="block px-6 py-3 nav-item transition">Contact</a></li>
+					</ul>
+				</nav>
+				<button id="cart-toggle" class="cart-trigger">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="h-5 w-5">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l3-6H5.4M7 13l-2 4h12m-8 0a2 2 0 104 0M7 17a2 2 0 11-4 0" />
+					</svg>
+					<span>Cart</span>
+					<span id="cart-count" class="cart-count-badge">0</span>
+				</button>
+			</div>
+		</div>
+	</header>
+    <main class="product-main">
+        <div class="product-container">
+            <nav class="product-breadcrumb">
+                <a href="/Store/">Store</a>
+                <span>/</span>
+                <span id="product-breadcrumb-name">Product</span>
+            </nav>
+
+            <div id="product-empty" class="product-empty" style="display: none;">
+                We couldn't find that resource. Try browsing the <a href="/Store/" style="color:#007f83; font-weight:700;">catalogue</a> instead.
+            </div>
+
+            <section id="product-content" class="product-content" style="display: none;">
+                <div class="product-gallery">
+                    <div class="product-image-main">
+                        <img id="product-image-main" src="../assets/img/logo.png" alt="Product preview"
+                            onerror="this.onerror=null;this.src='../assets/img/logo.png';">
+                    </div>
+                    <div id="product-thumbnails" class="product-thumbnails"></div>
+                </div>
+
+                <div class="product-details">
+                    <span id="product-grade" class="product-grade">Grade</span>
+                    <h1 id="product-name" class="product-name">Product name</h1>
+                    <p id="product-summary" class="product-summary"></p>
+                    <div class="product-price-row">
+                        <span id="product-price" class="product-price">0 د.ت</span>
+                        <span id="product-sku" class="product-sku"></span>
+                    </div>
+                    <div id="product-tags" class="product-tags"></div>
+                    <ul id="product-highlights" class="product-highlights"></ul>
+                    <div class="product-actions">
+                        <button id="product-add-to-cart" class="product-add-btn">Add to cart</button>
+                        <a href="cart-checkout.html" class="product-checkout-link">Go to checkout</a>
+                    </div>
+                    <p id="product-shipping" class="product-shipping"></p>
+                    <div class="product-includes">
+                        <h3>What's inside</h3>
+                        <ul id="product-includes-list"></ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="product-description-section" class="product-description-section" style="display: none;">
+                <h2>Overview</h2>
+                <p id="product-description"></p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="">
+                <a href="#" class="logo" id="logo">
+                    <img src="../assets/img/logo.png" alt="LingoLand Logo" class="footer-logo-img">
+                </a>
+            </div>
+            <div class="footer-info">
+                <h2><b>Contact Us</b></h2>
+                <p>3005 Cité Ons, Sfax, Tunisia</p>
+                <p>Email: <a href="mailto:contact@lingo-land.net">contact@lingo-land.net</a></p>
+                <p>Phone: <a href="tel:+21622571291">+216 22 571 291</a></p>
+                <hr><br>
+                <b><p>Developed by: <a href="https://i-startup.tn/">I-StartUp®️</a></p></b>
+            </div>
+            <div class="footer-links">
+                <h2><b>Quick Links</b></h2>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/Store/">Store</a></li>
+                    <li><a href="/About/">About Us</a></li>
+                    <li><a href="/Resources/">Resources</a></li>
+                    <li><a href="/Contact/">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social-media">
+                <h2>Follow Us</h2>
+                <a href="https://www.facebook.com/profile.php?id=100094352086577" target="_blank" class="social-icon facebook" aria-label="Facebook"><img src="../assets/img/facebook.png" alt="Facebook"></a>
+                <a href="https://www.youtube.com/@LingoLandCoursebooks" target="_blank" class="social-icon twitter" aria-label="YouTube"><img src="../assets/img/youtube.png" alt="YouTube"></a>
+                <a href="https://www.instagram.com/lingoland_coursebooks/" target="_blank" class="social-icon instagram" aria-label="Instagram"><img src="../assets/img/innstagram.png" alt="Instagram"></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 LingoLand. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="cart-panel" class="cart-panel" aria-hidden="true">
+        <div class="cart-panel__backdrop" data-cart-close></div>
+        <aside class="cart-panel__body" role="dialog" aria-label="Shopping cart">
+            <div class="cart-panel__header">
+                <div>
+                    <p class="cart-panel__eyebrow">Your cart</p>
+                    <h3>Learning bundle</h3>
+                </div>
+                <button class="cart-close-btn" data-cart-close>
+                    <span class="sr-only">Close cart</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div id="cart-items" class="cart-panel__items"></div>
+            <div class="cart-panel__footer">
+                <div class="cart-panel__subtotal">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal">0 د.ت</span>
+                </div>
+                <p class="cart-panel__note">Shipping: 5 د.ت around Sfax, 9 د.ت nationwide.</p>
+                <button id="checkout-btn" class="checkout-btn">Proceed to checkout</button>
+            </div>
+        </aside>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="products-data.js"></script>
+    <script src="utils.js"></script>
+    <script src="cart.js"></script>
+    <script src="products.js"></script>
+    <script src="product-page.js"></script>
+    <script src="app.js"></script>
+    <script src="../scripts.js"></script>
+</body>
+</html>

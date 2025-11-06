@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Review your order, provide delivery details, and confirm checkout for LingoLand English resources.">
+    <meta name="robots" content="noindex, follow">
+    <meta name="theme-color" content="#00aca8">
+    <title>Cart & Checkout | LingoLand Store</title>
+    <link rel="shortcut icon" href="../assets/img/circle.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="loader.css">
+    <style>
+        body {
+            background-color: #f8fafc;
+            color: #1f2937;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .checkout-main {
+            padding: 4rem 0 5rem;
+        }
+
+        .checkout-container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            gap: 2rem;
+        }
+
+        .checkout-breadcrumb {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .checkout-breadcrumb a {
+            color: #007f83;
+            font-weight: 600;
+        }
+
+        .checkout-layout {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .checkout-summary,
+        .checkout-form-card {
+            background: #ffffff;
+            border-radius: 1.75rem;
+            border: 1px solid #e2e8f0;
+            padding: 2rem;
+            box-shadow: 0 24px 50px rgba(15, 118, 110, 0.08);
+        }
+
+        .checkout-summary h2,
+        .checkout-form-card h2 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #0f3d3f;
+            margin-bottom: 1rem;
+        }
+
+        .checkout-cart-items {
+            display: grid;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .checkout-item {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 1rem;
+            align-items: center;
+            border: 1px solid #e2e8f0;
+            border-radius: 1.25rem;
+            padding: 1rem;
+            background: #f8fafc;
+        }
+
+        .checkout-item img {
+            width: 64px;
+            height: 64px;
+            object-fit: cover;
+            border-radius: 1rem;
+            border: 1px solid #e2e8f0;
+            background: #f1f5f9;
+        }
+
+        .checkout-item h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #0f3d3f;
+            margin-bottom: 0.25rem;
+        }
+
+        .checkout-item p {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .checkout-item span {
+            font-weight: 700;
+            color: #007f83;
+        }
+
+        .checkout-line {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.95rem;
+            color: #334155;
+            margin-bottom: 0.4rem;
+        }
+
+        .checkout-total {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #0f3d3f;
+            margin-top: 0.75rem;
+        }
+
+        .checkout-note {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 0.75rem;
+        }
+
+        .checkout-form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .checkout-field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .checkout-field label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: #64748b;
+        }
+
+        .checkout-input,
+        .checkout-select,
+        .checkout-textarea {
+            border: 1px solid #cbd5f5;
+            border-radius: 1rem;
+            padding: 0.75rem 1rem;
+            font-size: 0.95rem;
+            color: #1f2937;
+            background: #f8fafc;
+        }
+
+        .checkout-input:focus,
+        .checkout-select:focus,
+        .checkout-textarea:focus {
+            outline: 2px solid #00aca8;
+            border-color: #00aca8;
+        }
+
+        .checkout-submit {
+            border: none;
+            border-radius: 9999px;
+            background: linear-gradient(135deg, #00aca8, #0fb0e0);
+            color: #ffffff;
+            font-weight: 700;
+            padding: 0.95rem 2.5rem;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .checkout-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 36px rgba(0, 172, 168, 0.25);
+        }
+
+        .checkout-submit[disabled] {
+            opacity: 0.6;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+        }
+
+        .checkout-empty {
+            text-align: center;
+            padding: 2rem 1rem;
+            border: 1px dashed #e2e8f0;
+            border-radius: 1.5rem;
+            color: #0f3d3f;
+            font-weight: 600;
+            background: #f8fafc;
+        }
+
+        .cart-trigger {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-radius: 9999px;
+            border: 2px solid #ffffff;
+            background: rgba(255, 255, 255, 0.18);
+            color: #ffffff;
+            padding: 0.5rem 1.2rem;
+            font-weight: 700;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .cart-trigger:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .cart-count-badge {
+            position: absolute;
+            top: -8px;
+            right: -10px;
+            min-width: 22px;
+            min-height: 22px;
+            border-radius: 9999px;
+            background: #ffb451;
+            color: #0f172a;
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cart-panel {
+            position: fixed;
+            inset: 0;
+            display: none;
+            z-index: 80;
+        }
+
+        .cart-panel.active {
+            display: block;
+        }
+
+        .cart-panel__backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.35);
+            backdrop-filter: blur(4px);
+        }
+
+        .cart-panel__body {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: min(420px, 100%);
+            background: #ffffff;
+            border-left: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            box-shadow: -30px 0 90px rgba(15, 23, 42, 0.15);
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .cart-panel.active .cart-panel__body {
+            transform: translateX(0);
+        }
+
+        .cart-panel__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.75rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .cart-panel__header h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f3d3f;
+        }
+
+        .cart-panel__eyebrow {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: #94a3b8;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .cart-close-btn {
+            border: 1px solid #d4d4d8;
+            border-radius: 9999px;
+            padding: 0.55rem;
+            background: #ffffff;
+            color: #64748b;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .cart-close-btn:hover {
+            background: #f1f5f9;
+            color: #0f3d3f;
+        }
+
+        .cart-panel__items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .cart-panel__items::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .cart-panel__items::-webkit-scrollbar-thumb {
+            background: rgba(148, 163, 184, 0.4);
+            border-radius: 999px;
+        }
+
+        .cart-panel__footer {
+            border-top: 1px solid #e2e8f0;
+            padding: 1.75rem;
+            background: #f8fafc;
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .cart-panel__subtotal {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.95rem;
+            color: #334155;
+        }
+
+        .cart-panel__subtotal span:last-child {
+            font-weight: 700;
+            color: #007f83;
+        }
+
+        .cart-panel__note {
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+
+        .quantity-chip {
+            width: 32px;
+            height: 32px;
+            border-radius: 9999px;
+            border: 1px solid #cbd5f5;
+            background: #f1f5f9;
+            color: #0f3d3f;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            transition: all 0.2s ease;
+        }
+
+        .quantity-chip:hover {
+            background: #00aca8;
+            border-color: #009189;
+            color: #ffffff;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            border-radius: 9999px;
+            background: linear-gradient(135deg, #00aca8, #0fb0e0);
+            color: #ffffff;
+            font-weight: 700;
+            padding: 0.85rem;
+            border: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .checkout-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 18px 32px rgba(0, 172, 168, 0.25);
+        }
+
+        body.cart-open {
+            overflow: hidden;
+        }
+
+        @media (min-width: 1024px) {
+            .checkout-layout {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .checkout-loading {
+            display: none; /* Start hidden */
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+            flex-direction: column;
+            gap: 2rem;
+            grid-column: 1 / -1; /* Make it span both columns on desktop */
+        }
+
+        .checkout-loading.flex {
+            display: flex;
+        }
+
+        .checkout-loading.hidden {
+            display: none;
+        }
+
+        /* Make sure the truck loader has the right color */
+        .truck-loader {
+            color: #00aca8;
+            width: 120px;
+            height: 60px;
+        }
+
+        .loading-text {
+            color: #00aca8;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        .success-message {
+            animation: fadeIn 0.5s ease-in forwards;
+            padding: 2rem;
+        }
+
+        .success-content {
+            background: rgba(255, 255, 255, 0.9);
+            font-size: large;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* On mobile, ensure proper layout */
+        @media (max-width: 1023px) {
+            .checkout-loading {
+                grid-column: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="text-white flex items-center justify-between px-6 py-4 relative z-20" style="background-color: #02c9c2 !important;">
+        <div class="flex items-center justify-between w-full max-w-6xl mx-auto hheader">
+            <a href="/index.html" class="flex-shrink-0" id="logo">
+                <img src="../assets/img/logo.png" alt="LingoLand Logo" class="w-24 h-auto">
+            </a>
+            <div class="flex items-center space-x-4">
+                <button class="menu-toggle block md:hidden text-3xl focus:outline-none z-30" aria-label="Toggle navigation">
+                    <div class="space-y-2">
+                        <span class="block w-8 h-1 bg-white"></span>
+                        <span class="block w-8 h-1 bg-white"></span>
+                        <span class="block w-8 h-1 bg-white"></span>
+                    </div>
+                </button>
+                <nav class="nav hidden fixed inset-y-0 left-0 w-full transform -translate-x-full transition-transform duration-300 ease-in-out md:relative md:translate-x-0 md:flex md:items-center md:bg-transparent z-20 bg-gray-400">
+                    <ul class="nav-list flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 w-full md:w-auto text-lg md:text-base">
+                        <li><a href="/index.html" class="block px-6 py-3 nav-item transition">Home</a></li>
+                        <li><a href="/Store/" class="block px-6 py-3 nav-item transition">Store</a></li>
+                        <li><a href="/About/" class="block px-6 py-3 nav-item transition">About Us</a></li>
+                        <li><a href="/Resources/" class="block px-6 py-3 nav-item transition">Resources</a></li>
+                        <li><a href="/Contact/" class="block px-6 py-3 nav-item transition">Contact</a></li>
+                    </ul>
+                </nav>
+                <button id="cart-toggle" class="cart-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="h-5 w-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l3-6H5.4M7 13l-2 4h12m-8 0a2 2 0 104 0M7 17a2 2 0 11-4 0" />
+                    </svg>
+                    <span>Cart</span>
+                    <span id="cart-count" class="cart-count-badge">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="checkout-main">
+        <div class="checkout-container">
+            <nav class="checkout-breadcrumb">
+                <a href="/Store/">Store</a>
+                <span>/</span>
+                <span>Cart & Checkout</span>
+            </nav>
+
+            <div class="checkout-layout">
+                <div class="checkout-loading hidden">
+                    <span class="loader"></span>
+                    <p class="loading-text">Processing your order...</p>
+                </div>
+                <section class="checkout-summary">
+                    <h2>Order summary</h2>
+                    <div id="checkout-cart-items" class="checkout-cart-items"></div>
+                    <div class="checkout-line">
+                        <span>Subtotal</span>
+                        <span id="checkout-subtotal">0 د.ت</span>
+                    </div>
+                    <div class="checkout-line">
+                        <span>Estimated shipping</span>
+                        <span>5-9 د.ت</span>
+                    </div>
+                    <div class="checkout-line checkout-total">
+                        <span>Total due at delivery</span>
+                        <span id="checkout-total">0 د.ت</span>
+                    </div>
+                    <p class="checkout-note">Shipping and delivery are confirmed by phone within 24 hours. Cash-on-delivery available nationwide.</p>
+                </section>
+
+                <section class="checkout-form-card">
+                    <h2>Delivery details</h2>
+                    <form id="checkout-form" class="checkout-form">
+                        <div class="checkout-field">
+                            <label for="checkout-name">Full name</label>
+                            <input id="checkout-name" name="name" type="text" class="checkout-input" placeholder="Your full name" required>
+                        </div>
+                        <div class="checkout-field">
+                            <label for="checkout-email">Email</label>
+                            <input id="checkout-email" name="email" type="email" class="checkout-input" placeholder="you@example.com" required>
+                        </div>
+                        <div class="checkout-field">
+                            <label for="checkout-phone">Phone</label>
+                            <input id="checkout-phone" name="phone" type="tel" class="checkout-input" placeholder="(+216) xx xxx xxx" required>
+                        </div>
+                        <div class="checkout-field">
+                            <label for="checkout-country">Governorate</label>
+                            <select id="checkout-country" name="country" class="checkout-select" required>
+                                <option value="">Select</option>
+                                <option value="Tunis">Tunis</option>
+                                <option value="Ariana">Ariana</option>
+                                <option value="Ben Arous">Ben Arous</option>
+                                <option value="Manouba">Manouba</option>
+                                <option value="Bizerte">Bizerte</option>
+                                <option value="Nabeul">Nabeul</option>
+                                <option value="Zaghouan">Zaghouan</option>
+                                <option value="Beja">Beja</option>
+                                <option value="Jendouba">Jendouba</option>
+                                <option value="Kef">Kef</option>
+                                <option value="Siliana">Siliana</option>
+                                <option value="Kasserine">Kasserine</option>
+                                <option value="Sidi Bouzid">Sidi Bouzid</option>
+                                <option value="Sousse">Sousse</option>
+                                <option value="Monastir">Monastir</option>
+                                <option value="Mahdia">Mahdia</option>
+                                <option value="Sfax">Sfax</option>
+                                <option value="Gabes">Gabes</option>
+                                <option value="Mednine">Mednine</option>
+                                <option value="Tozeur">Tozeur</option>
+                                <option value="Kebili">Kebili</option>
+                                <option value="Gafsa">Gafsa</option>
+                                <option value="Tataouine">Tataouine</option>
+                                <option value="Kairouan">Kairouan</option>
+                            </select>
+                        </div>
+                        <div class="checkout-field">
+                            <label for="checkout-address">Delivery address</label>
+                            <textarea id="checkout-address" name="personaladdress" rows="4" class="checkout-textarea" placeholder="Street, city, landmarks" required></textarea>
+                        </div>
+                        <div class="checkout-field">
+                            <label for="checkout-notes">Notes (optional)</label>
+                            <textarea id="checkout-notes" name="notes" rows="3" class="checkout-textarea" placeholder="Anything we should know?"></textarea>
+                        </div>
+                        <button id="checkout-submit" class="checkout-submit" type="submit">Confirm order</button>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="">
+                <a href="#" class="logo" id="logo">
+                    <img src="../assets/img/logo.png" alt="LingoLand Logo" class="footer-logo-img">
+                </a>
+            </div>
+            <div class="footer-info">
+                <h2><b>Contact Us</b></h2>
+                <p>3005 Cité Ons, Sfax, Tunisia</p>
+                <p>Email: <a href="mailto:contact@lingo-land.net">contact@lingo-land.net</a></p>
+                <p>Phone: <a href="tel:+21622571291">+216 22 571 291</a></p>
+                <hr><br>
+                <b><p>Developed by: <a href="https://i-startup.tn/">I-StartUp®️</a></p></b>
+            </div>
+            <div class="footer-links">
+                <h2><b>Quick Links</b></h2>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/Store/">Store</a></li>
+                    <li><a href="/About/">About Us</a></li>
+                    <li><a href="/Resources/">Resources</a></li>
+                    <li><a href="/Contact/">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social-media">
+                <h2>Follow Us</h2>
+                <a href="https://www.facebook.com/profile.php?id=100094352086577" target="_blank" class="social-icon facebook" aria-label="Facebook"><img src="../assets/img/facebook.png" alt=""></a>
+                <a href="https://www.youtube.com/@LingoLandCoursebooks" target="_blank" class="social-icon twitter" aria-label="YouTube"><img src="../assets/img/youtube.png" alt=""></a>
+                <a href="https://www.instagram.com/lingoland_coursebooks/" target="_blank" class="social-icon instagram" aria-label="Instagram"><img src="../assets/img/innstagram.png" alt=""></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 LingoLand. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="cart-panel" class="cart-panel" aria-hidden="true">
+        <div class="cart-panel__backdrop" data-cart-close></div>
+        <aside class="cart-panel__body" role="dialog" aria-label="Shopping cart">
+            <div class="cart-panel__header">
+                <div>
+                    <p class="cart-panel__eyebrow">Your cart</p>
+                    <h3>Learning bundle</h3>
+                </div>
+                <button class="cart-close-btn" data-cart-close>
+                    <span class="sr-only">Close cart</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div id="cart-items" class="cart-panel__items"></div>
+            <div class="cart-panel__footer">
+                <div class="cart-panel__subtotal">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal">0 د.ت</span>
+                </div>
+                <p class="cart-panel__note">Shipping: 5 د.ت around Sfax, 9 د.ت nationwide.</p>
+                <button id="checkout-btn" class="checkout-btn">Proceed to checkout</button>
+            </div>
+        </aside>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="products-data.js"></script>
+    <script src="utils.js"></script>
+    <script src="products.js"></script>
+    <script src="cart.js"></script>
+    <script src="app.js"></script>
+    <script src="cart-checkout.js"></script>
+    <script src="../scripts.js"></script>
+</body>
+</html>

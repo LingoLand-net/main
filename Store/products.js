@@ -1,309 +1,195 @@
-const ProductManager = {
-    products: [
-        // Forth Grade
-        {
-            id: "4",
-            name: "4th Grade Book",
-            price: "35",
-            grade: "4",
-            images: [
-                "/assets/img/5.png",
-                "https://i.postimg.cc/QNgKnJYc/4th-grade-book-final-merge-34.png",
-                "https://i.postimg.cc/28zLpLgM/4th-grade-book-final-merge-65.png",
-                "https://i.postimg.cc/T1cyLT5t/4th-grade-book-final-merge-92.png"
-            ]
-        },
-        
-        // Fifth Grade
-        {
-            id: "5",
-            name: "5th Grade Book",
-            price: "35",
-            grade: "5",
-            images: [
-                "/assets/img/1.png",
-                "https://i.postimg.cc/SND2mNhs/5th-grade-final-book-merge-16.png",
-                "https://i.postimg.cc/6pq7qJWh/5th-grade-final-book-merge-26.png",
-                "https://i.postimg.cc/Cx2RfPdp/5th-grade-final-book-merge-82.png"
-            ]
-        },
-        
-        // Sixth Grade
-        {
-            id: "2",
-            name: "6th Grade Book",
-            price: "35",
-            grade: "6",
-            images: [
-                "/assets/img/14.png",
-                "https://i.postimg.cc/5yfyMDKL/6th-grade-final-book-merge-103.png",
-                "https://i.postimg.cc/85QsZ7hy/6th-grade-final-book-merge-124.png",
-                "https://i.postimg.cc/LXt5wmDm/6th-grade-final-book-merge-80.png"
-            ]
-        },
-        {
-            id: "3",
-            name: "Writing Guide",
-            price: "30",
-            grade: "6",
-            images: [
-                "/assets/img/6thwritingguidcover.png",
-                "/assets/img/6th grade writing guide_6.png",
-                "/assets/img/6th grade writing guide_3.png",
-                "/assets/img/6th grade writing guide_4.png"
-            ]
-        },
-        {
-            id: "6",
-            name: "6th Grade Box",
-            price: "60",
-            grade: "6",
-            contains: ["Notebooks", "Storyboards", "Stickers", "Project Files"],
-            description: "Complete learning package for 6th grade students",
-            images: [
-                "/assets/img/box.png",
-                "/assets/img/boxbox.png",
-                "/assets/img/pp.png",
-                "/assets/img/ww.png",
-                "/assets/img/ff.png",
-            ]
-        },
-        {
-            id: "8",
-            name: "Words&wonders Note Book",
-            price: "20",
-            grade: "6",
-            contains: ["Note Book", "Workbook"],
-            images: [
-                "https://i.postimg.cc/Qt3xpR3w/Words-and-wonders-cover-1.png",
-                "/assets/img/wordsandwonder.png",
-                "/assets/img/ww.png",
-            ]
-        },
-        {
-            id: "7",
-            name: "Fun&Focus Note Book",
-            price: "20",
-            grade: "6",
-            contains: ["Note Book", "Workbook"],
-            images: [
-                "https://i.postimg.cc/6p83wrcj/Fun-and-focus-cover-1.png",
-                "/assets/img/funandfoucus.png",
-                "/assets/img/ff.png",
-            ]
-        },
-        // Ninth Grade
-        {
-            id: "3",
-            name: "9th Grade Book",
-            price: "40",
-            grade: "9",
-            images: [
-                "/assets/img/16.png",
-                "/assets/img/9-1.png",
-                "/assets/img/9-2.png",
-                "/assets/img/9-3.png",
-            ]
-        },        
-        {
-            id: "3",
-            name: "Writing Guide",
-            price: "35",
-            grade: "9",
-            images: [
-                "/assets/img/9thwritingguidcover.png",
-                "/assets/img/9th grade writing guide_6.png",
-                "/assets/img/9th grade writing guide_3.png",
-                "/assets/img/9th grade writing guide_4.png"
-            ]
-        },
-        
-        // Forth Form
-        {
-            id: "1",
-            name: "4th Form Book",
-            price: "40",
-            grade: "4th-form",
-            images: [
-                "/assets/img/cover.png",
-                "/assets/img/Bac Class Book FINAL with numbers_4.png",
-                "/assets/img/Bac Class Book FINAL with numbers_10.png",
-                "/assets/img/Bac Class Book FINAL with numbers_91.png"
-            ]
-        },
-        {
-            id: "10",
-            name: "Writing Guide",
-            price: "35",
-            grade: "4th-form",
-            images: [
-                "/assets/img/4thformwritingcover.png",
-                "/assets/img/4th form writing guide_3.png",
-                "/assets/img/4th form writing guide_4.png",
-                "/assets/img/4th form writing guide_6.png"
-            ]
-        }
-    ],
+class ProductCatalog {
+    constructor(cart) {
+        this.cart = cart;
+        this.products = (Array.isArray(window.STORE_PRODUCTS) ? window.STORE_PRODUCTS : []).map((product) => ({
+            ...product,
+            image: product.images?.[0] ?? '../assets/img/logo.png'
+        }));
+        this.filteredProducts = [...this.products];
+        this.activeFilter = 'all';
+        this.searchTerm = '';
+        this.dom = {
+            grid: null,
+            filters: [],
+            searchInput: null,
+            scrollButton: null
+        };
+    }
 
-    // Rest of the ProductManager code remains the same
     init() {
-        this.setupEventListeners();
-        this.renderProducts("4"); // Default to 4th grade
-    },
+        this.cacheDom();
+        this.bindEvents();
+        this.renderProducts();
+    }
 
-    setupEventListeners() {
-        // Event listener to switch between tabs and update displayed products
-        document.querySelectorAll('.tab').forEach(tab => {
-            tab.addEventListener('click', (e) => {
-                // Remove active class from all tabs
-                document.querySelectorAll('.tab').forEach(t => 
-                    t.classList.remove('active-tab'));
-                
-                // Add active class to clicked tab
-                e.target.classList.add('active-tab');
-                
-                const grade = tab.getAttribute('data-grade');
-                this.renderProducts(grade);
+    cacheDom() {
+        this.dom.grid = document.getElementById('products-grid');
+        this.dom.filters = Array.from(document.querySelectorAll('[data-filter]'));
+        this.dom.searchInput = document.getElementById('search-input');
+        this.dom.scrollButton = document.getElementById('scroll-to-products');
+    }
+
+    bindEvents() {
+        if (this.dom.scrollButton) {
+            this.dom.scrollButton.addEventListener('click', () => {
+                document.getElementById('catalog')?.scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+
+        if (this.dom.searchInput) {
+            const handler = Utils.debounce((event) => {
+                this.searchTerm = event.target.value.trim().toLowerCase();
+                this.renderProducts();
+            }, 220);
+            this.dom.searchInput.addEventListener('input', handler);
+        }
+
+        this.dom.filters.forEach((button) => {
+            button.addEventListener('click', () => {
+                this.setActiveFilter(button.dataset.filter);
             });
         });
 
-        // Event delegation for handling clicks on "View Contents" and "Add to Cart"
-        document.querySelector('.products-container').addEventListener('click', (e) => {
-            if (e.target.classList.contains('show-contents')) {
-                const id = e.target.getAttribute('data-id');
-                this.showBoxContents(id);
-            }
-        });
-    },
+        this.dom.grid?.addEventListener('click', (event) => {
+            const actionButton = event.target.closest('[data-action]');
+            if (!actionButton) return;
 
-    renderProducts(grade) {
-        const container = document.querySelector('.products-container');
-        
-        // Filter products by the selected grade and generate HTML for each product
-        container.innerHTML = this.products
-            .filter(product => product.grade === grade)
-            .map(product => `
-                <div class="product-card border rounded-lg shadow-md" data-product-id="${product.id}">
-                    <div class="product-carousel">
-                        ${product.images.map(image => `
-                            <div>
-                                <img src="${image}" alt="${product.name}" >
-                            </div>
-                        `).join('')}
-                    </div>
-                    <h2 class="text-xl font-bold mt-4 mb-2">${product.name}</h2>
-                    <p class="price flex items-center gap-1 text-lg font-semibold">
-                        ${product.price} د.ت
-                    </p>
-                    <div class="flex flex-col sm:flex-row items-center gap-2 mt-3 w-full">
-                        <button class="add-to-cart w-full text-white font-medium px-6 py-2 rounded-md transition duration-200">
-                            Add to Cart
-                        </button>
-                        ${product.contains ? 
-                            `<button class="show-contents w-full hover:text-gray-800 font-medium px-6 py-2 rounded-md transition duration-200" data-id="${product.id}">
-                                View Contents
-                            </button>` 
-                            : ""}
+            const productId = actionButton.dataset.id;
+            const product = this.getProductById(productId);
+            if (!product) return;
+
+            if (actionButton.dataset.action === 'add') {
+                this.cart.addItem({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    grade: product.grade,
+                    image: product.image
+                });
+            }
+
+        });
+    }
+
+    setActiveFilter(filterValue) {
+        this.activeFilter = filterValue;
+        this.dom.filters.forEach((button) => {
+            button.classList.toggle('active', button.dataset.filter === filterValue);
+        });
+        this.renderProducts();
+    }
+
+    renderProducts() {
+        if (!this.dom.grid) return;
+
+        const products = this.getFilteredProducts();
+        if (!products.length) {
+            this.dom.grid.innerHTML = this.renderEmptyState();
+            return;
+        }
+
+        this.dom.grid.innerHTML = products.map((product) => this.renderCard(product)).join('');
+    }
+
+    renderCard(product) {
+        const thumbnail = product.image;
+        const badgeCopy = this.buildPrimaryBadge(product);
+        const features = (product.highlights || []).slice(0, 3);
+        return `
+            <article class="product-card group flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+                <div class="relative mb-5 overflow-hidden rounded-2xl border border-slate-100 bg-slate-50">
+                    <img src="${thumbnail}"
+                        alt="${product.name}"
+                        class="aspect-[4/5] w-full object-cover transition duration-500 ease-out group-hover:scale-105"
+                        onerror="this.onerror=null;this.src='../assets/img/logo.png';">
+                    <div class="absolute left-4 top-4 flex flex-wrap gap-2">
+                        ${badgeCopy}
                     </div>
                 </div>
-            `).join('');
-
-        // Initialize the Slick carousel for product images
-        document.querySelectorAll('.product-carousel').forEach(carousel => {
-            $(carousel).slick({
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                dots: true,
-                infinite: true,
-                autoplay: true,
-                autoplaySpeed: 3000,
-                pauseOnHover: true,
-                adaptiveHeight: true
-            });
-        });
-    },
-
-    showBoxContents(id) {
-        const product = this.products.find(p => p.id === id);
-        if (product && product.contains) {
-            this.previousModal = { // Save current modal data to reopen later
-                title: `${product.name}`,
-                html: `
-                    <div class="box-contents-modal">
-                        <div class="content-section">
-                            <h3 class="text-xl font-semibold mb-4 text-gray-800">Contents:</h3>
-                            <ul class="list-none space-y-2 mb-6">
-                                ${product.contains.map(item => `
-                                    <center>
-                                    <li class="flex items-center">
-                                        <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                        </svg>
-                                        <span class="text-gray-700">${item}</span>
-                                    </li>
-                                    </center>
-                                `).join('')}
-                            </ul>
-                            ${product.description ? `<p class="text-gray-600 mb-4">${product.description}</p>` : ''}
-                        </div>
-                        <div class="preview-section mt-6">
-                            <h3 class="text-xl font-semibold mb-4 text-gray-800">Pictures:</h3>
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                ${product.images.map(image => `
-                                    <img src="${image}" 
-                                         alt="Preview" 
-                                         class="w-full h-32 object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 cursor-pointer"
-                                         onclick="ProductManager.previewImage('${image}', '${product.name}')"
-                                    >
-                                `).join('')}
-                            </div>
-                        </div>
+                <div class="flex flex-1 flex-col">
+                    <div class="space-y-2">
+                        <h3 class="text-lg font-semibold text-slate-900">${product.name}</h3>
+                        <p class="text-sm text-slate-600">${product.summary}</p>
                     </div>
-                `,
-                width: 600,
-                padding: '2rem',
-                background: '#ffffff',
-                showConfirmButton: false,
-                showCloseButton: true,
-                customClass: {
-                    container: 'box-contents-container',
-                    popup: 'box-contents-popup',
-                    closeButton: 'box-contents-close'
-                }
-            };
-
-            this.openModal(this.previousModal); // Open the box contents modal
-        }
-    },
-
-    openModal(options, reopenData = null) {
-        Swal.fire({
-            ...options,
-            didClose: () => {
-                if (reopenData) {
-                    this.openModal(reopenData); // Reopen the previous modal if available
-                }
-            }
-        });
-    },
-
-    previewImage(imageUrl, productName) {
-        this.openModal({
-            title: `Preview ${productName} Item`,
-            imageUrl: imageUrl,
-            imageAlt: productName,
-            width: 'max-25',
-            background: '#fff',
-            showCloseButton: true,
-            closeButtonAriaLabel: 'Close preview',
-            closeButtonColor: '#f00', // Red close button
-            showConfirmButton: false,
-            padding: '1rem'
-        }, this.previousModal); // Reopen the previous modal after closing
+<div class="mt-4 flex items-center justify-between bg-white rounded-lg p-3 border border-slate-200">
+    <span class="text-xl font-bold text-teal-600">
+        ${typeof Utils !== 'undefined' && typeof Utils.formatPrice === 'function' ? Utils.formatPrice(product.price ?? 0) : (product.price ?? '')}
+    </span>
+    <span class="text-xs font-bold uppercase tracking-widest text-slate-600 border border-slate-300 px-2 py-1 rounded">
+        ${product.gradeLabel ?? ''}
+    </span>
+</div>
+                    <ul class="mt-4 space-y-2 text-xs text-slate-600">
+                        ${features.map((feature) => `<li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-teal-400"></span>${feature}</li>`).join('')}
+                    </ul>
+                    <div class="mt-6 flex flex-col gap-3">
+                        <button class="rounded-full bg-teal-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-teal-600"
+                            data-action="add"
+                            data-id="${product.id}">
+                            Add to cart
+                        </button>
+                        <a class="inline-flex items-center justify-center rounded-full border border-teal-500 px-4 py-2.5 text-sm font-semibold text-teal-600 transition hover:bg-teal-50"
+                            href="product.html?id=${product.id}">
+                            View details
+                        </a>
+                    </div>
+                </div>
+            </article>
+        `;
     }
-};
 
-// Initialize product manager when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    ProductManager.init();
-});
+    renderEmptyState() {
+        return `
+            <div class="empty-state col-span-full">
+                <div class="mb-3 flex justify-center">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-full bg-teal-50 text-teal-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 3h2l.4 2m0 0H21l-2.18 8.73a2 2 0 01-1.94 1.52H8.12m-2.72-12L4 7m4.12 8.25a2 2 0 102.76 2.76m7.24-5.01a2 2 0 102.76 2.76" />
+                        </svg>
+                    </div>
+                </div>
+                <h4 class="text-lg font-semibold text-slate-900">No resources match your search.</h4>
+                <p class="mt-2 text-sm text-slate-600">Try another keyword or reset the grade filter to see the full collection.</p>
+            </div>
+        `;
+    }
+
+    buildPrimaryBadge(product) {
+        const gradeBadge = `<span class="inline-flex items-center rounded-full bg-teal-500/15 px-3 py-1 text-xs font-semibold text-teal-600">Grade <span class="ml-1">${product.gradeLabel}</span></span>`;
+        const typeBadge = product.type === 'bundle'
+            ? '<span class="inline-flex items-center rounded-full bg-amber-500/15 px-3 py-1 text-xs font-semibold text-amber-600">Bundle</span>'
+            : '';
+        const bestsellerBadge = product.bestseller
+            ? '<span class="inline-flex items-center rounded-full bg-rose-500/15 px-3 py-1 text-xs font-semibold text-rose-600">Teacher pick</span>'
+            : '';
+        return [gradeBadge, typeBadge, bestsellerBadge].filter(Boolean).join('');
+    }
+
+    getFilteredProducts() {
+        const keyword = this.searchTerm;
+        return this.products.filter((product) => {
+            const matchesFilter = this.activeFilter === 'all'
+                ? true
+                : this.activeFilter === 'bundle'
+                    ? product.type === 'bundle'
+                    : product.grade === this.activeFilter;
+
+            const haystack = [
+                product.name,
+                product.summary,
+                ...(product.tags || []),
+                ...(product.highlights || [])
+            ].join(' ').toLowerCase();
+
+            const matchesSearch = keyword ? haystack.includes(keyword) : true;
+
+            return matchesFilter && matchesSearch;
+        });
+    }
+
+    getProductById(id) {
+        return this.products.find((product) => product.id === id);
+    }
+}
+
+window.ProductCatalog = ProductCatalog;
