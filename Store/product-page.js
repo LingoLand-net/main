@@ -16,7 +16,9 @@
         includes: document.getElementById('product-includes-list'),
         description: document.getElementById('product-description'),
         shipping: document.getElementById('product-shipping'),
-        addToCart: document.getElementById('product-add-to-cart')
+        addToCart: document.getElementById('product-add-to-cart'),
+        resourcesSection: document.getElementById('product-resources-section'),
+        resourcesList: document.getElementById('product-resources-list')
     };
 
     let activeProduct = null;
@@ -119,6 +121,35 @@
         });
     }
 
+    function renderResources(resources) {
+        const section = selectors.resourcesSection;
+        const list = selectors.resourcesList;
+        if (!section || !list) return;
+
+        if (!Array.isArray(resources) || !resources.length) {
+            section.style.display = 'none';
+            list.innerHTML = '';
+            return;
+        }
+
+        section.style.display = '';
+        list.innerHTML = resources
+            .filter((resource) => resource && typeof resource === 'object')
+            .map((resource) => {
+                const label = resource.label || 'Resource link';
+                const url = resource.url || '#';
+                const targetAttrs = url.startsWith('#') ? '' : ' target="_blank" rel="noopener"';
+                return `
+                    <li>
+                        <a class="product-resource-link" href="${url}"${targetAttrs}>
+                            ${label}
+                        </a>
+                    </li>
+                `;
+            })
+            .join('');
+    }
+
     function showProduct(product) {
         // Hide empty state and show content
         if (selectors.emptyState) selectors.emptyState.style.display = 'none';
@@ -148,12 +179,14 @@
         renderHighlights(product.highlights);
         renderIncludes(product.includes);
         renderTags(product.tags);
+        renderResources(product.resources);
     }
 
     function showNotFound() {
         if (selectors.emptyState) selectors.emptyState.style.display = '';
         if (selectors.contentSection) selectors.contentSection.style.display = 'none';
         if (selectors.descriptionSection) selectors.descriptionSection.style.display = 'none';
+        renderResources([]);
     }
 
     function handleAddToCart() {

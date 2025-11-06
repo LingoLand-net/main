@@ -1,5 +1,4 @@
-(function () {
-    const products = [
+products: [
         {
             id: "grade4-student-book",
             sku: "LL-G4-SB",
@@ -19,11 +18,6 @@
             shippingNote: "Ready to ship within 48 hours.",
             bestseller: true,
             tags: ["grade 4", "student book", "audio"],
-            resources: [
-                { label: "Audio playlist", url: "https://youtube.com/playlist?list=PLNCxjpGjFhX12Y6TAWceUKZR70fijOQxW&si=WTv_WGlQdjo3c0WL" },
-                { label: "4th grade key", url: "/assets/img/4th Grade - Key.pdf" },
-                { label: "4th grade | Listening scripts", url: "/assets/img/4th grade - Listening scripts.pdf" }
-            ],
             images: [
                 "../assets/img/5.png",
                 "https://i.postimg.cc/QNgKnJYc/4th-grade-book-final-merge-34.png",
@@ -48,11 +42,6 @@
             includes: ["Student book", "Teacher-ready answer key", "Printable flashcards"],
             shippingNote: "Delivery in Sfax within 24h.",
             tags: ["grade 5", "textbook", "teacher support"],
-            resources: [
-                { label: "Audio playlist", url: "https://youtube.com/playlist?list=PLNCxjpGjFhX2f6FVCH9gpteycqvPv5a0t&si=cPXBfM1e5TdTn3iq" },
-                { label: "5th grade key", url: "/assets/img/5th grade key new.pdf" },
-                { label: "5th grade | Listening scripts", url: "/assets/img/5th grade - Listening scripts.pdf" }
-            ],
             images: [
                 "../assets/img/1.png",
                 "https://i.postimg.cc/SND2mNhs/5th-grade-final-book-merge-16.png",
@@ -78,12 +67,6 @@
             shippingNote: "Ships nationwide within 72h.",
             bestseller: true,
             tags: ["grade 6", "project based", "assessment"],
-            resources: [
-                { label: "Audio playlist", url: "https://www.youtube.com/playlist?list=PLNCxjpGjFhX1vK0-aMdMJobcvabMR8hRb" },
-                { label: "6th grade key", url: "/assets/img/6th grade Key new.pdf" },
-                { label: "6th grade | Listening scripts", url: "/assets/img/6th grade - Listening scripts.pdf" },
-                { label: "6th grade progress check", url: "/assets/img/6th grade - progress check.pdf" }
-            ],
             images: [
                 "../assets/img/14.png",
                 "https://i.postimg.cc/5yfyMDKL/6th-grade-final-book-merge-103.png",
@@ -108,11 +91,6 @@
             includes: ["Writing handbook", "Editable planners", "Rubric templates"],
             shippingNote: "Ships within 48h.",
             tags: ["grade 6", "writing", "handbook"],
-            resources: [
-                { label: "Mini-lesson playlist", url: "https://youtube.com/playlist?list=PLNCxjpGjFhX2IkpZBtnY7shyuCWcv651Y&si=ZA9ghJOhs27QsI3U" },
-                { label: "6th Grade Writing guide - Key", url: "/assets/img/6th Grade Writing guide - Key.pdf" },
-                { label: "Coming Soon !", url: "" }
-            ],
             images: [
                 "../assets/img/6thwritingguidcover.png",
                 "../assets/img/6th grade writing guide_6.png",
@@ -128,7 +106,7 @@
             type: "bundle",
             price: 60,
             summary: "Complete classroom pack with student book, notebooks, and project tools.",
-            description: "All-in-one kit for grade 6 classrooms. notebooks, storyboard sets, and sticker packs for gamified projects.",
+            description: "All-in-one kit for grade 6 classrooms. Includes student books, notebooks, storyboard sets, and sticker packs for gamified projects.",
             highlights: [
                 "Teacher dashboard access",
                 "Project storyboard collection",
@@ -138,10 +116,6 @@
             shippingNote: "Bundle ships on Tuesdays and Thursdays.",
             bestseller: true,
             tags: ["bundle", "grade 6", "classroom kit"],
-            resources: [
-                { label: "Teacher dashboard login", url: "https://teacher.lingo-land.net" },
-                { label: "Bundle orientation playlist", url: "https://youtube.com/playlist?list=PLNCxjpGjFhX0AIvOy1ufbN-MIbmUVaLdx&si=ygrr9Rum2zWp6t3x" },
-            ],
             images: [
                 "../assets/img/box.png",
                 "../assets/img/boxbox.png",
@@ -168,9 +142,6 @@
             includes: ["Vocabulary notebook", "Audio QR stickers"],
             shippingNote: "Available for bulk orders.",
             tags: ["notebook", "vocabulary", "grade 6"],
-            resources: [
-                { label: "Grammar Explainer playlist", url: "https://www.youtube.com/playlist?list=PLNCxjpGjFhX2IkpZBtnY7shyuCWcv651Y" },
-            ],
             images: [
                 "https://i.postimg.cc/Qt3xpR3w/Words-and-wonders-cover-1.png",
                 "../assets/img/wordsandwonder.png",
@@ -195,11 +166,6 @@
             includes: ["Notebook", "Audio QR pack", "Teacher tracker"],
             shippingNote: "Ships in 48h.",
             tags: ["notebook", "grammar", "listening"],
-            // resources: [
-            //     { label: "Listening lab playlist", url: "" },
-            //     { label: "Homework tracker sheets", url: "" },
-            //     { label: "Grammar game templates", url: "" }
-            // ],
             images: [
                 "https://i.postimg.cc/6p83wrcj/Fun-and-focus-cover-1.png",
                 "../assets/img/funandfoucus.png",
@@ -224,12 +190,6 @@
             includes: ["Student book", "Exam practice pack", "Listening scripts"],
             shippingNote: "Delivery nationwide within 72h.",
             tags: ["grade 9", "exam prep", "student book"],
-            resources: [
-                { label: "Listening labs playlist", url: "https://www.youtube.com/playlist?list=PLNCxjpGjFhX11yT-knprkmziGjl-fljK0" },
-                { label: "9th grade key", url: "/assets/img/9th grade - Key.pdf" },
-                { label: "9th grade | Listening scripts", url: "/assets/img/9th grade - Listening scripts.pdf" },
-                { label: "9th grade progress check", url: "/assets/img/9th grade - progress check.pdf" }
-            ],
             images: [
                 "../assets/img/16.png",
                 "../assets/img/9-1.png",
@@ -254,11 +214,6 @@
             includes: ["Writing guide", "Rubric pack", "Editable planners"],
             shippingNote: "Ships same week.",
             tags: ["writing", "grade 9", "exam"],
-            resources: [
-                // { label: "Writing workshop playlist", url: "" },
-                { label: "9th Grade Writing guide - Key", url: "/assets/img/9th Grade Writing guide - Key.pdf" },
-                { label: "Coming Soon !", url: "" }
-            ],
             images: [
                 "../assets/img/9thwritingguidcover.png",
                 "../assets/img/9th grade writing guide_6.png",
@@ -283,11 +238,6 @@
             includes: ["Student book", "Practice exams", "Audio pack"],
             shippingNote: "Ships within 72h nationwide.",
             tags: ["4th form", "BAC", "student book"],
-            resources: [
-                { label: "BAC playlist", url: "https://www.youtube.com/playlist?list=PLNCxjpGjFhX1r4EEWwyi4vZJXu6ixq-C9" },
-                { label: "4th form (Bac) Key", url: "/assets/img/4th form - Key.pdf" },
-                { label: "4th form | Listening scripts", url: "/assets/img/4th form - Listening scripts.pdf" }
-            ],
             images: [
                 "../assets/img/cover.png",
                 "../assets/img/Bac Class Book FINAL with numbers_4.png",
@@ -312,11 +262,6 @@
             includes: ["Writing guide", "Essay planner pack", "Speaking prompt cards"],
             shippingNote: "Ready to dispatch within 48h.",
             tags: ["4th form", "writing", "BAC"],
-            resources: [
-                // { label: "Essay workshop playlist", url: "" },
-                // { label: "Planner templates", url: "" },
-                { label: "Coming Soon !", url: "" }
-            ],
             images: [
                 "../assets/img/4thformwritingcover.png",
                 "../assets/img/4th form writing guide_3.png",
@@ -324,6 +269,3 @@
             ]
         }
     ];
-
-    window.STORE_PRODUCTS = products;
-})();
