@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found | Bright Horizons</title>
+  <style>
+    body {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+      margin: 0;
+      padding: 0;
+      background-color:#00ABA4;
+      overflow: hidden;
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      z-index: 1;
+      font-family: 'Arial', sans-serif;
+      color:  white;
+    }
+
+    .pentagon {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      z-index: 0;
+      transition: transform 0.5s ease;
+      opacity: 0.6;
+    }
+
+    .pentagon:hover {
+      transform: scale(1.1) !important;
+      opacity: 1;
+      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+    }
+
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 8rem;
+      margin: 0;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      animation: pulse 2s infinite;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin: 1rem 0;
+      opacity: 0.8;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: #F48C06;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      margin-top: 2rem;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .btn:hover {
+      background: transparent;
+      border-color: #ffff;
+      transform: translateY(-2px);
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(var(--rotation)); }
+      50% { transform: translateY(20px) rotate(var(--rotation)); }
+      100% { transform: translateY(0) rotate(var(--rotation)); }
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>404</h1>
+    <p>Oops! Looks like you're lost in space</p>
+    <a href="/" class="btn">Take Me Home</a>
+  </div>
+
+<script>
+  function getRandomRotation() {
+    return Math.floor(Math.random() * 360);
+  }
+
+  function createPentagon(x, y, rotation) {
+    const size = 150;
+    const centerX = size / 2;
+    const centerY = size / 2;
+    const radius = size / 2;
+    let points = [];
+    
+    for (let i = 0; i < 5; i++) {
+      const angle = (i * 2 * Math.PI / 5) - Math.PI / 2;
+      const pointX = centerX + radius * Math.cos(angle);
+      const pointY = centerY + radius * Math.sin(angle);
+      points.push(`${pointX},${pointY}`);
+    }
+    
+    const pentagon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    pentagon.setAttribute("class", "pentagon");
+    pentagon.setAttribute("width", size);
+    pentagon.setAttribute("height", size);
+    pentagon.style.left = x + "px";
+    pentagon.style.top = y + "px";
+    pentagon.style.setProperty('--rotation', `${rotation}deg`);
+    pentagon.style.animation = `float ${3 + Math.random() * 2}s infinite ease-in-out ${Math.random() * 2}s`;
+    
+    const polygon = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+    polygon.setAttribute("points", points.join(" "));
+    polygon.setAttribute("fill", `hsla(${35 + Math.random() * 40}, 90%, 60%)`);
+    polygon.setAttribute("stroke", "rgba(255, 255, 255, 0.1)");
+    polygon.setAttribute("stroke-width", "2");
+    
+    pentagon.appendChild(polygon);
+    return pentagon;
+  }
+
+  function isPositionValid(x, y, existingPositions, minDistance = 150) {
+    return !existingPositions.some(pos => {
+      const dx = x - pos.x;
+      const dy = y - pos.y;
+      return Math.sqrt(dx * dx + dy * dy) < minDistance;
+    });
+  }
+
+  function generatePentagons() {
+    document.querySelectorAll('.pentagon').forEach(element => element.remove());
+    
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    const existingPositions = [];
+    const size = 150;
+    
+    function generateValidPosition(baseX, baseY) {
+      let attempts = 0;
+      let x, y;
+      
+      do {
+        x = baseX + (Math.random() - 0.5) * 100;
+        y = baseY + (Math.random() - 0.5) * 100;
+        attempts++;
+      } while (!isPositionValid(x, y, existingPositions) && attempts < 10);
+      
+      if (attempts < 10) {
+        existingPositions.push({ x, y });
+        return { x, y };
+      }
+      return null;
+    }
+    
+    const spacing = 250;
+    const positions = [];
+    
+    // Generate positions in a grid pattern
+    for (let x = -spacing; x <= width + spacing; x += spacing) {
+      for (let y = -spacing; y <= height + spacing; y += spacing) {
+        const pos = generateValidPosition(x, y);
+        if (pos) positions.push(pos);
+      }
+    }
+    
+    positions.forEach(pos => {
+      const rotation = getRandomRotation();
+      const pentagon = createPentagon(pos.x, pos.y, rotation);
+      document.body.appendChild(pentagon);
+    });
+  }
+
+  window.onload = generatePentagons;
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(generatePentagons, 250);
+  });
+</script>
+</body>
+</html>

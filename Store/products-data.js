@@ -1,4 +1,16 @@
 (function () {
+    const AUTO_DETECT_TEACHER_RESOURCES = true;
+    // auto-detect by top-level domain (override by setting window.TEACHER_RESOURCES_AVAILABLE_OVERRIDE = true/false)
+    let TEACHER_RESOURCES_AVAILABLE = false;
+    if (typeof window !== 'undefined') {
+        if (typeof window.TEACHER_RESOURCES_AVAILABLE_OVERRIDE === 'boolean') {
+            TEACHER_RESOURCES_AVAILABLE = window.TEACHER_RESOURCES_AVAILABLE_OVERRIDE;
+        } else if (AUTO_DETECT_TEACHER_RESOURCES && window.location && typeof window.location.hostname === 'string') {
+            // assume teacher resources are available in Tunisia (.tn) — adjust detection logic as needed
+            TEACHER_RESOURCES_AVAILABLE = window.location.hostname.endsWith('.com');
+        }
+    }
+
     const products = [
         {
             id: "grade4-student-book",
@@ -324,6 +336,44 @@
             ]
         }
     ];
+
+    // sanitize teacher-related entries when teacher resources are not available
+    if (!TEACHER_RESOURCES_AVAILABLE) {
+        const teacherRegex = /teacher/i;
+        products.forEach(p => {
+            // includes: replace teacher-related entries with "Coming Soon !" or remove empty placeholders
+            if (Array.isArray(p.includes)) {
+                p.includes = p.includes.map(item => {
+                    return teacherRegex.test(item) ? "Coming Soon !" : item;
+                }).filter(Boolean);
+            }
+
+            // resources: mark teacher-related resources as Coming Soon !
+            if (Array.isArray(p.resources)) {
+                p.resources = p.resources.map(r => {
+                    const label = (r && r.label) || '';
+                    const url = (r && r.url) || '';
+                    if (teacherRegex.test(label) || teacherRegex.test(url)) {
+                        return { label: "Coming Soon !", url: "" };
+                    }
+                    return r;
+                });
+            }
+
+            // tags: remove explicit teacher-related tags if any
+            if (Array.isArray(p.tags)) {
+                p.tags = p.tags.filter(t => !teacherRegex.test(t));
+            }
+
+            // highlights/descriptions: optionally remove explicit teacher mentions
+            if (Array.isArray(p.highlights)) {
+                p.highlights = p.highlights.map(h => teacherRegex.test(h) ? "Coming Soon !" : h);
+            }
+            if (typeof p.description === 'string' && teacherRegex.test(p.description)) {
+                p.description = p.description.replace(teacherRegex, "Instructor").replace(/\s+Instructor/i, ""); // minimal adjustment
+            }
+        });
+    }
 
     window.STORE_PRODUCTS = products;
 })();

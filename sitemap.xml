@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 
   <!-- Homepage -->
   <url>
     <loc>https://lingo-land.net/</loc>
-    <lastmod>2024-11-03</lastmod>
+    <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -13,7 +13,7 @@
   <!-- Store Page -->
   <url>
     <loc>https://lingo-land.net/store.html</loc>
-    <lastmod>2024-11-03</lastmod>
+    <lastmod>2025-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -21,7 +21,7 @@
   <!-- About Us Page -->
   <url>
     <loc>https://lingo-land.net/about-us.html</loc>
-    <lastmod>2024-08-31</lastmod>
+    <lastmod>2025-11-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
     <video:video>
@@ -31,7 +31,7 @@
       <video:content_loc>https://lingo-land.net/assets/img/about%20us.mp4</video:content_loc>
       <video:player_loc>https://lingo-land.net/assets/img/about%20us.mp4</video:player_loc>
       <video:duration>23</video:duration>
-      <video:publication_date>2024-11-03T00:00:00+00:00</video:publication_date>
+      <video:publication_date>2025-11-06T00:00:00+00:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
     </video:video>
   </url>
@@ -39,7 +39,7 @@
   <!-- Resources Page -->
   <url>
     <loc>https://lingo-land.net/our_resources.html</loc>
-    <lastmod>2024-11-03</lastmod>
+    <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -47,7 +47,7 @@
   <!-- Contact Page -->
   <url>
     <loc>https://lingo-land.net/contact.html</loc>
-    <lastmod>2024-11-03</lastmod>
+    <lastmod>2025-11-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
