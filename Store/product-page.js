@@ -272,4 +272,82 @@
             }
         }
     }
+    function feedbackHelper() {
+  const form = document.getElementById('feedback-form');
+  const feedbackSection = document.getElementById('feedback');
+  
+  // Exit if form or section isn't found
+  if (!form || !feedbackSection) return;
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    // --- 1. Show Loading State ---
+    feedbackSection.innerHTML = `
+      <div style="text-align: center; padding: 2rem;">
+        <h2>Submitting Feedback...</h2>
+        <h1 id="loader">.</h1>
+      </div>
+    `;
+    const loader = document.getElementById('loader');
+    let dotCount = 0;
+    const maxDots = 3;
+    const loadingInterval = setInterval(() => {
+      dotCount = (dotCount + 1) % (maxDots + 1);
+      loader.textContent ='.' + '.'.repeat(dotCount);
+    }, 100);
+
+
+    let responseMessage = 'An unexpected error occurred.'; // Default error message
+
+    try {
+      const formData = new FormData(form);
+      
+      // --- 2. Send Data using Fetch ---
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData
+      });
+      
+      // Check for HTTP errors (e.g., 404, 500)
+      if (!response.ok) {
+        responseMessage = `Server error (HTTP Status ${response.status}).`;
+        throw new Error(responseMessage);
+      }
+      
+      const result = await response.json();
+      responseMessage = result.message;
+
+      if (result && result.result === 'success') {
+        feedbackSection.innerHTML = `
+          <div style="text-align: center; padding: 2rem; color: green;">
+            <h2>Thank You!</h2>
+            <p>${responseMessage}</p>
+            <button onclick="window.location.reload()" 
+                    style="margin-top: 1rem; padding: 0.5rem 1rem; background: blue; color: white; border: none; border-radius: 4px; cursor: pointer;">
+              Submit Another Feedback
+            </button>
+          </div>
+        `;
+        return; // Exit function on success
+      } 
+      
+      // If we reach here, the JSON has {result: 'error'} or an invalid format
+      throw new Error(responseMessage);
+      
+    } catch (error) {
+        feedbackSection.innerHTML = `
+        <div style="text-align: center; padding: 2rem; color: red;">
+          <h2>Error</h2>
+          <p>There was a problem: **${error.message}**</p>
+          <button onclick="window.location.reload()" 
+                  style="margin-top: 1rem; padding: 0.5rem 1rem; background: blue; color: white; border: none; border-radius: 4px; cursor: pointer;">
+            Try Again
+          </button>
+        </div>
+      `;
+    }
+  });
+}
+    feedbackHelper();
 })();

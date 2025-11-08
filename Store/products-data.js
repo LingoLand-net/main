@@ -53,11 +53,11 @@
             summary: "Aligned with CEFR A2, includes speaking labs and writing frames.",
             description: "Engaging grammar, vocabulary, and communication tasks for grade 5 learners. Includes speaking labs scripted by LingoLand teachers.",
             highlights: [
-                "14 speaking labs with phonics focus",
+                "7 lingolander's learning profiles",
                 "Differentiated reading passages",
                 "Project-based learning tasks each term"
             ],
-            includes: ["Student book", "Teacher-ready answer key", "Printable flashcards"],
+            includes: ["Student book", "Teacher-ready answer key", "Listening scripts"],
             shippingNote: "Delivery in Sfax within 24h.",
             tags: ["grade 5", "textbook", "teacher support"],
             resources: [
@@ -148,7 +148,7 @@
             ],
             includes: ["Student book", "Fun & Focus notebook", "Words & Wonders notebook", "Storyboard kit", "Sticker pack"],
             shippingNote: "Bundle ships on Tuesdays and Thursdays.",
-            bestseller: true,
+            bestseller: false,
             tags: ["bundle", "grade 6", "classroom kit"],
             resources: [
                 { label: "Teacher dashboard login", url: "https://teacher.lingo-land.net" },
@@ -235,6 +235,7 @@
             ],
             includes: ["Student book", "Exam practice pack", "Listening scripts"],
             shippingNote: "Delivery nationwide within 72h.",
+            bestseller: true,
             tags: ["grade 9", "exam prep", "student book"],
             resources: [
                 { label: "Listening labs playlist", url: "https://www.youtube.com/playlist?list=PLNCxjpGjFhX11yT-knprkmziGjl-fljK0" },
