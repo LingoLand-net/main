@@ -1,4 +1,3 @@
-// Testimonials implementation: horizontal scroll carousel
 const reviews = [
   {
     name: "Hamdi Dkhil",
@@ -32,7 +31,6 @@ const reviews = [
     img: "assets/img/testppl/chahd.jpeg",
     stars: 5,
   },
-  // Add more reviews in this array; they will auto-render & scroll
 ];
 
 function starRow(count = 5) {

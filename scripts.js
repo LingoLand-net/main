@@ -45,68 +45,117 @@ document.addEventListener('DOMContentLoaded', function() {
 // };
 
  document.addEventListener('DOMContentLoaded', () => {
-            const videoContainer = document.querySelector('.video-container');
-            const playPauseBtn = document.getElementById('playPauseBtn');
-            const video = document.getElementById('myVideo');
-            const thumbnail = document.querySelector('.video-thumbnail');
-            let hideTimeout;
+    const videoContainer = document.querySelector('.video-container');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const video = document.getElementById('myVideo');
+    const thumbnail = document.querySelector('.video-thumbnail');
+    if(!videoContainer || !playPauseBtn || !video) return; // guard
 
-            // Show controls on mouse enter
-            videoContainer.addEventListener('mouseenter', () => {
-                playPauseBtn.style.display = 'block';
-                clearTimeout(hideTimeout);
-                hideTimeout = setTimeout(() => {
-                    playPauseBtn.style.display = 'none';
-                }, 4000);
-            });
+    // Inject custom progress bar
+    let progress = videoContainer.querySelector('.video-progress');
+    if(!progress){
+        progress = document.createElement('div');
+        progress.className = 'video-progress';
+        progress.innerHTML = '<div class="video-progress__bar"></div>';
+        videoContainer.appendChild(progress);
+    }
+    const progressBar = progress.querySelector('.video-progress__bar');
 
-            // Hide controls on mouse leave
-            videoContainer.addEventListener('mouseleave', () => {
-                clearTimeout(hideTimeout);
-                playPauseBtn.style.display = 'none';
-            });
+    let hideTimeout;
+    let userInteracting = false;
 
-            // Play/Pause functionality
-            playPauseBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                if (video.paused) {
-                    video.play();
-                    playPauseBtn.textContent = '❚❚';
-                    thumbnail.classList.add('hidden');
-                } else {
-                    video.pause();
-                    playPauseBtn.textContent = '▶';
-                }
-            });
+    function showButton(temp = true){
+        playPauseBtn.style.opacity = '1';
+        playPauseBtn.style.pointerEvents = 'auto';
+        if(temp){
+            clearTimeout(hideTimeout);
+            hideTimeout = setTimeout(()=> hideButton(), 3200);
+        }
+    }
+    function hideButton(){
+        if(video.paused || userInteracting) return; // keep visible if paused or interacting
+        playPauseBtn.style.opacity = '0';
+        playPauseBtn.style.pointerEvents = 'none';
+    }
 
-            // Also toggle play/pause when clicking on the video
-            videoContainer.addEventListener('click', (e) => {
-                if (e.target !== playPauseBtn) {
-                    if (video.paused) {
-                        video.play();
-                        playPauseBtn.textContent = '❚❚';
-                        thumbnail.classList.add('hidden');
-                    } else {
-                        video.pause();
-                        playPauseBtn.textContent = '▶';
-                    }
-                }
-            });
+    // Update progress bar width
+    function updateProgress(){
+        if(!progressBar) return;
+        const pct = (video.currentTime / video.duration) * 100;
+        progressBar.style.width = (pct || 0) + '%';
+    }
+    video.addEventListener('timeupdate', updateProgress);
+    video.addEventListener('durationchange', updateProgress);
 
-            // Hide button when video is playing and show when paused
-            video.addEventListener('play', () => {
-                playPauseBtn.textContent = '❚❚';
-                thumbnail.classList.add('hidden');
-            });
+    // Seeking via progress bar
+    function seek(e){
+        const rect = progress.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const pct = Math.min(Math.max(x / rect.width, 0), 1);
+        if(video.duration){
+            video.currentTime = pct * video.duration;
+            updateProgress();
+        }
+    }
+    progress.addEventListener('click', seek);
+    // Allow drag seek
+    let seeking = false;
+    progress.addEventListener('pointerdown', e=>{ seeking = true; seek(e); progress.setPointerCapture(e.pointerId); });
+    progress.addEventListener('pointermove', e=>{ if(seeking) seek(e); });
+    progress.addEventListener('pointerup', e=>{ seeking=false; try{progress.releasePointerCapture(e.pointerId);}catch(_){} });
+    progress.addEventListener('pointerleave', ()=> seeking=false);
 
-            video.addEventListener('pause', () => {
-                playPauseBtn.textContent = '▶';
-                playPauseBtn.style.display = 'block';
-            });
+    // Hover / focus behavior
+    videoContainer.addEventListener('mouseenter', ()=> showButton(true));
+    videoContainer.addEventListener('mouseleave', hideButton);
+    playPauseBtn.addEventListener('focus', ()=> { userInteracting = true; showButton(false); });
+    playPauseBtn.addEventListener('blur', ()=> { userInteracting = false; hideButton(); });
 
-            // Initially hide the play button
-            playPauseBtn.style.display = 'none';
+    // Keyboard accessibility
+    playPauseBtn.setAttribute('aria-label','Play video');
+    playPauseBtn.addEventListener('keydown', e=>{
+        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); togglePlay(); }
+        if(e.key === 'ArrowRight'){ video.currentTime = Math.min(video.currentTime + 5, video.duration || video.currentTime); }
+        if(e.key === 'ArrowLeft'){ video.currentTime = Math.max(video.currentTime - 5, 0); }
+    });
+
+    function togglePlay(){
+        if(video.paused){
+            video.play();
+        } else {
+            video.pause();
+        }
+    }
+
+    playPauseBtn.addEventListener('click', e=>{ e.stopPropagation(); togglePlay(); });
+    videoContainer.addEventListener('click', e=>{ if(e.target === video || e.target === thumbnail) togglePlay(); });
+
+    video.addEventListener('play', ()=>{
+        playPauseBtn.textContent = '❚❚';
+        playPauseBtn.setAttribute('aria-label','Pause video');
+        thumbnail && thumbnail.classList.add('hidden');
+        showButton(true);
+    });
+    video.addEventListener('pause', ()=>{
+        playPauseBtn.textContent = '▶';
+        playPauseBtn.setAttribute('aria-label','Play video');
+        showButton(false);
+    });
+
+    // Auto-pause when scrolled out of view for more than 50% (IntersectionObserver)
+    const observer = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+            if(!entry.isIntersecting && !video.paused){
+                video.pause();
+            }
         });
+    }, { threshold: 0.5 });
+    observer.observe(videoContainer);
+
+    // Initial state
+    playPauseBtn.style.opacity = '1';
+    playPauseBtn.style.pointerEvents = 'auto';
+});
 
 document.addEventListener("DOMContentLoaded", function() {
     const elements = document.querySelectorAll('.fade-in-up');
