@@ -24,18 +24,25 @@
 	<meta property="twitter:description" content="LingoLand offers top-quality English teaching materials designed to enhance learning experiences." />
 	<meta property="twitter:image" content="/assets/img/image.png" />
 	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-<script src="/assets/js/navbar.js"></script>
-	<title>Our Resources</title>
+	<script src="/assets/js/navbar.js" defer></script>
 	<link rel="stylesheet" href="/assets/css/styles.css">
+	<script src="/assets/js/resources.js" defer></script>
 </head>
 <body>
 <div id="navbar-placeholder"></div>
 	<section class="education-videos">
 		<div class="hero-banner">
-			<h1>Explore Educational Videos</h1>
-			<p>Learn and grow with our curated selection of videos for each grade.</p>
+			<div class="container">
+				<span class="hero-eyebrow">Resources</span>
+				<h1>Explore Educational Videos</h1>
+				<p>Learn and grow with our curated selection of videos for each grade.</p>
+			</div>
 		</div>
-		<section class="education-videos">
+		<div class="resource-search container" role="search" aria-label="Search resources">
+			<label for="resourceSearch" class="sr-only">Search lessons and PDF resources</label>
+			<input id="resourceSearch" type="search" placeholder="Search lessons or PDFs..." autocomplete="off" aria-describedby="searchHelp" />
+			<small id="searchHelp" class="search-help">Type to filter lessons names & units</small>
+		</div>
 			<div class="container">
 				<div class="tab-container">
 					<div class="tabs">
@@ -479,28 +486,110 @@
 					</div>
 				</div>
 			</div>
-		</section>
 		<div class="hero-banner">
-			<h1>PDF : Keys and Audio Scripts</h1>
-			<p>Click to Download the Audio Scripts and the Keys to the Book Activities.</p>
+			<div class="container">
+				<span class="hero-eyebrow">Downloads</span>
+				<h1>PDF: Keys and Audio Scripts</h1>
+				<p>Click to download the audio scripts and the keys to the book activities.</p>
+			</div>
 		</div>
-		<section class="pfd-files container">
-			<div class="links">
-				<a href="/assets/img/4th Grade - Key.pdf" target="_blank">4th grade key</a>
-				<a href="/assets/img/5th grade key new.pdf" target="_blank">5th grade key</a>
-				<a href="/assets/img/6th grade Key new.pdf" target="_blank">6th grade key</a>
-				<a href="/assets/img/9th grade - Key.pdf" target="_blank">9th grade key</a>
-				<a href="/assets/img/4th form - Key.pdf" target="_blank">4th form (Bac) Key</a>
-				<a href="/assets/img/4th grade - Listening scripts.pdf" target="_blank">4th grade | Listening scripts</a>
-				<a href="/assets/img/5th grade - Listening scripts.pdf" target="_blank">5th grade | Listening scripts</a>
-				<a href="/assets/img/6th grade - Listening scripts.pdf" target="_blank">6th grade | Listening scripts</a>
-				<a href="/assets/img/6th grade - progress check.pdf" target="_blank">6th grade - progress check</a>
-				<a href="/assets/img/6th Grade Writing guide - Key.pdf" target="_blank">6th Grade Writing guide - Key</a>
-				<a href="/assets/img/9th grade - Listening scripts.pdf" target="_blank">9th grade | Listening scripts</a>
-				<a href="/assets/img/9th grade - progress check.pdf" target="_blank">9th grade - progress check</a>
-				<a href="/assets/img/9th Grade Writing guide - Key.pdf" target="_blank">9th Grade Writing guide - Key</a>
-				<a href="/assets/img/4th form - Listening scripts.pdf" target="_blank">4th form | Listening scripts</a>
-				<a href="" target="_blank" disabled>Coming Soon !</a>
+		<section class="pdf-files container">
+			<div class="links pdf-resources" aria-labelledby="pdfResourcesHeading">
+				<h3 id="pdfResourcesHeading" class="sr-only">PDF resources by grade</h3>
+
+				<!-- Summary table -->
+					<div class="pdf-table-wrapper  my-5 p-5" role="region" aria-label="PDF resources summary table">
+						<table class="pdf-table">
+						<caption class="sr-only">Downloadable PDF resources overview by grade and resource type</caption>
+						<thead>
+							<tr>
+								<th>Grade / Form</th>
+								<th>Key</th>
+								<th>Listening scripts</th>
+								<th>Progress check</th>
+								<th>Writing guide</th>
+								<th>Other</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Grade 4</td>
+								<td>
+									<a href="/assets/img/4th Grade - Key.pdf" target="_blank" rel="noopener noreferrer" download="4th Grade - Key.pdf">Download / Open key</a>
+								</td>
+								<td>
+									<a href="/assets/img/4th grade - Listening scripts.pdf" target="_blank" rel="noopener noreferrer" download="4th grade - Listening scripts.pdf">Download / Open scripts</a>
+								</td>
+								<td>—</td>
+								<td>—</td>
+								<td>—</td>
+							</tr>
+
+							<tr>
+								<td>Grade 5</td>
+								<td>
+									<a href="/assets/img/5th grade key new.pdf" target="_blank" rel="noopener noreferrer" download="5th grade key new.pdf">Download / Open key</a>
+								</td>
+								<td>
+									<a href="/assets/img/5th grade - Listening scripts.pdf" target="_blank" rel="noopener noreferrer" download="5th grade - Listening scripts.pdf">Download / Open scripts</a>
+								</td>
+								<td>—</td>
+								<td>—</td>
+								<td>—</td>
+							</tr>
+
+							<tr>
+								<td>Grade 6</td>
+								<td>
+									<a href="/assets/img/6th grade Key new.pdf" target="_blank" rel="noopener noreferrer" download="6th grade Key new.pdf">Download / Open key</a>
+								</td>
+								<td>
+									<a href="/assets/img/6th grade - Listening scripts.pdf" target="_blank" rel="noopener noreferrer" download="6th grade - Listening scripts.pdf">Download / Open scripts</a>
+								</td>
+								<td>
+									<a href="/assets/img/6th grade - progress check.pdf" target="_blank" rel="noopener noreferrer" download="6th grade - progress check.pdf">Download / Open</a>
+								</td>
+								<td>
+									<a href="/assets/img/6th Grade Writing guide - Key.pdf" target="_blank" rel="noopener noreferrer" download="6th Grade Writing guide - Key.pdf">Download / Open</a>
+								</td>
+								<td>—</td>
+							</tr>
+
+							<tr>
+								<td>Grade 9</td>
+								<td>
+									<a href="/assets/img/9th grade - Key.pdf" target="_blank" rel="noopener noreferrer" download="9th grade - Key.pdf">Download / Open key</a>
+								</td>
+								<td>
+									<a href="/assets/img/9th grade - Listening scripts.pdf" target="_blank" rel="noopener noreferrer" download="9th grade - Listening scripts.pdf">Download / Open scripts</a>
+								</td>
+								<td>
+									<a href="/assets/img/9th grade - progress check.pdf" target="_blank" rel="noopener noreferrer" download="9th grade - progress check.pdf">Download / Open</a>
+								</td>
+								<td>
+									<a href="/assets/img/9th Grade Writing guide - Key.pdf" target="_blank" rel="noopener noreferrer" download="9th Grade Writing guide - Key.pdf">Download / Open</a>
+								</td>
+								<td>—</td>
+							</tr>
+
+							<tr>
+								<td>4th Form (Bac)</td>
+								<td>
+									<a href="/assets/img/4th form - Key.pdf" target="_blank" rel="noopener noreferrer" download="4th form - Key.pdf">Download / Open key</a>
+								</td>
+								<td>
+									<a href="/assets/img/4th form - Listening scripts.pdf" target="_blank" rel="noopener noreferrer" download="4th form - Listening scripts.pdf">Download / Open scripts</a>
+								</td>
+								<td>—</td>
+								<td>—</td>
+								<td>
+									<a href="#" class="disabled" aria-disabled="true" tabindex="-1" rel="noopener noreferrer">Coming Soon</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
 			</div>
 		</section>
 
