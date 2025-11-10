@@ -1,0 +1,126 @@
+/* Students Hall page-specific styles */
+:root {
+  --color-teal: #00ACA8;
+  --color-orange: #F48C06;
+  --color-deep: #0f3d3f;
+  --color-pale: #ecfeff;
+}
+
+body {
+  background-color: #f8fafc;
+  color: #1f2937;
+  font-family: 'Nunito', sans-serif;
+}
+
+.highlight { color: var(--color-teal); }
+
+/* Keep join-btn as a shape/spacing helper only so Tailwind utilities can control color */
+.join-btn {
+  /* no background-color here to avoid overriding bg-white from Tailwind */
+  /* no color here to allow text utilities like text-teal-600 */
+  border: none;
+  border-radius: 9999px;
+  padding: 0.8rem 1.8rem;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.join-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 20px rgba(0, 172, 168, 0.25);
+}
+
+.student-says {
+  background-color: var(--color-orange);
+  color: #ffffff;
+  padding: 2rem;
+  box-shadow: 0 18px 34px rgba(14, 165, 233, 0.12);
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--color-deep);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #475569;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 1.5rem;
+  border: 1px solid #e2e8f0;
+  padding: 1.75rem;
+  box-shadow: 0 18px 34px rgba(14, 165, 233, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover { transform: translateY(-5px); box-shadow: 0 25px 50px rgba(14, 165, 233, 0.15); }
+
+.btn { border-radius: 9999px; padding: 0.8rem 1.8rem; font-weight: 700; transition: all 0.2s ease; }
+.btn-outline { background-color: transparent; color: var(--color-teal); border: 2px solid var(--color-teal); }
+.btn-outline:hover { background-color: var(--color-teal); color: #ffffff; }
+
+/* Hero styled like Store hero */
+.hall-hero { padding: 4rem 0 5rem; background: #f8fafc; }
+.hall-intro { max-width: 1180px; margin: 0 auto; padding: 0 1.5rem; display: grid; gap: 1.1rem; justify-items: center; text-align: center; }
+.hall-eyebrow { display: inline-flex; align-items: center; padding: 0.35rem 1rem; border-radius: 9999px; background: var(--color-orange); color: #ffffff; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; }
+.hall-intro h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: var(--color-deep); }
+.hall-intro p { max-width: 720px; margin: 0 auto; font-size: 1rem; color: #475569; }
+.hall-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin-top: 0.5rem; }
+.hall-primary { background-color: var(--color-teal); color: #ffffff; border: none; border-radius: 9999px; padding: 0.8rem 1.8rem; font-weight: 700; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.hall-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 20px rgba(0, 172, 168, 0.25); }
+.hall-secondary { border-radius: 9999px; border: 2px solid var(--color-orange); padding: 0.75rem 1.6rem; font-weight: 700; color: var(--color-orange); transition: background-color 0.2s ease, color 0.2s ease; }
+.hall-secondary:hover { background-color: var(--color-orange); color: #ffffff; }
+
+.student-card { background: white; border-radius: 1rem; overflow: hidden; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease; }
+.student-card:hover { transform: translateY(-10px); }
+.student-img { width: 100%; height: 250px; object-fit: cover; }
+
+.achievement-badge { display: inline-block; background: var(--color-orange); color: #ffffff; padding: 0.3rem 0.8rem; border-radius: 2rem; font-size: 0.8rem; font-weight: 700; margin-right: 0.5rem; margin-bottom: 0.5rem; }
+
+.grade-chip { display: inline-block; background: var(--color-pale); color: var(--color-deep); padding: 0.35rem 0.9rem; border-radius: 9999px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; border: 1px solid var(--color-teal); margin-bottom: 0.75rem; }
+
+.stats-section { background: var(--color-deep); color: #ffffff; padding: 4rem 1rem; }
+.stat-number { font-size: 3rem; font-weight: 800; color: var(--color-orange); }
+
+.testimonial-slider { position: relative; overflow: hidden; height: 400px; }
+.testimonial-slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.5s ease; }
+.testimonial-slide.active { opacity: 1; }
+
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
+.gallery-item { border-radius: 1rem; overflow: hidden; height: 200px; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; cursor: zoom-in; }
+.gallery-item:hover img { transform: scale(1.1); }
+
+/* Highlights (feature) cards styling to match store look */
+.hall-highlights { margin-top: 3rem; display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.hall-highlight-card { background: #ffffff; border-radius: 1.5rem; border: 1px solid #ffe6c7; padding: 1.5rem; box-shadow: 0 18px 34px rgba(14, 165, 233, 0.12); display: grid; gap: 0.5rem; text-align: left; }
+.hall-highlight-card h4 { color: var(--color-deep); font-weight: 800; }
+.hall-highlight-card p { color: #475569; }
+.hall-icon { color: var(--color-orange); font-size: 1.25rem; }
+
+/* Lightbox styles */
+.lightbox-overlay { position: fixed; inset: 0; background: rgba(0, 61, 63, 0.85); display: flex; align-items: center; justify-content: center; padding: 1rem; z-index: 1000; }
+.lightbox-content { position: relative; max-width: 90vw; max-height: 85vh; }
+.lightbox-content img { width: 100%; height: auto; object-fit: contain; border-radius: 1rem; box-shadow: 0 20px 40px rgba(0,61,63,0.4); }
+.lightbox-close { position: absolute; top: 0.5rem; right: 0.5rem; background: var(--color-orange); color: #ffffff; border: none; border-radius: 50%; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: background-color 0.2s ease; }
+.lightbox-close:hover { background: var(--color-teal); }
+.lightbox-counter { position:absolute; left:1rem; bottom:0.75rem; color:#ffffff; font-weight:700; font-size:0.85rem; background:rgba(0,172,168,0.4); padding:0.35rem 0.75rem; border-radius:0.5rem; }
+@media (max-width: 640px) { .lightbox-close { width: 36px; height: 36px; font-size: 1rem; } }
+
+/* Share story form */
+.story-form { max-width: 760px; margin: 0 auto; }
+.story-form label { font-weight: 700; color: var(--color-deep); display:block; margin-bottom:0.35rem; }
+.story-form input, .story-form select, .story-form textarea { width: 100%; padding: 0.75rem 1rem; border: 2px solid #e2e8f0; border-radius: 0.85rem; background: #ffffff; font-size: 0.95rem; font-family: inherit; resize: vertical; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+.story-form input:focus, .story-form select:focus, .story-form textarea:focus { outline: none; border-color: var(--color-teal); box-shadow: 0 0 0 3px rgba(0,172,168,0.25); }
+.submit-story-btn { background: var(--color-orange); color: #ffffff; font-weight: 700; padding: 0.85rem 1.75rem; border: none; border-radius: 9999px; cursor: pointer; transition: background-color 0.2s ease, transform 0.2s ease; }
+.submit-story-btn:hover { background: var(--color-teal); transform: translateY(-2px); }
+.form-note { font-size: 0.75rem; color:#475569; margin-top:0.75rem; }
+.required::after { content:" *"; color:var(--color-orange); }
