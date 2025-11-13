@@ -89,7 +89,6 @@
                 "telephone": "+216-22-571-291",
                 "contactType": "Customer Service",
                 "areaServed": "TN",
-                "availableLanguage": ["en", "fr", "ar"]
             }
         };
 

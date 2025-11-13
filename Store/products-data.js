@@ -50,8 +50,8 @@
             gradeLabel: "5th",
             type: "core",
             price: 35,
-            summary: "Aligned with CEFR A2, includes speaking labs and writing frames.",
-            description: "Engaging grammar, vocabulary, and communication tasks for grade 5 learners. Includes speaking labs scripted by LingoLand teachers.",
+            summary: "Student textbook with interactive tasks and audio QR codes.",
+            description: "Engaging grammar, vocabulary, and communication tasks for grade 5 learners. Co-created with Tunisian teachers to ensure curriculum alignment and classroom relevance.",
             highlights: [
                 "7 lingolander's learning profiles",
                 "Differentiated reading passages",
@@ -79,12 +79,12 @@
             gradeLabel: "6th",
             type: "core",
             price: 35,
-            summary: "Comprehensive language journey with CLIL projects and assessments.",
+            summary: "Comprehensive language journey Student interactive tasks, projects and assessments and audio QR codes.",
             description: "In-depth grammar tutorials, vocabulary maps, and CLIL exploration for grade 6 students. Co-created with classroom teachers across Tunisia.",
             highlights: [
                 "Step-by-step assessment preparation",
                 "Integrated listening transcripts",
-                "Digital quizzes in Google Forms"
+                "Grade 6 progress check"
             ],
             includes: ["Student book", "Project pack", "Listening scripts"],
             shippingNote: "Ships nationwide within 72h.",
@@ -113,7 +113,7 @@
             summary: "Writing handbook with sentence frames, rubrics, and mentor texts.",
             description: "Model compositions, grammar tips, and editable planners to improve writing outcomes. Perfect companion for exam prep.",
             highlights: [
-                "21 writing genres with exemplars",
+                "Diffrent writing genres with exemplars",
                 "Peer review checklists",
                 "QR codes linking to mini-lessons"
             ],
@@ -226,12 +226,12 @@
             gradeLabel: "9th",
             type: "core",
             price: 40,
-            summary: "Advanced communicative units preparing students for national exams.",
-            description: "Integrated skills book for grade 9 with debate tasks, grammar labs, and test practice aligned with national exam specifications.",
+            summary: "Advanced communicative units preparing students for national exams and audio QR codes.",
+            description: "Integrated skills book for grade 9 with in class coursebook activities, grammar labs, and test practice aligned with national exam specifications.",
             highlights: [
                 "Exam-style practice papers",
                 "Listening labs with QR codes",
-                "Debate and speaking frameworks"
+                "In class coursebook activities"
             ],
             includes: ["Student book", "Exam practice pack", "Listening scripts"],
             shippingNote: "Delivery nationwide within 72h.",
