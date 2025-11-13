@@ -1,9 +1,15 @@
-
 User-agent: *
-Disallow: /img/
-Disallow: /js/
-Disallow: /test.html/
-Sitemap: http://lingo-land.net/
+Allow: /
+Disallow: /Store/cart-checkout.html
+Disallow: /Store/backup/
+Disallow: /assets/js/
+Disallow: /test.html
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /.vscode/
 
-
+# Sitemap
 Sitemap: https://lingo-land.net/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
