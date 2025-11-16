@@ -8,6 +8,12 @@ Disallow: /.git/
 Disallow: /.github/
 Disallow: /.vscode/
 
+# Explicitly allow Black Friday product URLs with query params
+Allow: /Store/product.html?id=bf-pack1-456
+Allow: /Store/product.html?id=bf-pack2-456-writing
+Allow: /Store/product.html?id=bf-pack3-9th-combo
+Allow: /Store/product.html?id=bf-pack4-bac-combo
+
 # Sitemap
 Sitemap: https://lingo-land.net/sitemap.xml
 

@@ -37,7 +37,7 @@
                 { label: "4th grade | Listening scripts", url: "/assets/img/4th grade - Listening scripts.pdf" }
             ],
             images: [
-                "../assets/img/5.png",
+                "../assets/img/4th Grade.png",
                 "https://i.postimg.cc/QNgKnJYc/4th-grade-book-final-merge-34.png",
                 "https://i.postimg.cc/28zLpLgM/4th-grade-book-final-merge-65.png"
             ]
@@ -66,7 +66,7 @@
                 { label: "5th grade | Listening scripts", url: "/assets/img/5th grade - Listening scripts.pdf" }
             ],
             images: [
-                "../assets/img/1.png",
+                "../assets/img/5th Grade.png",
                 "https://i.postimg.cc/SND2mNhs/5th-grade-final-book-merge-16.png",
                 "https://i.postimg.cc/6pq7qJWh/5th-grade-final-book-merge-26.png"
             ]
@@ -97,7 +97,7 @@
                 { label: "6th grade progress check", url: "/assets/img/6th grade - progress check.pdf" }
             ],
             images: [
-                "../assets/img/14.png",
+                "../assets/img/6th Grade.png",
                 "https://i.postimg.cc/5yfyMDKL/6th-grade-final-book-merge-103.png",
                 "https://i.postimg.cc/85QsZ7hy/6th-grade-final-book-merge-124.png"
             ]
@@ -244,7 +244,7 @@
                 { label: "9th grade progress check", url: "/assets/img/9th grade - progress check.pdf" }
             ],
             images: [
-                "../assets/img/16.png",
+                "../assets/img/9th Grade.png",
                 "../assets/img/9-1.png",
                 "../assets/img/9-2.png"
             ]
@@ -302,7 +302,7 @@
                 { label: "4th form | Listening scripts", url: "/assets/img/4th form - Listening scripts.pdf" }
             ],
             images: [
-                "../assets/img/cover.png",
+                "../assets/img/4th Form.png",
                 "../assets/img/Bac Class Book FINAL with numbers_4.png",
                 "../assets/img/Bac Class Book FINAL with numbers_10.png"
             ]
@@ -376,5 +376,129 @@
         });
     }
 
-    window.STORE_PRODUCTS = products;
+    // ========== BLACK FRIDAY TEMPORARY BUNDLES ==========
+    // These are promotional packs for Black Friday week (Nov 18-22, 2025)
+    // Remove or update after the promotion ends
+    const blackFridayBundles = [
+        {
+            id: "bf-pack1-456",
+            sku: "BF-PACK1",
+            name: "Black Friday Pack 1 - Triple Course Bundle",
+            grade: "4-6",
+            gradeLabel: "4th-6th",
+            type: "bundle",
+            price: 65,
+            originalPrice: 105,
+            summary: "Get 4th, 5th, and 6th grade student books together at an amazing Black Friday price!",
+            description: "Complete collection of primary cycle student books. Perfect for families with multiple children or teachers planning ahead. Includes comprehensive curriculum coverage for grades 4, 5, and 6.",
+            highlights: [
+                "Save 40 DT on this limited-time bundle",
+                "All three primary cycle student books",
+                "Audio support and digital resources included",
+                "Valid during Black Friday week only"
+            ],
+            includes: ["Grade 4 Student Book", "Grade 5 Student Book", "Grade 6 Student Book"],
+            shippingNote: "Black Friday orders ship within 48 hours.",
+            bestseller: false,
+            tags: ["black friday", "bundle", "grades 4-6", "limited offer"],
+            resources: [],
+            images: [
+                "/assets/img/balckfriday/1.png",
+                "/assets/img/4th Grade.png",
+                "/assets/img/5th Grade.png",
+                "/assets/img/6th Grade.png"
+            ]
+        },
+        {
+            id: "bf-pack2-456-writing",
+            sku: "BF-PACK2",
+            name: "Black Friday Pack 2 - Ultimate Primary Bundle",
+            grade: "4-6",
+            gradeLabel: "4th-6th",
+            type: "bundle",
+            price: 80,
+            originalPrice: 135,
+            summary: "The complete primary collection: 4th, 5th, 6th grade books PLUS 6th grade writing guide!",
+            description: "Everything you need for primary cycle English education. Includes all three student books plus the essential 6th grade writing guide to prepare students for middle school.",
+            highlights: [
+                "Save 55 DT - our biggest discount!",
+                "4 books: grades 4, 5, 6 + writing guide",
+                "Complete skills development package",
+                "Limited Black Friday availability"
+            ],
+            includes: ["Grade 4 Student Book", "Grade 5 Student Book", "Grade 6 Student Book", "Grade 6 Writing Guide"],
+            shippingNote: "Black Friday bundle - ships within 48 hours.",
+            bestseller: false,
+            tags: ["black friday", "bundle", "grades 4-6", "writing", "best value"],
+            resources: [],
+            images: [
+                "/assets/img/balckfriday/2.png",
+                "/assets/img/4th Grade.png",
+                "/assets/img/5th Grade.png",
+                "/assets/img/6th Grade.png",
+                "/assets/img/6thwritingguidcover.png"
+            ]
+        },
+        {
+            id: "bf-pack3-9th-combo",
+            sku: "BF-PACK3",
+            name: "Black Friday Pack 3 - Grade 9 Essentials",
+            grade: "9",
+            gradeLabel: "9th",
+            type: "bundle",
+            price: 45,
+            originalPrice: 75,
+            summary: "Grade 9 student book + writing guide combo at unbeatable Black Friday pricing.",
+            description: "Essential middle school package for 9th grade students. Combines the core coursebook with specialized writing instruction to build strong academic English skills.",
+            highlights: [
+                "Save 30 DT on this combo",
+                "Complete 9th grade curriculum",
+                "Writing skills development included",
+                "Black Friday special offer"
+            ],
+            includes: ["Grade 9 Student Book", "Grade 9 Writing Guide"],
+            shippingNote: "Ready to ship within 24 hours.",
+            bestseller: false,
+            tags: ["black friday", "grade 9", "writing", "middle school"],
+            resources: [],
+            images: [
+                "/assets/img/balckfriday/3.png",
+                "/assets/img/9th Grade.png",
+                "/assets/img/9thwritingguidcover.png"
+            ]
+        },
+        {
+            id: "bf-pack4-bac-combo",
+            sku: "BF-PACK4",
+            name: "Black Friday Pack 4 - BAC Preparation Bundle",
+            grade: "bac",
+            gradeLabel: "4th Form",
+            type: "bundle",
+            price: 45,
+            originalPrice: 75,
+            summary: "4th Form (BAC) student book + writing guide - everything you need for exam success!",
+            description: "Complete BAC preparation package. Combines comprehensive coursebook with targeted writing strategies to help students excel in their baccalaureate exams.",
+            highlights: [
+                "Save 30 DT - Black Friday exclusive",
+                "Full BAC curriculum coverage",
+                "Essay and exam writing techniques",
+                "Limited time promotional offer"
+            ],
+            includes: ["4th Form Student Book", "4th Form Writing Guide"],
+            shippingNote: "Priority shipping for exam prep materials.",
+            bestseller: false,
+            tags: ["black friday", "bac", "4th form", "exam prep", "writing"],
+            resources: [],
+            images: [
+                    "/assets/img/balckfriday/4.png",
+                    "/assets/img/4th Form.png",
+                    "/assets/img/4thformwritingcover.png"
+            ]
+        }
+    ];
+
+    // Merge Black Friday bundles into main products array (temporary)
+    const allProducts = [...products, ...blackFridayBundles];
+
+    window.STORE_PRODUCTS = allProducts;
 })();
