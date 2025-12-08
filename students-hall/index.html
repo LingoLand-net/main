@@ -3,313 +3,366 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="LingoLand: Innovation meets Education. Discover our innovative English language resources tailored to the Tunisian curriculum." />
-    <meta name="keywords" content="lingo land, lingoland, lingo store, lingo-land, English language, education, Tunisian curriculum, LingoLand, innovative resources" />
-    <meta name="author" content="LingoLand Team" />
-    <meta name="robots" content="index, follow" />
-    <meta name="language" content="English" />
-    <meta name="theme-color" content="#00aca8" />
-
+    <meta name="description" content="LingoLand Students Hall - Celebrating achievements and success stories" />
     <title>Students Hall - LingoLand</title>
     <link rel="shortcut icon" href="../assets/img/Logo.png" type="image/x-icon">
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Students Hall - LingoLand" />
-    <meta property="og:description" content="Discover the success stories and achievements of LingoLand students." />
-    <meta property="og:image" content="../assets/img/logo.png" />
-    <meta property="og:url" content="https://lingo-land.net/students-hall" />
-
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://lingo-land.net/students-hall" />
-    <meta property="twitter:title" content="Students Hall - LingoLand" />
-    <meta property="twitter:description" content="Discover the success stories and achievements of LingoLand students." />
-    <meta property="twitter:image" content="../assets/img/image.png" />
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="styles.css">
-
 </head>
-<body>
-    <!-- Navbar will be injected here by navbar.js -->
+<body class="font-sans bg-gray-50">
     <div id="navbar-placeholder"></div>
 
     <main>
-        <!-- Hero Section (aligned with Store hero) -->
-        <section class="hall-hero">
-            <div class="hall-intro">
-                <span class="hall-eyebrow">Community</span>
-                <h1>Students Hall</h1>
-                <p>Celebrating achievements, elevating voices, and inspiring learners across Tunisia.</p>
-                <div class="hall-actions">
-                    <a href="#student-spotlight" class="hall-primary">Meet Our Students</a>
-                    <a href="/Contact/" class="hall-secondary">Submit Your Story</a>
-                </div>
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden py-24 px-4" style="background: linear-gradient(135deg, var(--color-teal) 0%, var(--color-deep) 100%);">
+            <div class="absolute inset-0 pointer-events-none">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+            </div>
+            <div class="relative z-10 max-w-6xl mx-auto text-center text-white">
+                <h1 class="text-5xl md:text-6xl mb-4">Students Hall of Success</h1>
+                <p class="text-xl md:text-2xl opacity-95 max-w-3xl mx-auto">Where Achievement Meets Inspiration – Real Stories from Real Students</p>
             </div>
         </section>
 
-        <!-- Highlights section: Why students love LingoLand -->
-        <section class="py-10 bg-white">
-            <div class="container mx-auto px-4">
-                <h2 class="section-title">Why Students <span class="highlight">Love</span> LingoLand</h2>
-                <p class="section-subtitle">Built around real progress, motivation, and modern language learning.</p>
-                <div class="hall-highlights">
-                    <div class="hall-highlight-card">
-                        <div class="hall-icon"><i class="fas fa-bolt"></i></div>
-                        <h4>Interactive Lessons</h4>
-                        <p>Engaging activities and visuals that make learning memorable and fun.</p>
+        <!-- Stats Section -->
+        <section class="py-16 px-4 bg-white">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="stat-card bg-white p-8 rounded-3xl shadow-xl text-center cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl">
+                        <div class="stat-number text-5xl md:text-6xl gradient-text" data-target="500">0</div>
+                        <p class="text-gray-600 font-semibold mt-2 text-lg">Happy Students</p>
                     </div>
-                    <div class="hall-highlight-card">
-                        <div class="hall-icon"><i class="fas fa-robot"></i></div>
-                        <h4>AI‑Powered Practice</h4>
-                        <p>Smart support that adapts to the learner and builds confidence step by step.</p>
+                    <div class="stat-card bg-white p-8 rounded-3xl shadow-xl text-center cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl">
+                        <div class="stat-number text-5xl md:text-6xl gradient-text" data-target="95">0</div>
+                        <p class="text-gray-600 font-semibold mt-2 text-lg">% Grade Improvement</p>
                     </div>
-                    <div class="hall-highlight-card">
-                        <div class="hall-icon"><i class="fas fa-comments"></i></div>
-                        <h4>Real‑World Skills</h4>
-                        <p>Focus on speaking, listening, and practical usage—not just rules.</p>
+                    <div class="stat-card bg-white p-8 rounded-3xl shadow-xl text-center cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl">
+                        <div class="stat-number text-5xl md:text-6xl gradient-text" data-target="25">0</div>
+                        <p class="text-gray-600 font-semibold mt-2 text-lg">Partner Schools</p>
                     </div>
-                    <div class="hall-highlight-card">
-                        <div class="hall-icon"><i class="fas fa-users"></i></div>
-                        <h4>Supportive Community</h4>
-                        <p>Teachers and peers who celebrate progress and share what works.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Student Spotlight Section -->
-        <section id="student-spotlight" class="py-16 bg-white">
-            <div class="container mx-auto px-4">
-                <h2 class="section-title">Student <span class="highlight">Spotlight</span></h2>
-                <p class="section-subtitle">Meet some of our outstanding students and their achievements</p>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-                    <!-- Student Card 1 -->
-                    <div class="student-card">
-                        <img src="../assets/img/testppl/chahd.jpeg" alt="Chahd smiling portrait" class="student-img" loading="lazy">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Chahd M.</h3>
-                            <span class="grade-chip" aria-label="Student grade">Grade 10</span>
-                            <div class="mb-4">
-                                <span class="achievement-badge">English Excellence</span>
-                                <span class="achievement-badge">Public Speaking</span>
-                            </div>
-                            <p class="text-gray-700">"LingoLand transformed how I learn English. The interactive approach made all the difference!"</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Student Card 2 -->
-                    <div class="student-card">
-                        <img src="../assets/img/students/student2.jpg" alt="Ahmed during class activity" class="student-img" loading="lazy">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Ahmed B.</h3>
-                            <span class="grade-chip" aria-label="Student grade">Grade 9</span>
-                            <div class="mb-4">
-                                <span class="achievement-badge">Writing Champion</span>
-                                <span class="achievement-badge">Vocabulary Master</span>
-                            </div>
-                            <p class="text-gray-700">"The practical approach to grammar in LingoLand helped me improve my writing skills significantly."</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Student Card 3 -->
-                    <div class="student-card">
-                        <img src="../assets/img/students/student3.jpg" alt="Sara presenting in class" class="student-img" loading="lazy">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Sara K.</h3>
-                            <span class="grade-chip" aria-label="Student grade">Grade 11</span>
-                            <div class="mb-4">
-                                <span class="achievement-badge">Debate Team</span>
-                                <span class="achievement-badge">Listening Skills</span>
-                            </div>
-                            <p class="text-gray-700">"Thanks to LingoLand's listening exercises, I can now understand native speakers much better."</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Statistics Section -->
-        <section class="stats-section">
-            <div class="container mx-auto px-4">
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-                    <div>
-                        <div class="stat-number">95%</div>
-                        <p class="text-xl">Improved Grades</p>
-                    </div>
-                    <div>
-                        <div class="stat-number">500+</div>
-                        <p class="text-xl">Happy Students</p>
-                    </div>
-                    <div>
-                        <div class="stat-number">25</div>
-                        <p class="text-xl">Schools Using Our Materials</p>
-                    </div>
-                    <div>
-                        <div class="stat-number">98%</div>
-                        <p class="text-xl">Satisfaction Rate</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Student Testimonials Section -->
-    <section class="py-16" style="background:#ecfeff;">
-            <div class="container mx-auto px-4">
-                <h2 class="section-title">What Our <span class="highlight">Students Say</span></h2>
-                <p class="section-subtitle">Hear directly from students about their LingoLand experience</p>
-                
-                <div class="testimonial-slider mt-12 relative" role="region" aria-label="Student testimonials" aria-live="polite">
-                    <!-- Testimonial 1 -->
-                    <div class="testimonial-slide active card p-8" aria-hidden="false">
-                        <div class="flex items-center mb-6">
-                            <img src="../assets/img/testppl/chahd.jpeg" alt="Chahd" class="w-16 h-16 rounded-full mr-4" loading="lazy">
-                            <div>
-                                <h3 class="text-xl font-bold">Chahd M.</h3>
-                                <p class="text-gray-600">Grade 10 Student</p>
-                            </div>
-                        </div>
-                        <p class="text-gray-700 text-lg leading-relaxed">
-                            I'm Bessem Mbarek's favorite student and quite frankly who's surprised? But this post isn't just about me it's about Lingoland: the book that made all the difference. If you haven't heard of LingoLand, you're seriously missing out. It's not just an English textbook it's a full experience. Designed by the one and only Mr. Bessem himself. LingoLand is smart, fun, and made for us. Real topics, real conversations, and exercises that actually help you use the language not just memorize it from the first page, I could tell it was different. The lessons felt like they were made for me and the way everything's explained just clicks. What really made a difference? The interactive listening and speaking exercises gave me that extra confidence to speak like a native. The grammar and vocabulary weren't just "rules" but practical things I could actually use every day. And the best part? It never felt like work. It felt like I was just having a conversation or learning something cool with every chapter. So yeah, I've always been good at English, but Lingoland made me even better.
-                        </p>
-                    </div>
-                    
-                    <!-- Testimonial 2 -->
-                    <div class="testimonial-slide card p-8" aria-hidden="true">
-                        <div class="flex items-center mb-6">
-                            <img src="../assets/img/students/student2.jpg" alt="Student 2" class="w-16 h-16 rounded-full mr-4" loading="lazy">
-                            <div>
-                                <h3 class="text-xl font-bold">Ahmed B.</h3>
-                                <p class="text-gray-600">Grade 9 Student</p>
-                            </div>
-                        </div>
-                        <p class="text-gray-700 text-lg leading-relaxed">
-                            Before using LingoLand, English was my weakest subject. The traditional methods just didn't work for me. But LingoLand changed everything. The way they present grammar through real-life situations made it so much easier to understand. Now I actually enjoy English classes and my grades have improved dramatically. I went from struggling to pass to being one of the top students in my class!
-                        </p>
-                    </div>
-                    
-                    <!-- Testimonial 3 -->
-                    <div class="testimonial-slide card p-8" aria-hidden="true">
-                        <div class="flex items-center mb-6">
-                            <img src="../assets/img/students/student3.jpg" alt="Student 3" class="w-16 h-16 rounded-full mr-4" loading="lazy">
-                            <div>
-                                <h3 class="text-xl font-bold">Sara K.</h3>
-                                <p class="text-gray-600">Grade 11 Student</p>
-                            </div>
-                        </div>
-                        <p class="text-gray-700 text-lg leading-relaxed">
-                            The listening exercises in LingoLand are amazing! They use different accents and real conversations, which prepared me perfectly for understanding native speakers. I recently traveled abroad and was able to communicate confidently. The vocabulary sections are also fantastic - they teach words in context, so you remember them better. LingoLand doesn't just teach English; it prepares you for real-world communication.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="flex justify-center mt-8">
-                    <button id="prev-testimonial" class="mx-2 p-2 rounded-full text-white" style="background:#F48C06;" aria-label="Previous testimonial">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button id="next-testimonial" class="mx-2 p-2 rounded-full text-white" style="background:#F48C06;" aria-label="Next testimonial">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Student Gallery Section -->
-        <section class="py-16 bg-white">
-            <div class="container mx-auto px-4">
-                <h2 class="section-title">Student <span class="highlight">Gallery</span></h2>
-                <p class="section-subtitle">A glimpse into our students' learning journey with LingoLand</p>
-                
-                <div class="gallery-grid mt-12" id="studentGallery" aria-label="Student gallery grid">
-                    <div class="gallery-item">
-                        <img src="../assets/img/gallery/class1.jpg" alt="Classroom activity" loading="lazy">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="../assets/img/gallery/student-work1.jpg" alt="Student work" loading="lazy">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="../assets/img/gallery/class2.jpg" alt="Group discussion" loading="lazy">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="../assets/img/gallery/event1.jpg" alt="School event" loading="lazy">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="../assets/img/gallery/student-work2.jpg" alt="Student project" loading="lazy">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="../assets/img/gallery/class3.jpg" alt="Interactive lesson" loading="lazy">
+                    <div class="stat-card bg-white p-8 rounded-3xl shadow-xl text-center cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl">
+                        <div class="stat-number text-5xl md:text-6xl gradient-text" data-target="98">0</div>
+                        <p class="text-gray-600 font-semibold mt-2 text-lg">% Satisfaction Rate</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Share Your Story Section -->
-        <section id="share-story" class="py-16" style="background:var(--color-pale);">
-            <div class="container mx-auto px-4">
-                <h2 class="section-title">Share Your <span class="highlight">Story</span></h2>
-                <p class="section-subtitle">Have LingoLand helped you grow? Tell us about your progress and inspire other learners.</p>
-                <form class="story-form mt-10" id="storyForm" novalidate>
-                    <div class="grid gap-6 md:grid-cols-2">
+        <!-- Success Stories -->
+        <section class="py-20 px-4 bg-gray-50">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="title-dark text-4xl md:text-5xl text-center mb-4">Student <span class="gradient-text">Success Stories</span></h2>
+                <p class="text-center text-gray-600 text-lg max-w-2xl mx-auto mb-12">Hover or tap the cards to discover how LingoLand transformed their English learning journey</p>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Story 1 -->
+                    <div class="story-card" style="height: 450px;">
+                        <div class="story-card-inner h-full">
+                            <div class="story-card-front bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col">
+                                <img src="../assets/img/testppl/chahd.jpeg" alt="Chahd" class="w-full h-64 object-cover">
+                                <div class="p-6 flex-grow">
+                                    <h3 class="text-2xl mb-2" style="color: var(--color-deep);">Chahd M.</h3>
+                                    <span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3" style="background: var(--color-pale); color: var(--color-teal);">Grade 10</span>
+                                    <div class="flex flex-wrap gap-2 mb-3">
+                                        <span class="text-xs px-3 py-1 rounded-full font-semibold text-white" style="background: var(--color-orange);">🏆 Excellence</span>
+                                        <span class="text-xs px-3 py-1 rounded-full font-semibold text-white" style="background: var(--color-orange);">🎤 Speaking</span>
+                                        <span class="text-xs px-3 py-1 rounded-full font-semibold text-white" style="background: var(--color-orange);">⭐ Top Student</span>
+                                    </div>
+                                    <p class="text-gray-600 text-sm">Hover to read my story →</p>
+                                </div>
+                            </div>
+                            <div class="story-card-back rounded-3xl shadow-xl p-8 flex flex-col justify-center text-white" style="background: linear-gradient(135deg, var(--color-orange), var(--color-teal));">
+                                <h3 class="text-2xl mb-4">My Journey</h3>
+                                <p class="leading-relaxed">"LingoLand completely transformed how I approach English! The interactive lessons and Mr. Bessem's innovative teaching style made everything click. I went from being good to being confident enough to represent my school in English competitions!"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Story 2 -->
+                    <div class="story-card" style="height: 450px;">
+                        <div class="story-card-inner h-full">
+                            <div class="story-card-front bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col">
+                                <img src="../assets/img/students/student2.jpg" alt="Ahmed" class="w-full h-64 object-cover">
+                                <div class="p-6 flex-grow">
+                                    <h3 class="text-2xl mb-2" style="color: var(--color-deep);">Ahmed B.</h3>
+                                    <span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3" style="background: var(--color-pale); color: var(--color-teal);">Grade 9</span>
+                                    <div class="flex flex-wrap gap-2 mb-3">
+                                        <span class="text-xs px-3 py-1 rounded-full font-semibold text-white" style="background: var(--color-orange);">✍️ Writing</span>
+                                        <span class="text-xs px-3 py-1 rounded-full font-semibold text-white" style="background: var(--color-orange);">📚 Vocabulary</span>
+                                    </div>
+                                    <p class="text-gray-600 text-sm">Hover to read my story →</p>
+                                </div>
+                            </div>
+                            <div class="story-card-back rounded-3xl shadow-xl p-8 flex flex-col justify-center text-white" style="background: linear-gradient(135deg, var(--color-orange), var(--color-teal));">
+                                <h3 class="text-2xl mb-4">From Struggle to Success</h3>
+                                <p class="leading-relaxed">"English used to be my weakest subject. LingoLand's practical approach to grammar and real-world examples changed everything. Now I write confidently and even help my classmates!"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Story 3 -->
+                    <div class="story-card" style="height: 450px;">
+                        <div class="story-card-inner h-full">
+                            <div class="story-card-front bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col">
+                                <img src="../assets/img/students/student3.jpg" alt="Sara" class="w-full h-64 object-cover">
+                                <div class="p-6 flex-grow">
+                                    <h3 class="text-2xl mb-2" style="color: var(--color-deep);">Sara K.</h3>
+                                    <span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3" style="background: var(--color-pale); color: var(--color-teal);">Grade 11</span>
+                                    <div class="flex flex-wrap gap-2 mb-3">
+                                        <span class="text-xs px-3 py-1 rounded-full font-semibold text-white" style="background: var(--color-orange);">🎯 Debate</span>
+                                        <span class="text-xs px-3 py-1 rounded-full font-semibold text-white" style="background: var(--color-orange);">👂 Listening</span>
+                                    </div>
+                                    <p class="text-gray-600 text-sm">Hover to read my story →</p>
+                                </div>
+                            </div>
+                            <div class="story-card-back rounded-3xl shadow-xl p-8 flex flex-col justify-center text-white" style="background: linear-gradient(135deg, var(--color-orange), var(--color-teal));">
+                                <h3 class="text-2xl mb-4">Building Confidence</h3>
+                                <p class="leading-relaxed">"The listening exercises prepared me perfectly for understanding native speakers. I joined the debate team and can now communicate confidently in any situation!"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="mt-10 flex justify-center">
+                        <a id="viewMoreStoriesBtn" href="/students-hall/stories.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-white shadow-lg transition-transform duration-200" style="background: linear-gradient(135deg, var(--color-teal), var(--color-orange));">
+                            View more stories
+                            <span aria-hidden="true">→</span>
+                        </a>
+                    </div>
+            </div>
+        </section>
+
+        <!-- Learning Pillars -->
+        <section class="py-20 px-4 text-white relative overflow-hidden" style="background: linear-gradient(135deg, var(--color-deep), var(--color-teal));">
+            <div class="max-w-6xl mx-auto relative z-10">
+                <h2 class="text-4xl md:text-5xl text-center mb-4">Our Learning <span style="color: var(--color-orange);">Pillars</span></h2>
+                <p class="text-center text-lg opacity-90 max-w-2xl mx-auto mb-12">The foundations that make LingoLand effective for every student</p>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="teacher-card glass-card rounded-3xl p-8 transition-all duration-300 hover:-translate-y-3 hover:scale-105">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-3xl" aria-hidden="true">📚</div>
+                            <span class="px-3 py-1 rounded-full text-sm font-bold" style="background: rgba(255,255,255,0.15); color: #fff;">Curriculum</span>
+                        </div>
+                        <h3 class="text-2xl mb-2">Official Alignment</h3>
+                        <p class="leading-relaxed opacity-95">Every unit maps to Tunisia's official program, so students build confidence while staying on track for exams.</p>
+                    </div>
+
+                    <div class="teacher-card glass-card rounded-3xl p-8 transition-all duration-300 hover:-translate-y-3 hover:scale-105">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-3xl" aria-hidden="true">🎧</div>
+                            <span class="px-3 py-1 rounded-full text-sm font-bold" style="background: rgba(255,255,255,0.15); color: #fff;">Practice</span>
+                        </div>
+                        <h3 class="text-2xl mb-2">Interactive Practice</h3>
+                        <p class="leading-relaxed opacity-95">Listening, speaking, and writing drills with real-world topics so skills transfer outside the classroom.</p>
+                    </div>
+
+                    <div class="teacher-card glass-card rounded-3xl p-8 transition-all duration-300 hover:-translate-y-3 hover:scale-105">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-3xl" aria-hidden="true">🤝</div>
+                            <span class="px-3 py-1 rounded-full text-sm font-bold" style="background: rgba(255,255,255,0.15); color: #fff;">Support</span>
+                        </div>
+                        <h3 class="text-2xl mb-2">Guided Support</h3>
+                        <p class="leading-relaxed opacity-95">Clear explanations, worked examples, and teacher tips that help every learner progress steadily.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Wall -->
+        <section class="py-20 px-4 bg-white">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="title-dark text-4xl md:text-5xl text-center mb-4">Student <span class="gradient-text">Voices</span></h2>
+                <p class="text-center text-gray-600 text-lg max-w-2xl mx-auto mb-12">Quick thoughts from our amazing community</p>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="quote-card relative bg-white p-8 rounded-2xl shadow-lg border-l-4 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" style="border-color: var(--color-orange);">
+                        <p class="relative z-10 italic text-gray-600 mb-4 leading-relaxed">LingoLand made English fun! I actually look forward to class now.</p>
+                        <p class="relative z-10 font-bold text-sm" style="color: var(--color-deep);">— Youssef, Grade 8</p>
+                    </div>
+                    <div class="quote-card relative bg-white p-8 rounded-2xl shadow-lg border-l-4 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" style="border-color: var(--color-orange);">
+                        <p class="relative z-10 italic text-gray-600 mb-4 leading-relaxed">The exercises are challenging but achievable. Perfect balance!</p>
+                        <p class="relative z-10 font-bold text-sm" style="color: var(--color-deep);">— Marwa, Grade 10</p>
+                    </div>
+                    <div class="quote-card relative bg-white p-8 rounded-2xl shadow-lg border-l-4 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" style="border-color: var(--color-orange);">
+                        <p class="relative z-10 italic text-gray-600 mb-4 leading-relaxed">My speaking confidence has skyrocketed thanks to LingoLand.</p>
+                        <p class="relative z-10 font-bold text-sm" style="color: var(--color-deep);">— Omar, Grade 11</p>
+                    </div>
+                    <div class="quote-card relative bg-white p-8 rounded-2xl shadow-lg border-l-4 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" style="border-color: var(--color-orange);">
+                        <p class="relative z-10 italic text-gray-600 mb-4 leading-relaxed">Real-world topics make learning so much more relevant and interesting.</p>
+                        <p class="relative z-10 font-bold text-sm" style="color: var(--color-deep);">— Nour, Grade 9</p>
+                    </div>
+                    <div class="quote-card relative bg-white p-8 rounded-2xl shadow-lg border-l-4 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" style="border-color: var(--color-orange);">
+                        <p class="relative z-10 italic text-gray-600 mb-4 leading-relaxed">I improved my grade from C to A in just one semester!</p>
+                        <p class="relative z-10 font-bold text-sm" style="color: var(--color-deep);">— Fares, Grade 10</p>
+                    </div>
+                    <div class="quote-card relative bg-white p-8 rounded-2xl shadow-lg border-l-4 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" style="border-color: var(--color-orange);">
+                        <p class="relative z-10 italic text-gray-600 mb-4 leading-relaxed">The grammar explanations actually make sense now. Game changer!</p>
+                        <p class="relative z-10 font-bold text-sm" style="color: var(--color-deep);">— Leila, Grade 12</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Testimonials -->
+        <section class="py-20 px-4" style="background: var(--color-pale);">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="title-dark text-4xl md:text-5xl text-center mb-4">Video <span class="gradient-text">Testimonials</span></h2>
+                <p class="text-center text-gray-600 text-lg max-w-2xl mx-auto mb-12">Watch students share their LingoLand experience</p>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="video-card relative rounded-3xl overflow-hidden shadow-xl cursor-pointer transition-transform duration-300 hover:scale-105">
+                        <img src="../assets/img/gallery/class1.jpg" alt="Video" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center transition-all duration-300 hover:bg-opacity-60">
+                            <div class="w-20 h-20 rounded-full flex items-center justify-center text-3xl text-white transition-all duration-300 hover:scale-125" style="background: var(--color-orange);">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-card relative rounded-3xl overflow-hidden shadow-xl cursor-pointer transition-transform duration-300 hover:scale-105">
+                        <img src="../assets/img/gallery/class2.jpg" alt="Video" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center transition-all duration-300 hover:bg-opacity-60">
+                            <div class="w-20 h-20 rounded-full flex items-center justify-center text-3xl text-white transition-all duration-300 hover:scale-125" style="background: var(--color-orange);">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-card relative rounded-3xl overflow-hidden shadow-xl cursor-pointer transition-transform duration-300 hover:scale-105">
+                        <img src="../assets/img/gallery/class3.jpg" alt="Video" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center transition-all duration-300 hover:bg-opacity-60">
+                            <div class="w-20 h-20 rounded-full flex items-center justify-center text-3xl text-white transition-all duration-300 hover:scale-125" style="background: var(--color-orange);">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements -->
+        <!-- <section class="py-20 px-4 bg-white">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl md:text-5xl text-center mb-4">Student <span class="gradient-text">Achievements</span></h2>
+                <p class="text-center text-gray-600 text-lg max-w-2xl mx-auto mb-12">Celebrating milestones and memorable moments</p>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl">
+                        <div class="overflow-hidden">
+                            <img src="../assets/img/gallery/event1.jpg" alt="Achievement" class="w-full h-48 object-cover transition-transform duration-500 hover:scale-110">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="font-bold mb-2" style="color: var(--color-deep);">English Competition Winners</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">Our students took 1st place in the regional competition!</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl">
+                        <div class="overflow-hidden">
+                            <img src="../assets/img/gallery/student-work1.jpg" alt="Achievement" class="w-full h-48 object-cover transition-transform duration-500 hover:scale-110">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="font-bold mb-2" style="color: var(--color-deep);">Creative Writing Showcase</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">Outstanding essays and stories from our talented writers</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl">
+                        <div class="overflow-hidden">
+                            <img src="../assets/img/gallery/student-work2.jpg" alt="Achievement" class="w-full h-48 object-cover transition-transform duration-500 hover:scale-110">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="font-bold mb-2" style="color: var(--color-deep);">Speaking Champions</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">Students presenting with confidence and fluency</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl">
+                        <div class="overflow-hidden">
+                            <img src="../assets/img/gallery/class1.jpg" alt="Achievement" class="w-full h-48 object-cover transition-transform duration-500 hover:scale-110">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="font-bold mb-2" style="color: var(--color-deep);">Interactive Learning</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">Engaged students loving every moment of class</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- Share Your Story Form -->
+        <section class="py-20 px-4" style="background: var(--color-pale);">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="title-dark text-4xl md:text-5xl text-center mb-4">Share Your <span class="gradient-text">Story</span></h2>
+                <p class="text-center text-gray-600 text-lg mb-12">Has LingoLand helped you grow? Tell us about your progress and inspire other learners.</p>
+                
+                <form id="storyForm" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
                         <div>
-                            <label class="required" for="storyName">Your Name</label>
-                            <input id="storyName" name="name" type="text" required placeholder="e.g. Sara K." aria-required="true">
+                            <label class="block font-bold mb-2" style="color: var(--color-deep);">Your Name <span style="color: var(--color-orange);">*</span></label>
+                            <input type="text" id="storyName" required placeholder="e.g. Sara K." class="w-full px-4 py-3 border-2 border-gray-300 rounded-2xl focus:border-teal-500 focus:outline-none transition-colors">
                         </div>
                         <div>
-                            <label for="storyEmail">Email (optional)</label>
-                            <input id="storyEmail" name="email" type="email" placeholder="you@example.com">
+                            <label class="block font-bold mb-2" style="color: var(--color-deep);">Email (optional)</label>
+                            <input type="email" id="storyEmail" placeholder="you@example.com" class="w-full px-4 py-3 border-2 border-gray-300 rounded-2xl focus:border-teal-500 focus:outline-none transition-colors">
                         </div>
                         <div>
-                            <label class="required" for="storyGrade">Grade</label>
-                            <select id="storyGrade" name="grade" required aria-required="true">
+                            <label class="block font-bold mb-2" style="color: var(--color-deep);">Grade <span style="color: var(--color-orange);">*</span></label>
+                            <select id="storyGrade" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-2xl focus:border-teal-500 focus:outline-none transition-colors">
                                 <option value="" disabled selected>Select grade</option>
-                                <option>7</option>
-                                <option>8</option>
-                                <option>9</option>
-                                <option>10</option>
-                                <option>11</option>
-                                <option>12</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
                             </select>
                         </div>
                         <div>
-                            <label for="storyPhoto">Photo (optional)</label>
-                            <input id="storyPhoto" name="photo" type="file" accept="image/*">
+                            <label class="block font-bold mb-2" style="color: var(--color-deep);">Photo (optional)</label>
+                            <input type="file" id="storyPhoto" accept="image/*" class="w-full px-4 py-3 border-2 border-gray-300 rounded-2xl focus:border-teal-500 focus:outline-none transition-colors">
                         </div>
                         <div class="md:col-span-2">
-                            <label class="required" for="storyText">Your Story</label>
-                            <textarea id="storyText" name="story" rows="6" required placeholder="Describe how LingoLand helped you..." aria-required="true"></textarea>
+                            <label class="block font-bold mb-2" style="color: var(--color-deep);">Your Story <span style="color: var(--color-orange);">*</span></label>
+                            <textarea id="storyText" required rows="6" placeholder="Describe how LingoLand helped you..." class="w-full px-4 py-3 border-2 border-gray-300 rounded-2xl focus:border-teal-500 focus:outline-none transition-colors resize-none"></textarea>
                         </div>
                     </div>
-                    <div class="mt-8 flex items-center gap-4">
-                        <button type="submit" class="submit-story-btn">Send Story</button>
-                        <p class="form-note">We may publish selected stories (with light editing for clarity). By submitting, you agree we can feature it.</p>
+                    <div class="flex flex-col md:flex-row items-start md:items-center gap-4">
+                        <button type="submit" class="px-8 py-3 rounded-full font-bold text-white text-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl" style="background: var(--color-orange);">Send Story</button>
+                        <p class="text-sm text-gray-600 leading-snug max-w-md">We may publish selected stories (with light editing for clarity). By submitting, you agree we can feature it.</p>
                     </div>
                 </form>
             </div>
         </section>
-        
-        <!-- Join Us CTA Section -->
-        <section class="py-16 text-white text-center" style="background:linear-gradient(90deg, var(--color-teal) 0%, var(--color-teal) 45%, var(--color-orange) 100%);">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">Join Our Success Stories</h2>
-                <p class="text-xl max-w-2xl mx-auto mb-8">Become part of the LingoLand community and transform your English learning experience</p>
-                <a href="/Store/" class="join-btn inline-block bg-white text-teal-600 hover:bg-gray-100">Get Your Materials</a>
+
+
+        <!-- CTA -->
+        <section class="py-20 px-4 text-center text-white relative overflow-hidden" style="background: linear-gradient(135deg, var(--color-orange), var(--color-teal));">
+            <div class="max-w-4xl mx-auto relative z-10">
+                <h2 class="text-4xl md:text-5xl mb-4">Join Our Success Stories</h2>
+                <p class="text-xl mb-8 opacity-95">Become part of the LingoLand community and transform your English learning experience</p>
+                <a href="/Store/" class="inline-block px-12 py-4 bg-white rounded-full text-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl" style="color: var(--color-teal);">Get Your Materials</a>
             </div>
         </section>
     </main>
-    
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <div class="">
-                <a href="#" class="logo" id="logo">
+            <div class="footer-logo">
+                <a href="../index.html" class="logo">
                     <img src="../assets/img/logo.png" alt="LingoLand Logo" class="footer-logo-img">
                 </a>
             </div>
             <div class="footer-info">
                 <h2><b>Contact Us</b></h2>
                 <p>3005 Cité Ons, Sfax, Tunisia</p>
-                <p>Email: <a href="mailto:contact@lingoland.com">contact@lingo-land.net</a></p>
-                <p>Phone: <a href="tel:+21612345678">+216 22 571 291</a></p>
+                <p>Email: <a href="mailto:contact@lingo-land.net">contact@lingo-land.net</a></p>
+                <p>Phone: <a href="tel:+21622571291">+216 22 571 291</a></p>
                 <hr><br>
                 <b><p>Developed by: <a href="https://i-startup.tn/">I-StartUp®️</a></p></b>
             </div>
@@ -325,9 +378,15 @@
             </div>
             <div class="footer-social-media">
                 <h2>Follow Us</h2>
-                <a href="https://www.facebook.com/profile.php?id=100094352086577" target="_blank" class="social-icon facebook" aria-label="Facebook"><img src="../assets/img/facebook.png" alt="Facebook"></a>
-                <a href="https://www.youtube.com/@LingoLandCoursebooks" target="_blank" class="social-icon twitter" aria-label="YouTube"><img src="../assets/img/youtube.png" alt="YouTube"></a>
-                <a href="https://www.instagram.com/lingoland_coursebooks/" target="_blank" class="social-icon instagram" aria-label="Instagram"><img src="../assets/img/innstagram.png" alt="Instagram"></a>
+                <a href="https://www.facebook.com/profile.php?id=100094352086577" target="_blank" class="social-icon" aria-label="Facebook">
+                    <img src="../assets/img/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.youtube.com/@LingoLandCoursebooks" target="_blank" class="social-icon" aria-label="YouTube">
+                    <img src="../assets/img/youtube.png" alt="YouTube">
+                </a>
+                <a href="https://www.instagram.com/lingoland_coursebooks/" target="_blank" class="social-icon" aria-label="Instagram">
+                    <img src="../assets/img/innstagram.png" alt="Instagram">
+                </a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -335,8 +394,9 @@
         </div>
     </footer>
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-92CZEJ6YE7"></script>
+    <!-- Scripts -->
     <script src="../assets/js/navbar.js"></script>
-    <script src="./script.js" defer></script>
+    <script src="script.js"></script>
+
 </body>
 </html>
