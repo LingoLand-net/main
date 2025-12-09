@@ -10,6 +10,63 @@ buttons.forEach((button) => {
 	button.addEventListener("click", toggleAnswer);
 });
 
+		// Premium FAQ Accordion with optimized performance - uses transform instead of max-height
+		document.addEventListener('DOMContentLoaded', () => {
+			const faqButtons = document.querySelectorAll('.faq-question');
+			
+			// Pre-calculate max heights for smooth animation
+			const answerHeights = new Map();
+			faqButtons.forEach(btn => {
+				const answer = btn.nextElementSibling;
+				if (answer) {
+					answer.style.maxHeight = '0px';
+					// Temporarily show to measure
+					answer.classList.add('show');
+					answerHeights.set(answer, answer.scrollHeight + 'px');
+					answer.classList.remove('show');
+					answer.style.maxHeight = '0px';
+				}
+			});
+			
+			faqButtons.forEach(btn => {
+				btn.addEventListener('click', function() {
+					const answer = this.nextElementSibling;
+					const isExpanded = this.getAttribute('aria-expanded') === 'true';
+					
+					// Close all other open items
+					faqButtons.forEach(otherBtn => {
+						if (otherBtn !== this && otherBtn.getAttribute('aria-expanded') === 'true') {
+							otherBtn.setAttribute('aria-expanded', 'false');
+							const otherAnswer = otherBtn.nextElementSibling;
+							if (otherAnswer) {
+								otherAnswer.style.maxHeight = '0px';
+								otherAnswer.classList.remove('show');
+							}
+						}
+					});
+					
+					// Toggle current item with calculated height
+					this.setAttribute('aria-expanded', String(!isExpanded));
+					if (answer) {
+						if (!isExpanded) {
+							answer.style.maxHeight = answerHeights.get(answer);
+							answer.classList.add('show');
+						} else {
+							answer.style.maxHeight = '0px';
+							answer.classList.remove('show');
+						}
+					}
+				});
+				
+				// Keyboard navigation
+				btn.addEventListener('keydown', (e) => {
+					if (e.key === 'Enter' || e.key === ' ') {
+						e.preventDefault();
+						btn.click();
+					}
+				});
+			});
+		});
 
 const scriptURL = 'https://script.google.com/macros/s/AKfycbzoyrA_EWaF-LEpaLBEU3Yb12ETCVqSB8QX4jpSSJKlItsz2FMxkn0zdPRKP7kZm8jP/exec';
 
