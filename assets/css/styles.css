@@ -325,8 +325,7 @@ a {
 
 .hero-content {
 	max-width: 500px;
-	animation: slideInLeft 1s ease-in-out;
-	/* Slide-in animation from the left */
+	/* Slide-in animation removed - blur effect only on scroll */
 }
 
 .hero-content h1 {
@@ -388,8 +387,7 @@ a {
 
 .hero-image {
 	position: relative;
-	animation: slideInRight 1s ease-in-out;
-	/* Slide-in animation from the right */
+	/* Slide-in animation removed - blur effect only on scroll */
 	top: 30px;
 	/* Adjust this value to move the .hero-image down */
 }

@@ -255,11 +255,15 @@ document.addEventListener('click', function(e) {
     const onDomReady = function() {
         // Apply read more to Student Says paragraph only
         const studentPara = document.querySelector('#student-says .sec');
-        setupReadMore(studentPara, { maxChars: 420 });
-        // add a br before the button so it doesnt mix with the text
-        const br = document.createElement('br');
-        const btn = studentPara.querySelector('button[data-action="toggle-readmore"]');
-        studentPara.insertBefore(br, btn);
+        if (studentPara) {
+            setupReadMore(studentPara, { maxChars: 420 });
+            // add a br before the button so it doesnt mix with the text
+            const br = document.createElement('br');
+            const btn = studentPara.querySelector('button[data-action="toggle-readmore"]');
+            if (btn) {
+                studentPara.insertBefore(br, btn);
+            }
+        }
     };
 
     if (document.readyState === 'loading') {

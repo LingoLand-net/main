@@ -7,6 +7,7 @@
     <title>Students Hall - LingoLand</title>
     <link rel="shortcut icon" href="../assets/img/Logo.png" type="image/x-icon">
     
+
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -28,8 +29,8 @@
                 <div class="shape shape-4"></div>
             </div>
             <div class="relative z-10 max-w-6xl mx-auto text-center text-white">
-                <h1 class="text-5xl md:text-6xl mb-4">Students Hall of Success</h1>
-                <p class="text-xl md:text-2xl opacity-95 max-w-3xl mx-auto">Where Achievement Meets Inspiration – Real Stories from Real Students</p>
+                <h1 class="text-5xl md:text-6xl mb-4 reveal">Students Hall of Success</h1>
+                <p class="text-xl md:text-2xl opacity-95 max-w-3xl mx-auto reveal" data-reveal-delay="0.1s">Where Achievement Meets Inspiration – Real Stories from Real Students</p>
             </div>
         </section>
 
@@ -37,21 +38,21 @@
         <section class="py-16 px-4 bg-white">
             <div class="max-w-6xl mx-auto">
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="stat-card bg-white p-8 rounded-3xl shadow-xl text-center cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl">
-                        <div class="stat-number text-5xl md:text-6xl gradient-text" data-target="500">0</div>
+                    <div class="stat-card scale-in bg-white p-8 rounded-3xl shadow-xl text-center cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl" data-reveal-delay="0s">
+                        <div class="stat-number text-5xl md:text-6xl gradient-text" data-target="400">0<span>+</span></div>
                         <p class="text-gray-600 font-semibold mt-2 text-lg">Happy Students</p>
                     </div>
-                    <div class="stat-card bg-white p-8 rounded-3xl shadow-xl text-center cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl">
-                        <div class="stat-number text-5xl md:text-6xl gradient-text" data-target="95">0</div>
-                        <p class="text-gray-600 font-semibold mt-2 text-lg">% Grade Improvement</p>
+                    <div class="stat-card scale-in bg-white p-8 rounded-3xl shadow-xl text-center cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl" data-reveal-delay="0.05s">
+                        <div class="stat-number text-5xl md:text-6xl gradient-text" data-target="95">0<span>%</span></div>
+                        <p class="text-gray-600 font-semibold mt-2 text-lg">Grade Improvement</p>
                     </div>
-                    <div class="stat-card bg-white p-8 rounded-3xl shadow-xl text-center cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl">
-                        <div class="stat-number text-5xl md:text-6xl gradient-text" data-target="25">0</div>
+                    <div class="stat-card scale-in bg-white p-8 rounded-3xl shadow-xl text-center cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl" data-reveal-delay="0.1s">
+                        <div class="stat-number text-5xl md:text-6xl gradient-text" data-target="4">0<span><i class="fas fa-graduation-cap"></i></span></div>
                         <p class="text-gray-600 font-semibold mt-2 text-lg">Partner Schools</p>
                     </div>
-                    <div class="stat-card bg-white p-8 rounded-3xl shadow-xl text-center cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl">
-                        <div class="stat-number text-5xl md:text-6xl gradient-text" data-target="98">0</div>
-                        <p class="text-gray-600 font-semibold mt-2 text-lg">% Satisfaction Rate</p>
+                    <div class="stat-card scale-in bg-white p-8 rounded-3xl shadow-xl text-center cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl" data-reveal-delay="0.15s">
+                        <div class="stat-number text-5xl md:text-6xl gradient-text" data-target="98">0<span>%</span></div>
+                        <p class="text-gray-600 font-semibold mt-2 text-lg">Satisfaction Rate</p>
                     </div>
                 </div>
             </div>
@@ -60,12 +61,12 @@
         <!-- Success Stories -->
         <section class="py-20 px-4 bg-gray-50">
             <div class="max-w-6xl mx-auto">
-                <h2 class="title-dark text-4xl md:text-5xl text-center mb-4">Student <span class="gradient-text">Success Stories</span></h2>
-                <p class="text-center text-gray-600 text-lg max-w-2xl mx-auto mb-12">Hover or tap the cards to discover how LingoLand transformed their English learning journey</p>
+                <h2 class="title-dark text-4xl md:text-5xl text-center mb-4 reveal">Student <span class="gradient-text">Success Stories</span></h2>
+                <p class="text-center text-gray-600 text-lg max-w-2xl mx-auto mb-12 reveal" data-reveal-delay="0.05s">Hover or tap the cards to discover how LingoLand transformed their English learning journey</p>
                 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Story 1 -->
-                    <div class="story-card" style="height: 450px;">
+                    <div class="story-card reveal" data-reveal-delay="0s" style="height: 450px;">
                         <div class="story-card-inner h-full">
                             <div class="story-card-front bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col">
                                 <img src="../assets/img/testppl/chahd.jpeg" alt="Chahd" class="w-full h-64 object-cover">
@@ -73,9 +74,9 @@
                                     <h3 class="text-2xl mb-2" style="color: var(--color-deep);">Chahd M.</h3>
                                     <span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3" style="background: var(--color-pale); color: var(--color-teal);">Grade 10</span>
                                     <div class="flex flex-wrap gap-2 mb-3">
-                                        <span class="text-xs px-3 py-1 rounded-full font-semibold text-white" style="background: var(--color-orange);">🏆 Excellence</span>
-                                        <span class="text-xs px-3 py-1 rounded-full font-semibold text-white" style="background: var(--color-orange);">🎤 Speaking</span>
-                                        <span class="text-xs px-3 py-1 rounded-full font-semibold text-white" style="background: var(--color-orange);">⭐ Top Student</span>
+                                        <span class="text-xs px-3 py-1 rounded-full font-semibold text-white" style="background: var(--color-orange);"><i class="fas fa-trophy"></i> Excellence</span>
+                                        <span class="text-xs px-3 py-1 rounded-full font-semibold text-white" style="background: var(--color-orange);"><i class="fas fa-microphone"></i> Speaking</span>
+                                        <span class="text-xs px-3 py-1 rounded-full font-semibold text-white" style="background: var(--color-orange);"><i class="fas fa-star"></i> Top Student</span>
                                     </div>
                                     <p class="text-gray-600 text-sm">Hover to read my story →</p>
                                 </div>
@@ -88,7 +89,7 @@
                     </div>
 
                     <!-- Story 2 -->
-                    <div class="story-card" style="height: 450px;">
+                    <div class="story-card reveal" data-reveal-delay="0.05s" style="height: 450px;">
                         <div class="story-card-inner h-full">
                             <div class="story-card-front bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col">
                                 <img src="../assets/img/students/student2.jpg" alt="Ahmed" class="w-full h-64 object-cover">
@@ -96,8 +97,8 @@
                                     <h3 class="text-2xl mb-2" style="color: var(--color-deep);">Ahmed B.</h3>
                                     <span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3" style="background: var(--color-pale); color: var(--color-teal);">Grade 9</span>
                                     <div class="flex flex-wrap gap-2 mb-3">
-                                        <span class="text-xs px-3 py-1 rounded-full font-semibold text-white" style="background: var(--color-orange);">✍️ Writing</span>
-                                        <span class="text-xs px-3 py-1 rounded-full font-semibold text-white" style="background: var(--color-orange);">📚 Vocabulary</span>
+                                        <span class="text-xs px-3 py-1 rounded-full font-semibold text-white" style="background: var(--color-orange);"><i class="fas fa-pen"></i> Writing</span>
+                                        <span class="text-xs px-3 py-1 rounded-full font-semibold text-white" style="background: var(--color-orange);"><i class="fas fa-book"></i> Vocabulary</span>
                                     </div>
                                     <p class="text-gray-600 text-sm">Hover to read my story →</p>
                                 </div>
@@ -110,7 +111,7 @@
                     </div>
 
                     <!-- Story 3 -->
-                    <div class="story-card" style="height: 450px;">
+                    <div class="story-card reveal" data-reveal-delay="0.1s" style="height: 450px;">
                         <div class="story-card-inner h-full">
                             <div class="story-card-front bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col">
                                 <img src="../assets/img/students/student3.jpg" alt="Sara" class="w-full h-64 object-cover">
@@ -118,8 +119,8 @@
                                     <h3 class="text-2xl mb-2" style="color: var(--color-deep);">Sara K.</h3>
                                     <span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3" style="background: var(--color-pale); color: var(--color-teal);">Grade 11</span>
                                     <div class="flex flex-wrap gap-2 mb-3">
-                                        <span class="text-xs px-3 py-1 rounded-full font-semibold text-white" style="background: var(--color-orange);">🎯 Debate</span>
-                                        <span class="text-xs px-3 py-1 rounded-full font-semibold text-white" style="background: var(--color-orange);">👂 Listening</span>
+                                        <span class="text-xs px-3 py-1 rounded-full font-semibold text-white" style="background: var(--color-orange);"><i class="fas fa-bullseye"></i> Debate</span>
+                                        <span class="text-xs px-3 py-1 rounded-full font-semibold text-white" style="background: var(--color-orange);"><i class="fas fa-headphones"></i> Listening</span>
                                     </div>
                                     <p class="text-gray-600 text-sm">Hover to read my story →</p>
                                 </div>
@@ -131,7 +132,7 @@
                         </div>
                     </div>
                 </div>
-                    <div class="mt-10 flex justify-center">
+                    <div class="mt-10 flex justify-center reveal" data-reveal-delay="0.15s">
                         <a id="viewMoreStoriesBtn" href="/students-hall/stories.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-white shadow-lg transition-transform duration-200" style="background: linear-gradient(135deg, var(--color-teal), var(--color-orange));">
                             View more stories
                             <span aria-hidden="true">→</span>
@@ -143,31 +144,31 @@
         <!-- Learning Pillars -->
         <section class="py-20 px-4 text-white relative overflow-hidden" style="background: linear-gradient(135deg, var(--color-deep), var(--color-teal));">
             <div class="max-w-6xl mx-auto relative z-10">
-                <h2 class="text-4xl md:text-5xl text-center mb-4">Our Learning <span style="color: var(--color-orange);">Pillars</span></h2>
-                <p class="text-center text-lg opacity-90 max-w-2xl mx-auto mb-12">The foundations that make LingoLand effective for every student</p>
+                <h2 class="text-4xl md:text-5xl text-center mb-4 reveal">Our Learning <span style="color: var(--color-orange);">Pillars</span></h2>
+                <p class="text-center text-lg opacity-90 max-w-2xl mx-auto mb-12 reveal" data-reveal-delay="0.05s">The foundations that make LingoLand effective for every student</p>
                 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="teacher-card glass-card rounded-3xl p-8 transition-all duration-300 hover:-translate-y-3 hover:scale-105">
+                    <div class="teacher-card glass-card rounded-3xl p-8 transition-all duration-300 hover:-translate-y-3 hover:scale-105 reveal-left" data-reveal-delay="0s">
                         <div class="flex items-center justify-between mb-4">
-                            <div class="text-3xl" aria-hidden="true">📚</div>
+                            <div class="text-3xl" aria-hidden="true"><i class="fas fa-book-open"></i></div>
                             <span class="px-3 py-1 rounded-full text-sm font-bold" style="background: rgba(255,255,255,0.15); color: #fff;">Curriculum</span>
                         </div>
                         <h3 class="text-2xl mb-2">Official Alignment</h3>
                         <p class="leading-relaxed opacity-95">Every unit maps to Tunisia's official program, so students build confidence while staying on track for exams.</p>
                     </div>
 
-                    <div class="teacher-card glass-card rounded-3xl p-8 transition-all duration-300 hover:-translate-y-3 hover:scale-105">
+                    <div class="teacher-card glass-card rounded-3xl p-8 transition-all duration-300 hover:-translate-y-3 hover:scale-105 reveal" data-reveal-delay="0.05s">
                         <div class="flex items-center justify-between mb-4">
-                            <div class="text-3xl" aria-hidden="true">🎧</div>
+                            <div class="text-3xl" aria-hidden="true"><i class="fas fa-headphones-alt"></i></div>
                             <span class="px-3 py-1 rounded-full text-sm font-bold" style="background: rgba(255,255,255,0.15); color: #fff;">Practice</span>
                         </div>
                         <h3 class="text-2xl mb-2">Interactive Practice</h3>
                         <p class="leading-relaxed opacity-95">Listening, speaking, and writing drills with real-world topics so skills transfer outside the classroom.</p>
                     </div>
 
-                    <div class="teacher-card glass-card rounded-3xl p-8 transition-all duration-300 hover:-translate-y-3 hover:scale-105">
+                    <div class="teacher-card glass-card rounded-3xl p-8 transition-all duration-300 hover:-translate-y-3 hover:scale-105 reveal-right" data-reveal-delay="0.1s">
                         <div class="flex items-center justify-between mb-4">
-                            <div class="text-3xl" aria-hidden="true">🤝</div>
+                            <div class="text-3xl" aria-hidden="true"><i class="fas fa-handshake"></i></div>
                             <span class="px-3 py-1 rounded-full text-sm font-bold" style="background: rgba(255,255,255,0.15); color: #fff;">Support</span>
                         </div>
                         <h3 class="text-2xl mb-2">Guided Support</h3>
@@ -180,31 +181,31 @@
         <!-- Quote Wall -->
         <section class="py-20 px-4 bg-white">
             <div class="max-w-6xl mx-auto">
-                <h2 class="title-dark text-4xl md:text-5xl text-center mb-4">Student <span class="gradient-text">Voices</span></h2>
-                <p class="text-center text-gray-600 text-lg max-w-2xl mx-auto mb-12">Quick thoughts from our amazing community</p>
+                <h2 class="title-dark text-4xl md:text-5xl text-center mb-4 reveal">Student <span class="gradient-text">Voices</span></h2>
+                <p class="text-center text-gray-600 text-lg max-w-2xl mx-auto mb-12 reveal" data-reveal-delay="0.05s">Quick thoughts from our amazing community</p>
                 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="quote-card relative bg-white p-8 rounded-2xl shadow-lg border-l-4 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" style="border-color: var(--color-orange);">
+                    <div class="quote-card reveal-left relative bg-white p-8 rounded-2xl shadow-lg border-l-4 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-reveal-delay="0s" style="border-color: var(--color-orange);">
                         <p class="relative z-10 italic text-gray-600 mb-4 leading-relaxed">LingoLand made English fun! I actually look forward to class now.</p>
                         <p class="relative z-10 font-bold text-sm" style="color: var(--color-deep);">— Youssef, Grade 8</p>
                     </div>
-                    <div class="quote-card relative bg-white p-8 rounded-2xl shadow-lg border-l-4 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" style="border-color: var(--color-orange);">
+                    <div class="quote-card reveal relative bg-white p-8 rounded-2xl shadow-lg border-l-4 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-reveal-delay="0.05s" style="border-color: var(--color-orange);">
                         <p class="relative z-10 italic text-gray-600 mb-4 leading-relaxed">The exercises are challenging but achievable. Perfect balance!</p>
                         <p class="relative z-10 font-bold text-sm" style="color: var(--color-deep);">— Marwa, Grade 10</p>
                     </div>
-                    <div class="quote-card relative bg-white p-8 rounded-2xl shadow-lg border-l-4 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" style="border-color: var(--color-orange);">
+                    <div class="quote-card reveal-right relative bg-white p-8 rounded-2xl shadow-lg border-l-4 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-reveal-delay="0.1s" style="border-color: var(--color-orange);">
                         <p class="relative z-10 italic text-gray-600 mb-4 leading-relaxed">My speaking confidence has skyrocketed thanks to LingoLand.</p>
                         <p class="relative z-10 font-bold text-sm" style="color: var(--color-deep);">— Omar, Grade 11</p>
                     </div>
-                    <div class="quote-card relative bg-white p-8 rounded-2xl shadow-lg border-l-4 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" style="border-color: var(--color-orange);">
+                    <div class="quote-card reveal-left relative bg-white p-8 rounded-2xl shadow-lg border-l-4 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-reveal-delay="0.15s" style="border-color: var(--color-orange);">
                         <p class="relative z-10 italic text-gray-600 mb-4 leading-relaxed">Real-world topics make learning so much more relevant and interesting.</p>
                         <p class="relative z-10 font-bold text-sm" style="color: var(--color-deep);">— Nour, Grade 9</p>
                     </div>
-                    <div class="quote-card relative bg-white p-8 rounded-2xl shadow-lg border-l-4 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" style="border-color: var(--color-orange);">
+                    <div class="quote-card reveal relative bg-white p-8 rounded-2xl shadow-lg border-l-4 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-reveal-delay="0.2s" style="border-color: var(--color-orange);">
                         <p class="relative z-10 italic text-gray-600 mb-4 leading-relaxed">I improved my grade from C to A in just one semester!</p>
                         <p class="relative z-10 font-bold text-sm" style="color: var(--color-deep);">— Fares, Grade 10</p>
                     </div>
-                    <div class="quote-card relative bg-white p-8 rounded-2xl shadow-lg border-l-4 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" style="border-color: var(--color-orange);">
+                    <div class="quote-card reveal-right relative bg-white p-8 rounded-2xl shadow-lg border-l-4 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-reveal-delay="0.25s" style="border-color: var(--color-orange);">
                         <p class="relative z-10 italic text-gray-600 mb-4 leading-relaxed">The grammar explanations actually make sense now. Game changer!</p>
                         <p class="relative z-10 font-bold text-sm" style="color: var(--color-deep);">— Leila, Grade 12</p>
                     </div>
@@ -215,11 +216,11 @@
         <!-- Video Testimonials -->
         <section class="py-20 px-4" style="background: var(--color-pale);">
             <div class="max-w-6xl mx-auto">
-                <h2 class="title-dark text-4xl md:text-5xl text-center mb-4">Video <span class="gradient-text">Testimonials</span></h2>
-                <p class="text-center text-gray-600 text-lg max-w-2xl mx-auto mb-12">Watch students share their LingoLand experience</p>
+                <h2 class="title-dark text-4xl md:text-5xl text-center mb-4 reveal">Video <span class="gradient-text">Testimonials</span></h2>
+                <p class="text-center text-gray-600 text-lg max-w-2xl mx-auto mb-12 reveal" data-reveal-delay="0.05s">Watch students share their LingoLand experience</p>
                 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="video-card relative rounded-3xl overflow-hidden shadow-xl cursor-pointer transition-transform duration-300 hover:scale-105">
+                    <div class="video-card scale-in relative rounded-3xl overflow-hidden shadow-xl cursor-pointer transition-transform duration-300 hover:scale-105" data-reveal-delay="0s">
                         <img src="../assets/img/gallery/class1.jpg" alt="Video" class="w-full h-64 object-cover">
                         <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center transition-all duration-300 hover:bg-opacity-60">
                             <div class="w-20 h-20 rounded-full flex items-center justify-center text-3xl text-white transition-all duration-300 hover:scale-125" style="background: var(--color-orange);">
@@ -227,7 +228,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="video-card relative rounded-3xl overflow-hidden shadow-xl cursor-pointer transition-transform duration-300 hover:scale-105">
+                    <div class="video-card scale-in relative rounded-3xl overflow-hidden shadow-xl cursor-pointer transition-transform duration-300 hover:scale-105" data-reveal-delay="0.05s">
                         <img src="../assets/img/gallery/class2.jpg" alt="Video" class="w-full h-64 object-cover">
                         <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center transition-all duration-300 hover:bg-opacity-60">
                             <div class="w-20 h-20 rounded-full flex items-center justify-center text-3xl text-white transition-all duration-300 hover:scale-125" style="background: var(--color-orange);">
@@ -235,7 +236,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="video-card relative rounded-3xl overflow-hidden shadow-xl cursor-pointer transition-transform duration-300 hover:scale-105">
+                    <div class="video-card scale-in relative rounded-3xl overflow-hidden shadow-xl cursor-pointer transition-transform duration-300 hover:scale-105" data-reveal-delay="0.1s">
                         <img src="../assets/img/gallery/class3.jpg" alt="Video" class="w-full h-64 object-cover">
                         <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center transition-all duration-300 hover:bg-opacity-60">
                             <div class="w-20 h-20 rounded-full flex items-center justify-center text-3xl text-white transition-all duration-300 hover:scale-125" style="background: var(--color-orange);">
@@ -297,10 +298,10 @@
         <!-- Share Your Story Form -->
         <section class="py-20 px-4" style="background: var(--color-pale);">
             <div class="max-w-3xl mx-auto">
-                <h2 class="title-dark text-4xl md:text-5xl text-center mb-4">Share Your <span class="gradient-text">Story</span></h2>
-                <p class="text-center text-gray-600 text-lg mb-12">Has LingoLand helped you grow? Tell us about your progress and inspire other learners.</p>
+                <h2 class="title-dark text-4xl md:text-5xl text-center mb-4 reveal">Share Your <span class="gradient-text">Story</span></h2>
+                <p class="text-center text-gray-600 text-lg mb-12 reveal" data-reveal-delay="0.05s">Has LingoLand helped you grow? Tell us about your progress and inspire other learners.</p>
                 
-                <form id="storyForm" class="space-y-6">
+                <form id="storyForm" class="space-y-6 reveal" data-reveal-delay="0.1s">
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label class="block font-bold mb-2" style="color: var(--color-deep);">Your Name <span style="color: var(--color-orange);">*</span></label>
@@ -343,9 +344,9 @@
         <!-- CTA -->
         <section class="py-20 px-4 text-center text-white relative overflow-hidden" style="background: linear-gradient(135deg, var(--color-orange), var(--color-teal));">
             <div class="max-w-4xl mx-auto relative z-10">
-                <h2 class="text-4xl md:text-5xl mb-4">Join Our Success Stories</h2>
-                <p class="text-xl mb-8 opacity-95">Become part of the LingoLand community and transform your English learning experience</p>
-                <a href="/Store/" class="inline-block px-12 py-4 bg-white rounded-full text-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl" style="color: var(--color-teal);">Get Your Materials</a>
+                <h2 class="text-4xl md:text-5xl mb-4 reveal">Join Our Success Stories</h2>
+                <p class="text-xl mb-8 opacity-95 reveal" data-reveal-delay="0.05s">Become part of the LingoLand community and transform your English learning experience</p>
+                <a href="/Store/" class="inline-block px-12 py-4 bg-white rounded-full text-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl reveal" data-reveal-delay="0.1s" style="color: var(--color-teal);">Get Your Materials</a>
             </div>
         </section>
     </main>

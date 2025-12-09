@@ -446,9 +446,9 @@
 	<!-- Hero Section -->
 	<section class="hero-about">
 		<div class="hero-content">
-			<div class="hero-badge reveal">🏆 Award-Winning Educator</div>
-			<h1 class="hero-title reveal">Meet the Visionary Behind <br/><span style="color: #fbbf24;">LingoLand</span></h1>
-			<p class="hero-subtitle reveal">Transforming English education across Tunisia, one innovative coursebook at a time</p>
+			<div class="hero-badge">🏆 Award-Winning Educator</div>
+			<h1 class="hero-title">Meet the Visionary Behind <br/>Lin<span style="color: #f48c06;">go</span>Land</h1>
+			<p class="hero-subtitle">Transforming English education across Tunisia, one innovative coursebook at a time</p>
 		</div>
 	</section>
 	
@@ -665,12 +665,13 @@
 			});
 		});
 		
-		// Parallax effect on hero
+		// Blur effect on hero
 		window.addEventListener('scroll', () => {
 			const scrolled = window.pageYOffset;
 			const hero = document.querySelector('.hero-about');
 			if (hero && scrolled < hero.offsetHeight) {
-				hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+				const blurValue = Math.min(scrolled * 0.1, 10); // Limit blur to a maximum value
+				hero.style.filter = `blur(${blurValue}px)`;
 			}
 		});
 	</script>

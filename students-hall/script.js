@@ -21,7 +21,9 @@ function initStatsCounter() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const target = parseInt(entry.target.dataset.target, 10) || 0;
-        animateNumber(entry.target, 0, target, 2000);
+        // Each stat animates in 1-2s, random for natural effect
+        const duration = 1000 + Math.random() * 1000;
+        animateNumber(entry.target, 0, target, duration);
         obs.unobserve(entry.target);
       }
     });
@@ -33,15 +35,28 @@ function initStatsCounter() {
 function animateNumber(element, start, end, duration) {
   const startTime = performance.now();
   const range = end - start;
+  const numberNode = Array.from(element.childNodes).find(
+    node => node.nodeType === Node.TEXT_NODE
+  );
 
   function update(currentTime) {
     const elapsed = currentTime - startTime;
     const progress = Math.min(elapsed / duration, 1);
     const easeOutQuart = 1 - Math.pow(1 - progress, 4);
     const current = Math.floor(start + (range * easeOutQuart));
-    element.textContent = current;
+    if (numberNode) {
+      numberNode.nodeValue = current;
+    } else {
+      element.textContent = current;
+    }
     if (progress < 1) requestAnimationFrame(update);
-    else element.textContent = end;
+    else {
+      if (numberNode) {
+        numberNode.nodeValue = end;
+      } else {
+        element.textContent = end;
+      }
+    }
   }
 
   requestAnimationFrame(update);
@@ -290,37 +305,28 @@ function ensureNotificationStyles() {
 
 // Scroll Animations
 function initScrollAnimations() {
-  const animated = document.querySelectorAll(
-    '.section-title, .section-subtitle, .stat-card, .story-card, .teacher-card, .quote-card, .video-card, .achievement-card'
-  );
-  if (!animated.length) return;
+  const revealables = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .scale-in');
+  if (!revealables.length) return;
+
+  if (!('IntersectionObserver' in window)) {
+    revealables.forEach(el => el.classList.add('active'));
+    return;
+  }
 
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('animate-in');
-        obs.unobserve(entry.target);
+        const el = entry.target;
+        if (el.dataset.revealDelay) {
+          el.style.transitionDelay = el.dataset.revealDelay;
+        }
+        requestAnimationFrame(() => el.classList.add('active'));
+        obs.unobserve(el);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 
-  animated.forEach((el, index) => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.4s, transform 0.4s';
-    el.style.transitionDelay = `${index * 0.01}s`;
-    observer.observe(el);
-  });
-
-  ensureScrollAnimationStyles();
-}
-
-function ensureScrollAnimationStyles() {
-  if (document.querySelector('style[data-animate-styles]')) return;
-  const styleEl = document.createElement('style');
-  styleEl.setAttribute('data-animate-styles', 'true');
-  styleEl.textContent = `.animate-in { opacity: 1 !important; transform: translateY(0) !important; }`;
-  document.head.appendChild(styleEl);
+  revealables.forEach(el => observer.observe(el));
 }
 
 // Smooth Scroll for Anchor Links

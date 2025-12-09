@@ -50,6 +50,7 @@
     <script src="sweetalert2.min.js"></script>
     <script src="sweetalert2/dist/sweetalert2.min.js"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 	<link rel="stylesheet" href="/assets/css/styles.css">
 
 	<!-- Structured Data: Organization Schema -->
@@ -257,6 +258,158 @@
 		.btn-outline:hover {
 			background-color: #00aca8;
 			color: #ffffff;
+		}
+
+		/* FAQ Styling - Premium Accordion */
+		.faq-container {
+			padding: 2rem 0;
+		}
+
+		.faq-item {
+			margin-bottom: 1.25rem;
+			border-radius: 1.25rem;
+			overflow: hidden;
+			border: 2px solid #e2e8f0;
+			transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+			background: white;
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+		}
+
+		.faq-item:hover {
+			border-color: #00aca8;
+			box-shadow: 0 15px 40px rgba(0, 172, 168, 0.15);
+			transform: translateY(-4px);
+		}
+
+		.faq-question {
+			width: 100%;
+			padding: 1.75rem;
+			background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+			border: none;
+			text-align: left;
+			font-size: 1.1rem;
+			font-weight: 700;
+			color: #0f3d3f;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+			font-family: 'Nunito', sans-serif;
+		}
+
+		.faq-question:hover {
+			background: linear-gradient(135deg, #f0fffe 0%, #ecfeff 100%);
+			color: #00aca8;
+			padding-left: 2rem;
+		}
+
+		.faq-question:focus-visible {
+			outline: 3px solid #00aca8;
+			outline-offset: -2px;
+		}
+
+		.faq-question::after {
+			content: '\f078';
+			font-family: 'Font Awesome 6 Free';
+			font-weight: 900;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			margin-left: auto;
+			transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+			color: #00aca8;
+			font-size: 0.9rem;
+			min-width: 24px;
+		}
+
+		.faq-question[aria-expanded="true"]::after {
+			transform: rotate(180deg);
+		}
+
+		.faq-answer {
+			max-height: 0;
+			overflow: hidden;
+			transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+			background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+			padding: 0 1.75rem;
+		}
+
+		.faq-answer.show {
+			max-height: 500px;
+			padding: 1.5rem 1.75rem;
+			border-top: 2px solid #e0f2f1;
+		}
+
+		.faq-answer p {
+			color: #475569;
+			font-size: 1rem;
+			line-height: 1.7;
+			margin: 0;
+			letter-spacing: 0.3px;
+		}
+
+		.faq-answer a {
+			color: #00aca8;
+			font-weight: 600;
+			text-decoration: none;
+			transition: all 0.2s ease;
+			position: relative;
+		}
+
+		.faq-answer a::after {
+			content: '';
+			position: absolute;
+			bottom: -2px;
+			left: 0;
+			width: 0;
+			height: 2px;
+			background: #F48C06;
+			transition: width 0.3s ease;
+		}
+
+		.faq-answer a:hover {
+			color: #F48C06;
+		}
+
+		.faq-answer a:hover::after {
+			width: 100%;
+		}
+
+		/* Mobile Responsive */
+		@media (max-width: 768px) {
+			.faq-item {
+				margin-bottom: 1rem;
+				border-radius: 1rem;
+			}
+
+			.faq-question {
+				font-size: 1rem;
+				padding: 1.25rem;
+			}
+
+			.faq-question:hover {
+				padding-left: 1.5rem;
+			}
+
+			.faq-answer.show {
+				padding: 1rem 1.25rem;
+			}
+
+			.faq-answer {
+				padding: 0 1.25rem;
+			}
+
+			.faq-question::after {
+				font-size: 0.7rem;
+			}
+		}
+
+		/* Tablet Landscape */
+		@media (max-width: 1024px) and (orientation: landscape) {
+			.faq-question {
+				padding: 1.25rem 1.5rem;
+			}
 		}
 	</style>
 </head>
@@ -512,7 +665,79 @@
 			</div>
 		</div>
 	</section>
+
 <br><br>
+	<!-- FAQ -->
+	<section style="position: relative;">
+		<h1 class="section-title" style="text-align: center;">
+			<span style="color:#00ACA8;">Frequently</span> <span style="color: #F48C06;">Asked</span> Questions
+		</h1>
+		<p class="section-subtitle" style="text-align: center; margin-bottom: 2rem;">
+			Answers to common questions about LingoLand and our offerings.
+		</p>
+		<div class="faq-container max-w-4xl mx-auto px-4">
+			<div class="faq-item">
+				<button class="faq-question" type="button" aria-expanded="false">
+					What age group are LingoLand books suitable for?
+				</button>
+				<div class="faq-answer">
+					<p>LingoLand books are designed for students from Grade 4 to BAC, typically ranging from ages 9 to 18.</p>
+				</div>
+			</div>
+			<div class="faq-item">
+				<button class="faq-question" type="button" aria-expanded="false">
+					Do the books follow the official Tunisian curriculum?
+				</button>
+				<div class="faq-answer">
+					<p>Yes. Every level is mapped to the Ministry of Education program, so students stay fully aligned with national requirements.</p>
+				</div>
+			</div>		
+			<div class="faq-item">
+				<button class="faq-question" type="button" aria-expanded="false">
+					How do I order and receive my books?
+				</button>
+				<div class="faq-answer">
+					<p>Order directly from our online Store. We ship across Tunisia with reliable partners; most orders arrive within 2–5 business days.</p>
+				</div>
+			</div>
+			<div class="faq-item">
+				<button class="faq-question" type="button" aria-expanded="false">
+					What payment methods are accepted?
+				</button>
+				<div class="faq-answer">
+					<p>We accept major Tunisian bank cards and offer cash-on-delivery in most regions. Payment instructions appear at checkout.</p>
+				</div>
+			</div>
+			<div class="faq-item">
+				<button class="faq-question" type="button" aria-expanded="false">
+					Do you offer classroom or school bundles?
+				</button>
+				<div class="faq-answer">
+					<p>Yes. We provide classroom packs and bulk pricing for schools. Contact us to tailor a bundle for your teachers and students.</p>
+				</div>
+			</div>
+			<div class="faq-item">
+				<button class="faq-question" type="button" aria-expanded="false">
+					Is there digital or audio support with the books?
+				</button>
+				<div class="faq-answer">
+					<p>Many titles include listening tracks and downloadable extras. Check each product page for the available digital resources.</p>
+				</div>
+			</div>
+			<div class="faq-item">
+				<button class="faq-question" type="button" aria-expanded="false">
+					Can I return or exchange an order?
+				</button>
+				<div class="faq-answer">
+					<p>If an item is damaged or incorrect, reach out within 7 days of delivery at <a href="mailto:contact@lingo-land.net">contact@lingo-land.net</a> and we will arrange a replacement.</p>
+				</div>
+			</div>
+		</div>
+		<!-- Decorative shapes -->
+		<div class="circle-point" style="position: absolute; top: 50%; right: 10%; opacity: 0.1; z-index: 0;"></div>
+		<div class="cube cube-top-right" style="position: absolute; top: 20%; right: 5%; opacity: 0.08; z-index: 0;"></div>
+		<div class="cube cube-bottom-right" style="position: absolute; bottom: 10%; left: 5%; opacity: 0.08; z-index: 0;"></div>
+	</section>
 	<footer class="footer">
 		<div class="footer-content">
 			<div class="">
@@ -555,6 +780,65 @@
 	<script src="Store/products-data.js"></script>
 	<script src="assets/js/testemonials.js"></script>
 	<script src="/assets/js/blackfriday.js"></script>
+	<script>
+		// Premium FAQ Accordion with optimized performance - uses transform instead of max-height
+		document.addEventListener('DOMContentLoaded', () => {
+			const faqButtons = document.querySelectorAll('.faq-question');
+			
+			// Pre-calculate max heights for smooth animation
+			const answerHeights = new Map();
+			faqButtons.forEach(btn => {
+				const answer = btn.nextElementSibling;
+				if (answer) {
+					answer.style.maxHeight = '0px';
+					// Temporarily show to measure
+					answer.classList.add('show');
+					answerHeights.set(answer, answer.scrollHeight + 'px');
+					answer.classList.remove('show');
+					answer.style.maxHeight = '0px';
+				}
+			});
+			
+			faqButtons.forEach(btn => {
+				btn.addEventListener('click', function() {
+					const answer = this.nextElementSibling;
+					const isExpanded = this.getAttribute('aria-expanded') === 'true';
+					
+					// Close all other open items
+					faqButtons.forEach(otherBtn => {
+						if (otherBtn !== this && otherBtn.getAttribute('aria-expanded') === 'true') {
+							otherBtn.setAttribute('aria-expanded', 'false');
+							const otherAnswer = otherBtn.nextElementSibling;
+							if (otherAnswer) {
+								otherAnswer.style.maxHeight = '0px';
+								otherAnswer.classList.remove('show');
+							}
+						}
+					});
+					
+					// Toggle current item with calculated height
+					this.setAttribute('aria-expanded', String(!isExpanded));
+					if (answer) {
+						if (!isExpanded) {
+							answer.style.maxHeight = answerHeights.get(answer);
+							answer.classList.add('show');
+						} else {
+							answer.style.maxHeight = '0px';
+							answer.classList.remove('show');
+						}
+					}
+				});
+				
+				// Keyboard navigation
+				btn.addEventListener('keydown', (e) => {
+					if (e.key === 'Enter' || e.key === ' ') {
+						e.preventDefault();
+						btn.click();
+					}
+				});
+			});
+		});
+	</script>
 	<script src="scripts.js"></script>
 	
 	<!-- SEO Helper Script -->
