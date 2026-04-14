@@ -1,0 +1,27 @@
+# LingoLand Tunisia
+
+> Official English coursebooks and educational resources aligned with the Tunisian curriculum.
+
+## Primary pages
+- Home: https://lingo-land.net/
+- Store: https://lingo-land.net/Store/
+- About: https://lingo-land.net/About/
+- Resources: https://lingo-land.net/Resources/
+- Students Hall: https://lingo-land.net/students-hall/
+- Survey: https://lingo-land.net/survey/
+- Contact: https://lingo-land.net/Contact/
+
+## Commerce pages
+- Product template: https://lingo-land.net/Store/product.html
+
+## Brand facts
+- Brand: LingoLand Tunisia
+- Founder: Bessem Mbarek
+- Location: Sfax, Tunisia
+- Support email: contact@lingo-land.net
+- Phone: +216 22 571 291
+
+## Crawl guidance
+- Public pages are intended for indexing.
+- Utility pages such as checkout and test pages are not intended for indexing.
+- Canonical sitemap: https://lingo-land.net/sitemap.xml

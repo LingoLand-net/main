@@ -124,7 +124,7 @@
     };
 
     /* ── Replace with your Apps Script URL ── */
-    const URL = 'https://script.google.com/macros/s/AKfycbwSqqlv2Il-PslHjl_Bdw2gbEB0UbZZcjYud3ZzgathpicfxtMFvQOhxxi9Mrkx94MX/exec';
+    const URL = 'https://script.google.com/macros/s/AKfycbzHL4YTNzP0A4ISyqY36HZA8j1s5Qw71KTIGLAb5SJWjoS0i4w81GrMzH-xVPZtwubR/exec';
     postJsonToAppsScript(URL, payload)
       .then(() => {
         document.getElementById('rs4').classList.remove('active');
@@ -177,7 +177,7 @@
     };
 
     /* ── Replace with your Apps Script URL ── */
-    const URL = 'https://script.google.com/macros/s/AKfycbwSqqlv2Il-PslHjl_Bdw2gbEB0UbZZcjYud3ZzgathpicfxtMFvQOhxxi9Mrkx94MX/exec';
+    const URL = 'https://script.google.com/macros/s/AKfycbzHL4YTNzP0A4ISyqY36HZA8j1s5Qw71KTIGLAb5SJWjoS0i4w81GrMzH-xVPZtwubR/exec';
     postJsonToAppsScript(URL, payload)
       .then(showReqDone).catch(showReqDone);
   }

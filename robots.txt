@@ -2,7 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /Store/cart-checkout.html
 Disallow: /Store/backup/
-Disallow: /assets/js/
 Disallow: /test.html
 Disallow: /.git/
 Disallow: /.github/
@@ -14,8 +13,39 @@ Allow: /Store/product.html?id=bf-pack2-456-writing
 Allow: /Store/product.html?id=bf-pack3-9th-combo
 Allow: /Store/product.html?id=bf-pack4-bac-combo
 
+# AI crawlers: allow public pages, keep utility/private paths blocked
+User-agent: GPTBot
+Allow: /
+Disallow: /Store/cart-checkout.html
+Disallow: /Store/backup/
+Disallow: /test.html
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /Store/cart-checkout.html
+Disallow: /Store/backup/
+Disallow: /test.html
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /Store/cart-checkout.html
+Disallow: /Store/backup/
+Disallow: /test.html
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /Store/cart-checkout.html
+Disallow: /Store/backup/
+Disallow: /test.html
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /Store/cart-checkout.html
+Disallow: /Store/backup/
+Disallow: /test.html
+
 # Sitemap
 Sitemap: https://lingo-land.net/sitemap.xml
 
-# Crawl-delay for respectful crawling
-Crawl-delay: 1
+# LLM guidance
+# https://lingo-land.net/llms.txt
