@@ -150,6 +150,131 @@
             .join('');
     }
 
+    function upsertMeta(attr, key, value) {
+        if (!value) return;
+        let tag = document.head.querySelector(`meta[${attr}="${key}"]`);
+        if (!tag) {
+            tag = document.createElement('meta');
+            tag.setAttribute(attr, key);
+            document.head.appendChild(tag);
+        }
+        tag.setAttribute('content', value);
+    }
+
+    function upsertCanonical(href) {
+        let canonical = document.head.querySelector('link[rel="canonical"]');
+        if (!canonical) {
+            canonical = document.createElement('link');
+            canonical.setAttribute('rel', 'canonical');
+            document.head.appendChild(canonical);
+        }
+        canonical.setAttribute('href', href);
+    }
+
+    function upsertJsonLd(id, data) {
+        let script = document.getElementById(id);
+        if (!script) {
+            script = document.createElement('script');
+            script.id = id;
+            script.type = 'application/ld+json';
+            document.head.appendChild(script);
+        }
+        script.textContent = JSON.stringify(data);
+    }
+
+    function absoluteUrl(path) {
+        try {
+            return new URL(path, window.location.origin).href;
+        } catch (_) {
+            return `${window.location.origin}/assets/img/logo.png`;
+        }
+    }
+
+    function applyProductSeo(product, imagePath) {
+        const canonicalUrl = `${window.location.origin}/Store/product.html?id=${encodeURIComponent(product.id)}`;
+        const imageUrl = absoluteUrl(imagePath || '/assets/img/logo.png');
+        const description = product.summary || product.description || 'Official Tunisian curriculum English coursebook details and order options.';
+        const title = `${product.name} | LingoLand Store Tunisia`;
+        const robots = 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1';
+
+        document.title = title;
+        upsertCanonical(canonicalUrl);
+        upsertMeta('name', 'description', description);
+        upsertMeta('name', 'robots', robots);
+        upsertMeta('name', 'googlebot', robots);
+
+        upsertMeta('property', 'og:type', 'product');
+        upsertMeta('property', 'og:title', title);
+        upsertMeta('property', 'og:description', description);
+        upsertMeta('property', 'og:url', canonicalUrl);
+        upsertMeta('property', 'og:image', imageUrl);
+        upsertMeta('property', 'og:image:alt', `${product.name} - LingoLand Tunisia`);
+
+        upsertMeta('name', 'twitter:card', 'summary_large_image');
+        upsertMeta('name', 'twitter:url', canonicalUrl);
+        upsertMeta('name', 'twitter:title', title);
+        upsertMeta('name', 'twitter:description', description);
+        upsertMeta('name', 'twitter:image', imageUrl);
+
+        upsertJsonLd('product-jsonld', {
+            '@context': 'https://schema.org',
+            '@type': 'Product',
+            name: product.name,
+            description: description,
+            image: [imageUrl],
+            sku: product.sku || '',
+            brand: {
+                '@type': 'Brand',
+                name: 'LingoLand Tunisia'
+            },
+            category: product.gradeLabel || product.grade || 'English Coursebook',
+            offers: {
+                '@type': 'Offer',
+                priceCurrency: 'TND',
+                price: typeof product.price === 'number' ? product.price.toFixed(2) : String(product.price || ''),
+                availability: 'https://schema.org/InStock',
+                url: canonicalUrl
+            }
+        });
+    }
+
+    function applyNotFoundSeo() {
+        const url = `${window.location.origin}/Store/product.html`;
+        const title = 'Product Not Found | LingoLand Store Tunisia';
+        const description = 'The requested product could not be found. Explore available LingoLand resources in the store.';
+
+        document.title = title;
+        upsertCanonical(url);
+        upsertMeta('name', 'description', description);
+        upsertMeta('name', 'robots', 'noindex, follow');
+        upsertMeta('name', 'googlebot', 'noindex, follow');
+
+        upsertMeta('property', 'og:type', 'website');
+        upsertMeta('property', 'og:title', title);
+        upsertMeta('property', 'og:description', description);
+        upsertMeta('property', 'og:url', url);
+        upsertMeta('property', 'og:image', `${window.location.origin}/assets/img/logo.png`);
+
+        upsertMeta('name', 'twitter:card', 'summary_large_image');
+        upsertMeta('name', 'twitter:url', url);
+        upsertMeta('name', 'twitter:title', title);
+        upsertMeta('name', 'twitter:description', description);
+        upsertMeta('name', 'twitter:image', `${window.location.origin}/assets/img/logo.png`);
+
+        upsertJsonLd('product-jsonld', {
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            name: 'Product not found',
+            url: url,
+            description: description,
+            isPartOf: {
+                '@type': 'WebSite',
+                name: 'LingoLand Tunisia',
+                url: `${window.location.origin}/`
+            }
+        });
+    }
+
     function showProduct(product) {
         // Hide empty state and show content
         if (selectors.emptyState) selectors.emptyState.style.display = 'none';
@@ -180,6 +305,7 @@
         renderIncludes(product.includes);
         renderTags(product.tags);
         renderResources(product.resources);
+        applyProductSeo(product, primaryImage);
     }
 
     function showNotFound() {
@@ -187,6 +313,7 @@
         if (selectors.contentSection) selectors.contentSection.style.display = 'none';
         if (selectors.descriptionSection) selectors.descriptionSection.style.display = 'none';
         renderResources([]);
+        applyNotFoundSeo();
     }
 
     function handleAddToCart() {

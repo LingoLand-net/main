@@ -5,7 +5,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://lingo-land.net/</loc>
-    <lastmod>2025-11-13</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -13,7 +13,7 @@
   <!-- Store Main Page - High Priority for Tunisia SEO -->
   <url>
     <loc>https://lingo-land.net/Store/</loc>
-    <lastmod>2025-11-13</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
@@ -21,7 +21,7 @@
   <!-- Store Product Page -->
   <url>
     <loc>https://lingo-land.net/Store/product.html</loc>
-    <lastmod>2025-11-17</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -29,25 +29,25 @@
   <!-- Black Friday Bundle Product URLs (temporary, valid during BF week) -->
   <url>
     <loc>https://lingo-land.net/Store/product.html?id=bf-pack1-456</loc>
-    <lastmod>2025-11-17</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lingo-land.net/Store/product.html?id=bf-pack2-456-writing</loc>
-    <lastmod>2025-11-17</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://lingo-land.net/Store/product.html?id=bf-pack3-9th-combo</loc>
-    <lastmod>2025-11-17</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lingo-land.net/Store/product.html?id=bf-pack4-bac-combo</loc>
-    <lastmod>2025-11-17</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
@@ -55,7 +55,7 @@
   <!-- About Us Page -->
   <url>
     <loc>https://lingo-land.net/About/</loc>
-    <lastmod>2025-11-13</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -63,7 +63,7 @@
   <!-- Resources Page - Important for Tunisia Teachers -->
   <url>
     <loc>https://lingo-land.net/Resources/</loc>
-    <lastmod>2025-11-13</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -71,15 +71,23 @@
   <!-- Students Hall Page -->
   <url>
     <loc>https://lingo-land.net/students-hall/</loc>
-    <lastmod>2025-11-13</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+
+  <!-- Survey Page -->
+  <url>
+    <loc>https://lingo-land.net/survey/</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- Contact Page -->
   <url>
     <loc>https://lingo-land.net/Contact/</loc>
-    <lastmod>2025-11-13</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
