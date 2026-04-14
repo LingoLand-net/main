@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Share your LingoLand experience. Submit student reviews and support requests to help us improve courses and resources in Tunisia." />
+  <meta name="keywords" content="LingoLand survey, student feedback Tunisia, course review form, request support LingoLand" />
+  <meta name="author" content="LingoLand Tunisia" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="language" content="en-TN" />
+  <meta name="theme-color" content="#00aca8" />
+  <title>Student Reviews & Requests | LingoLand Tunisia</title>
+  <link rel="shortcut icon" href="../assets/img/Logo.png" type="image/x-icon">
+  <link rel="canonical" href="https://lingo-land.net/survey/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Student Reviews & Requests | LingoLand Tunisia" />
+  <meta property="og:description" content="Send your review or request to the LingoLand team and help us improve learning outcomes in Tunisia." />
+  <meta property="og:image" content="https://lingo-land.net/assets/img/logo.png" />
+  <meta property="og:image:alt" content="LingoLand Tunisia feedback page" />
+  <meta property="og:url" content="https://lingo-land.net/survey/" />
+  <meta property="og:site_name" content="LingoLand Tunisia" />
+  <meta property="og:locale" content="fr_TN" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://lingo-land.net/survey/" />
+  <meta name="twitter:title" content="Student Reviews & Requests | LingoLand Tunisia" />
+  <meta name="twitter:description" content="Submit course feedback and support requests directly to LingoLand." />
+  <meta name="twitter:image" content="https://lingo-land.net/assets/img/logo.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Student Reviews & Requests",
+    "url": "https://lingo-land.net/survey/",
+    "description": "Public feedback and student request page for LingoLand Tunisia.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "LingoLand Tunisia",
+      "url": "https://lingo-land.net/"
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="font-sans bg-gray-50">
+  <div id="navbar-placeholder"></div>
+
+  <!-- ═══ PAGE ═══ -->
+  <div class="page-shell">
+
+    <!-- header -->
+    <div class="eyebrow">LingoLand Feedback</div>
+    <h1 class="page-title" id="page-title">Student Review</h1>
+    <p class="page-sub" id="page-sub">Tell us what is working well and what we should improve.</p>
+
+    <!-- tab switcher -->
+    <div class="tab-bar">
+      <button class="tab-btn review-tab" id="tab-review" onclick="switchTab('review')">
+        ✏️ Write a Review
+      </button>
+      <button class="tab-btn request-tab inactive" id="tab-request" onclick="switchTab('request')">
+        📬 Send a Request
+      </button>
+    </div>
+
+    <!-- ════════════════════════════════════════════════
+       REVIEW PANEL
+  ════════════════════════════════════════════════ -->
+    <div id="panel-review">
+      <div class="form-card">
+        <p class="card-title">Student Review</p>
+        <p class="card-sub">Tell us what is working well and what we should improve.</p>
+
+        <!-- progress dots -->
+        <div class="dots">
+          <div class="dot active" id="rd1"></div>
+          <div class="dot" id="rd2"></div>
+          <div class="dot" id="rd3"></div>
+          <div class="dot" id="rd4"></div>
+        </div>
+
+        <!-- ── STEP 1 ── -->
+        <div class="step active" id="rs1">
+          <div class="step-label">Step 1 of 4 — About you</div>
+
+          <div class="fgroup">
+            <label class="fl">Are you currently a student? <span class="req">*</span></label>
+            <div class="radio-pair">
+              <label class="radio-opt" id="ro-yes" onclick="pickRadio('yes')">
+                <div class="radio-dot"></div> Yes
+              </label>
+              <label class="radio-opt" id="ro-no" onclick="pickRadio('no')">
+                <div class="radio-dot"></div> No
+              </label>
+            </div>
+          </div>
+
+          <div class="fgroup">
+            <label class="fl">Course <span class="req">*</span></label>
+            <select class="fi" id="r-course">
+              <option value="">Select a course</option>
+              <option>LingoLand 7th Grade</option>
+              <option>LingoLand 8th Grade</option>
+              <option>LingoLand 9th Grade</option>
+              <option>LingoLand 1st Secondary</option>
+              <option>LingoLand 2nd Secondary</option>
+              <option>LingoLand 3rd Secondary</option>
+              <option>LingoLand 4th Secondary</option>
+              <option>LingoLand Bac Prep</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="fgroup">
+            <label class="fl">Teacher <span class="req">*</span></label>
+            <input class="fi" type="text" id="r-teacher" placeholder="Your teacher's name">
+          </div>
+
+          <button class="btn-submit" onclick="rNext(1)">Next <i class="fas fa-arrow-right ml-1"></i></button>
+        </div>
+
+        <!-- ── STEP 2 ── -->
+        <div class="step" id="rs2">
+          <div class="step-label">Step 2 of 4 — Rate the course</div>
+
+          <div class="fgroup">
+            <label class="fl">How engaging was the content? <span class="req">*</span></label>
+            <div class="emo-row" id="e-fun">
+              <div class="emo" data-v="1" onclick="emo(this,'e-fun')">😴<span class="lb">Boring</span></div>
+              <div class="emo" data-v="2" onclick="emo(this,'e-fun')">😐<span class="lb">Meh</span></div>
+              <div class="emo" data-v="3" onclick="emo(this,'e-fun')">🙂<span class="lb">Okay</span></div>
+              <div class="emo" data-v="4" onclick="emo(this,'e-fun')">😄<span class="lb">Fun!</span></div>
+              <div class="emo" data-v="5" onclick="emo(this,'e-fun')">🤩<span class="lb">Loved it</span></div>
+            </div>
+          </div>
+
+          <hr class="line">
+
+          <div class="fgroup">
+            <label class="fl">How clear were the lessons? <span class="req">*</span></label>
+            <div class="emo-row" id="e-clear">
+              <div class="emo" data-v="1" onclick="emo(this,'e-clear')">🤯<span class="lb">Lost me</span></div>
+              <div class="emo" data-v="2" onclick="emo(this,'e-clear')">😬<span class="lb">Tricky</span></div>
+              <div class="emo" data-v="3" onclick="emo(this,'e-clear')">🤔<span class="lb">Alright</span></div>
+              <div class="emo" data-v="4" onclick="emo(this,'e-clear')">😊<span class="lb">Clear</span></div>
+              <div class="emo" data-v="5" onclick="emo(this,'e-clear')">💡<span class="lb">Crystal!</span></div>
+            </div>
+          </div>
+
+          <hr class="line">
+
+          <div class="fgroup">
+            <label class="fl">Difficulty — was it right for your level?</label>
+            <div class="chips" id="c-diff">
+              <div class="chip" data-v="Way too easy" onclick="chip(this,'c-diff')">😴 Too easy</div>
+              <div class="chip" data-v="A bit easy" onclick="chip(this,'c-diff')">🙂 A bit easy</div>
+              <div class="chip" data-v="Just right" onclick="chip(this,'c-diff')">🎯 Just right</div>
+              <div class="chip" data-v="A bit hard" onclick="chip(this,'c-diff')">😬 A bit hard</div>
+              <div class="chip" data-v="Too hard" onclick="chip(this,'c-diff')">🤯 Too hard</div>
+            </div>
+          </div>
+
+          <div class="btn-row">
+            <button class="btn-back" onclick="rPrev(2)"><i class="fas fa-arrow-left mr-1"></i> Back</button>
+            <button class="btn-next" onclick="rNext(2)">Next <i class="fas fa-arrow-right ml-1"></i></button>
+          </div>
+        </div>
+
+        <!-- ── STEP 3 ── -->
+        <div class="step" id="rs3">
+          <div class="step-label">Step 3 of 4 — Rate the teacher</div>
+
+          <div class="fgroup">
+            <label class="fl">How well did the teacher explain things? <span class="req">*</span></label>
+            <div class="emo-row" id="e-exp">
+              <div class="emo" data-v="1" onclick="emo(this,'e-exp')">😕<span class="lb">Not well</span></div>
+              <div class="emo" data-v="2" onclick="emo(this,'e-exp')">😐<span class="lb">Okay</span></div>
+              <div class="emo" data-v="3" onclick="emo(this,'e-exp')">🙂<span class="lb">Good</span></div>
+              <div class="emo" data-v="4" onclick="emo(this,'e-exp')">😊<span class="lb">Very good</span></div>
+              <div class="emo" data-v="5" onclick="emo(this,'e-exp')">🌟<span class="lb">Amazing!</span></div>
+            </div>
+          </div>
+
+          <hr class="line">
+
+          <div class="fgroup">
+            <label class="fl">Overall experience <span class="req">*</span></label>
+            <div class="star-row" id="sr-overall">
+              <span class="star" onclick="setStars(1,'sr-overall','ov')">★</span>
+              <span class="star" onclick="setStars(2,'sr-overall','ov')">★</span>
+              <span class="star" onclick="setStars(3,'sr-overall','ov')">★</span>
+              <span class="star" onclick="setStars(4,'sr-overall','ov')">★</span>
+              <span class="star" onclick="setStars(5,'sr-overall','ov')">★</span>
+            </div>
+          </div>
+
+          <div class="btn-row">
+            <button class="btn-back" onclick="rPrev(3)"><i class="fas fa-arrow-left mr-1"></i> Back</button>
+            <button class="btn-next" onclick="rNext(3)">Next <i class="fas fa-arrow-right ml-1"></i></button>
+          </div>
+        </div>
+
+        <!-- ── STEP 4 ── -->
+        <div class="step" id="rs4">
+          <div class="step-label">Step 4 of 4 — Final notes</div>
+
+          <div class="fgroup">
+            <label class="fl">What did you like? <span style="font-weight:400;color:#94a3b8;">Optional</span></label>
+            <input class="fi" type="text" id="r-liked" placeholder="Optional, quick note">
+          </div>
+
+          <div class="fgroup">
+            <label class="fl">What should improve? <span style="font-weight:400;color:#94a3b8;">Optional</span></label>
+            <input class="fi" type="text" id="r-improve" placeholder="Optional, quick note">
+          </div>
+
+          <div class="fgroup">
+            <label class="fl">Your name <span style="font-weight:400;color:#94a3b8;">(leave blank to stay
+                anonymous)</span></label>
+            <input class="fi" type="text" id="r-name" placeholder="Anonymous" style="margin-bottom:.5rem;">
+            <div class="anon-row" id="anon-r" onclick="toggleAnon('r')">
+              <div class="toggle-pill"></div>
+              <span class="anon-label">Submit anonymously 🎭</span>
+            </div>
+          </div>
+
+          <div class="btn-row" style="margin-top:0;">
+            <button class="btn-back" onclick="rPrev(4)"><i class="fas fa-arrow-left mr-1"></i> Back</button>
+          </div>
+          <button class="btn-submit" onclick="submitReview()" id="btn-r-submit">
+            Submit Review
+          </button>
+        </div>
+
+        <!-- SUCCESS -->
+        <div class="success" id="r-success">
+          <div class="success-ico">🎊</div>
+          <h3
+            style="font-family:'Poppins',sans-serif;font-weight:800;font-size:1.4rem;color:var(--teal-d);margin:.75rem 0 .4rem;">
+            Thank you!</h3>
+          <p style="color:#64748b;font-size:.9rem;margin-bottom:1.5rem;">Your review has been sent to the LingoLand
+            team. We really appreciate it! 💪</p>
+          <button class="btn-submit" style="border-radius:99px;" onclick="resetReview()">Write another review</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════
+       REQUEST PANEL
+  ════════════════════════════════════════════════ -->
+    <div id="panel-request" style="display:none;">
+      <div class="form-card">
+        <p class="card-title">Student Request</p>
+        <p class="card-sub">Need help, support, or a course update? Send it here.</p>
+
+        <div id="req-form">
+
+          <div class="fgroup">
+            <label class="fl">Request type <span class="req">*</span></label>
+            <select class="fi" id="req-type">
+              <option value="">Choose request type</option>
+              <option>Book / Resource request</option>
+              <option>Exercise or activity request</option>
+              <option>Topic suggestion</option>
+              <option>Technical issue</option>
+              <option>General question</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="fgroup">
+            <label class="fl">Message <span class="req">*</span></label>
+            <textarea class="fi" id="req-msg" maxlength="1000"
+              oninput="document.getElementById('cc').textContent=this.value.length"
+              placeholder="Tell us what you need in one or two lines"></textarea>
+            <div style="font-size:.72rem;color:#94a3b8;text-align:right;margin-top:.25rem;"><span id="cc">0</span>/1000
+            </div>
+          </div>
+
+          <div class="fgroup">
+            <label class="fl">Your name <span style="font-weight:400;color:#94a3b8;">(optional)</span></label>
+            <input class="fi" type="text" id="req-name" placeholder="Anonymous" style="margin-bottom:.5rem;">
+            <div class="anon-row" id="anon-q" onclick="toggleAnon('q')">
+              <div class="toggle-pill"></div>
+              <span class="anon-label">Submit anonymously 🎭</span>
+            </div>
+          </div>
+
+          <div class="fgroup">
+            <label class="fl">Contact <span style="font-weight:400;color:#94a3b8;">(optional — email or
+                phone)</span></label>
+            <input class="fi" type="text" id="req-contact" placeholder="Optional">
+          </div>
+
+          <button class="btn-submit" onclick="submitRequest()" id="btn-q-submit">
+            Send Request
+          </button>
+        </div>
+
+        <!-- SUCCESS -->
+        <div class="success" id="q-success">
+          <div class="success-ico">✅</div>
+          <h3
+            style="font-family:'Poppins',sans-serif;font-weight:800;font-size:1.4rem;color:var(--teal-d);margin:.75rem 0 .4rem;">
+            Request received!</h3>
+          <p style="color:#64748b;font-size:.9rem;margin-bottom:1.5rem;">We read every request. We'll get back to you
+            soon! 🙌</p>
+          <button class="btn-submit" style="border-radius:99px;" onclick="resetRequest()">Send another request</button>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /page-shell -->
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <a href="../index.html" class="logo">
+          <img src="../assets/img/logo.png" alt="LingoLand Logo" class="footer-logo-img">
+        </a>
+      </div>
+      <div class="footer-info">
+        <h2><b>Contact Us</b></h2>
+        <p>3005 Cité Ons, Sfax, Tunisia</p>
+        <p>Email: <a href="mailto:contact@lingo-land.net">contact@lingo-land.net</a></p>
+        <p>Phone: <a href="tel:+21622571291">+216 22 571 291</a></p>
+        <hr><br>
+        <b>
+          <p>Developed by: <a href="https://i-startup.tn/">I-StartUp®️</a></p>
+        </b>
+      </div>
+      <div class="footer-links">
+        <h2><b>Quick Links</b></h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../Store/">Store</a></li>
+          <li><a href="../About/">About Us</a></li>
+          <li><a href="../Resources/">Resources</a></li>
+          <li><a href="../Contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-social-media">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/profile.php?id=100094352086577" target="_blank" class="social-icon"
+          aria-label="Facebook">
+          <img src="../assets/img/facebook.png" alt="Facebook">
+        </a>
+        <a href="https://www.youtube.com/@LingoLandCoursebooks" target="_blank" class="social-icon"
+          aria-label="YouTube">
+          <img src="../assets/img/youtube.png" alt="YouTube">
+        </a>
+        <a href="https://www.instagram.com/lingoland_coursebooks/" target="_blank" class="social-icon"
+          aria-label="Instagram">
+          <img src="../assets/img/innstagram.png" alt="Instagram">
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 LingoLand. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="../assets/js/navbar.js"></script>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
