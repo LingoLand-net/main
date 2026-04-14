@@ -497,7 +497,8 @@
     //     }
     // ];
 
-    // Merge Black Friday bundles into main products array (temporary)
+    // Merge optional Black Friday bundles only when they are actually defined.
+    const blackFridayBundles = Array.isArray(window.BLACK_FRIDAY_BUNDLES) ? window.BLACK_FRIDAY_BUNDLES : [];
     const allProducts = [...products, ...blackFridayBundles];
 
     window.STORE_PRODUCTS = allProducts;
